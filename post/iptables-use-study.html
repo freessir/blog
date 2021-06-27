@@ -79,7 +79,11 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -280,7 +284,7 @@
 <p>filter 表有 INPUT、OUTPUT 和 FORWARD 等规则链。INPUT 链控制数据包的流入，PUTPUT 链控制数据包的流出，FORWARD 链控制数据的转发。</p>
 <p>nat 表有 PREROUTING、POSTROUTING 和 OUTPUT 规则链，PREROUTING 链用来修改数据包的目标端口和地址，POSTROUTING 链用来修改数据的源端口和地址，OUTPUT 链作用类似 PREROUTING 链，不过是用来修改本机发出的数据的 目标端口和地址。</p>
 <p>这几个规则链的关系如下：</p>
-<img src="/post/iptables-use-study/iptables_01.gif" class="" title="流量在 iptables 链的流动途径">
+<img data-src="/post/iptables-use-study/iptables_01.gif" class="" title="流量在 iptables 链的流动途径">
 
 <p>当外面的数据包进入本机，首先会经过 PREROUTING 链，对修改后的目标地址进行路由判断，如果发现其目标就是本机，那就走 A 经过 INPUT 链的筛选，符合条件就放行至本应用处理；如果发现目标地址是其他主机，那就走 B 使用 FORWARD 链进行转发，最后通过 POSTROOUTING 链出去。POSTROUTING 链很重要的工作是修改来源地址为本机，并记录这个修改关系。数据回传的时候本机通过这个修改关系转发数据给源主机。</p>
 <p>当本机要发出数据包，先经过路由判断进入 nat 表的 OUTPUT 链，用来修改目标主机，然后经过 filter 表的 OUTPUT 链的筛选，符合条件就放行到 POSTROUTING 链，修改源地址就包并发出。</p>
@@ -369,7 +373,10 @@
     <a href="/post/crontab-vs-anacron.html" rel="prev" title="计划任务：crontab 对比 anacron">
       <i class="fa fa-chevron-left"></i> 计划任务：crontab 对比 anacron
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/how-to-hexo-next.html" rel="next" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">
+      借助 GitHub 安装 hexo 博客并配置 NexT 主题 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -445,7 +452,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -454,7 +461,7 @@
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -520,19 +527,19 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">home again</span>
+  <span class="author" itemprop="copyrightHolder">true</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">15k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div><!--添加网站运行时间 -->
 <div>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
@@ -628,6 +635,8 @@ setInterval("createtime()",250);
 
 
 
+
+  
 
   
 
