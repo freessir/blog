@@ -82,24 +82,16 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>//post/test.html</url>
-    <content><![CDATA[<p>hello world</p>
-<p>$$\begin{equation}\label{eq1}<br>e=mc^2<br>\end{equation}$$</p>
-<p>$$\begin{align}<br>-4 + 5x &amp;= 2+y \nonumber  \<br> w+2 &amp;= -1+w \<br> ab &amp;= cb<br>\end{align}$$</p>
-<p>著名的质能方程 $\eqref{eq1}$ 由爱因斯坦提出 …</p>
-]]></content>
-  </entry>
-  <entry>
     <title>借助 GitHub 安装 hexo 博客并配置 NexT 主题</title>
     <url>//post/how-to-hexo-next.html</url>
     <content><![CDATA[<p>Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。</p>
 <p>Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。</p>
+<span id="more"></span>
+
 <h2 id="创建-GitHub-仓库"><a href="#创建-GitHub-仓库" class="headerlink" title="创建 GitHub 仓库"></a>创建 GitHub 仓库</h2><p>创建一个 GitHub 仓库可以算是 Git 基础中的基础了吧，这个不再这篇文章的讨论范围（太简单了。。）。当然你也可以将代码部署在自己的 VPS 上，Hexo 自带 web 服务，只需要通过 nginx 等程序反代到 80 端口即可。</p>
 <p>不过 GitHub 的羊毛不要白不要，稳定不用自己操心，岂不是妙哉。</p>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>hexo 是一款基于 Node.js 开发的博客框架，所以 首先要安装 Node.js。</p>
-<p>###安装 Node.js###</p>
-<p>下载地址：<a href="https://nodejs.org/en/">官网下载</a></p>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>下载地址：<a href="https://nodejs.org/en/">官网下载</a></p>
 <p>Node.js 提供可视化的安装方式，全程跟着步骤即可。需要注意的是 Windows 系统在安装过程中记得勾选  <strong>Add to PATH</strong>，方便在 cmd 命令行里使用。</p>
 <p>安装技术后，打开 cmd 命令行，MacOS 用户打开终端，使用命令 <code>npm --version</code> 通过查看版本信息的方式检验是否安装成功。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm --version</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
@@ -154,7 +146,7 @@
 <ul>
 <li>:year ：文章发表年份（4位数）</li>
 <li>:month：文章发表的月份（2位数）</li>
-<li>：i_month：文章的发表月份（去掉开头的零）</li>
+<li>:i_month：文章的发表月份（去掉开头的零）</li>
 <li>:day    文章的发表日期 (2 位数)</li>
 <li>:i_day    文章的发表日期（去掉开头的零）</li>
 <li>:hour    文章发表时的小时 (2 位数)</li>

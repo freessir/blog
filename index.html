@@ -187,94 +187,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/test.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/test.html" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-27 22:54:35" itemprop="dateModified" datetime="2021-06-27T22:54:35+08:00">2021-06-27</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/test.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/test.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>165</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>hello world</p>
-<p>$$\begin{equation}\label{eq1}<br>e=mc^2<br>\end{equation}$$</p>
-<p>$$\begin{align}<br>-4 + 5x &amp;= 2+y \nonumber  \<br> w+2 &amp;= -1+w \<br> ab &amp;= cb<br>\end{align}$$</p>
-<p>著名的质能方程 $\eqref{eq1}$ 由爱因斯坦提出 …</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/how-to-hexo-next.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -298,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-27 23:38:26" itemprop="dateModified" datetime="2021-06-27T23:38:26+08:00">2021-06-27</time>
+                <time title="修改时间：2021-06-27 23:41:56" itemprop="dateModified" datetime="2021-06-27T23:41:56+08:00">2021-06-27</time>
               </span>
 
           
@@ -342,203 +254,14 @@
       
           <p>Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。</p>
 <p>Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。</p>
-<h2 id="创建-GitHub-仓库"><a href="#创建-GitHub-仓库" class="headerlink" title="创建 GitHub 仓库"></a>创建 GitHub 仓库</h2><p>创建一个 GitHub 仓库可以算是 Git 基础中的基础了吧，这个不再这篇文章的讨论范围（太简单了。。）。当然你也可以将代码部署在自己的 VPS 上，Hexo 自带 web 服务，只需要通过 nginx 等程序反代到 80 端口即可。</p>
-<p>不过 GitHub 的羊毛不要白不要，稳定不用自己操心，岂不是妙哉。</p>
-<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>hexo 是一款基于 Node.js 开发的博客框架，所以 首先要安装 Node.js。</p>
-<p>###安装 Node.js###</p>
-<p>下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网下载</a></p>
-<p>Node.js 提供可视化的安装方式，全程跟着步骤即可。需要注意的是 Windows 系统在安装过程中记得勾选  <strong>Add to PATH</strong>，方便在 cmd 命令行里使用。</p>
-<p>安装技术后，打开 cmd 命令行，MacOS 用户打开终端，使用命令 <code>npm --version</code> 通过查看版本信息的方式检验是否安装成功。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>xxxx</p>
-<h3 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>上面工作准备好之后，安装 Hexo 就非常容易，一句话搞定：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
-<p>同样我们通过查看版本信息的方式检查 Hexo 是否安装成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">xxx xxx</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>cd</code> 命令切换一个目录，此目录就是操作 Hexo 博客的工作目录了。为了便于区分管理，新建一个目录 hexo-blog。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo-blog &amp;&amp; cd hexo-blog</span><br></pre></td></tr></table></figure>
-
-<p>现在我们把 Hexo 博客代码下载到工作目录，此步骤只需要 Hexo 初始化命令即可完成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>除了下载源代码，init 初始化命令还帮我们做了一些其他事情，例如下载并使用了 landscape 主题。<code>npm install</code> 命令帮我们自动安装博客需要的东西，专业叫法叫做安装依赖。</p>
-<p>现在你的工作目录结构如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<p>使用如下两行命令开启预览一下吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>接下来在浏览器打开地址：<a href="localhost:4000">localhost:4000</a>，你就能一睹 Hexo 了。</p>
-<img data-src="/post/how-to-hexo-next/hexo_index.jpg" class="" title="hexo 首次启动">
-
-<p>可以看到还有一篇名为 Hello World 的文章。接下来就是配置 Hexo 博客了，这些默认的设置显然不是我们想要的。</p>
-<h2 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h2><p>先来了解一下 hexo 的原理。</p>
-<p>新建一个文章，可以使用 <code>hexo new postname</code>，例如新建一个名为 test 的文章，那么：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="built_in">test</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ~/hexo-blog/<span class="built_in">source</span>/_posts/test.md</span><br></pre></td></tr></table></figure>
-
-<p>通过提示信息 INFO 看到这篇文章生成在了 source/_posts/test.md。source 目录是 hexo 用来存放未经加工的原始文件的地方。还有一个 _posts 目录，这就是 hexo 的布局，可以理解为文章的类型。hexo 有三种文章类型，post、page 和 draft。post 表示普通文章，page 表示这个一个独立页面，draft 表示文章还只是草稿，还需要修改。</p>
-<p>现在在 test.md 文件写个简单的 hello world，保存后使用命令 <code>hexo generate</code>，这一步就是要生成文章等内容了。为什么要生成文章呢？test.md 不就是文章么？要记住，hexo 是一个静态博客，我们写的只是 Markdown 格式的内容，gernerate 帮我们生成可以在网页浏览的 html 格式文件。最终我们的 test 文章就跑到了 hexo 目录下的 public/post/test.html。所以 hexo 真正的根目录其实是 public/。</p>
-<p>查看 test.html 会发现，hexo 除了将 hello world 转换成了 <code>&lt;p&gt;hello world&lt;/p&gt;</code> 的 html 格式外，还多了一大堆 css、js 等完整的信息，这是怎么做到的？查看 hexo 目录，很明显的看到除了根目录 public 外，还有其他目录和文件，正是这些目录和文件共同规定了 hexo generate 的方式，才生成了一个标签完备的 test.html 文件。</p>
-<p>顺利成章的，来看看这些目录和文件。</p>
-<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h3><p>这个就是 hexo 的配置文件，也叫做 站点配置文件，可以对整个博客站进行全局配置。参考如下：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="comment"># 网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment"># 网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment"># 针对 seo 的网站描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="comment"># 针对 seo 的网站关键词</span></span><br><span class="line"><span class="attr">language:</span> <span class="comment"># 站点支持的语言</span></span><br><span class="line"><span class="attr">author:</span> <span class="comment"># 站点的作者</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="comment"># 站点的时区。默认使用本地电脑的时区</span></span><br><span class="line"><span class="attr">url:</span> <span class="comment"># 站点的地址。带 http 或 https 的域名</span></span><br><span class="line"><span class="attr">root:</span> <span class="comment"># 根目录。默认 /</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="comment"># 文章的链接，可以认为是 “伪静态”</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="comment"># 是否显示 index.html</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="comment"># 是否显示 .html 后缀</span></span><br><span class="line"><span class="attr">theme:</span> <span class="comment"># 指定使用的主题</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="comment"># 创建文章的同时创建同名的目录，用于存放资源</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>网站时区</strong></p>
-<p>网站默认的时区就是本地电脑的时区，也可以指定时区，例如指定中国时区：<code>timezone: Asia/Shanghai</code></p>
-<p><strong>二级目录</strong></p>
-<p>如果我把 hexo 放在网站根目录下的 <code>blog/</code> 目录下，即所谓的把 hexo 部署在网站的二级目录，那么需要修改 root 为 /blog/，不要忘了前后两个斜号。否则你的站点除了首页，其他都无法通过链接打开。二级目录在网站虚拟机上比较常用。</p>
-<p><strong>链接后缀</strong></p>
-<p>如果我不想要 .html 后缀，设置 <code>trailing_html: false</code>；如果不想显示文件名：设置 <code>trailing_index: false</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 现在有一个链接：</span></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>文章链接</strong></p>
-<p>上面说 permalink 是 “伪静态”，因为效果跟 WordPress 等博客的伪静态一样，但事实上 hexo 是 “真静态”。</p>
-<p>hexo 会在 generate 时生成和 permalink 设定的链接一样的目录层级。例如设定 <code>permalink：first/second:title.html</code>，然后命令 <code>hexo generate</code>，在 public/post 目录下会看到 first/second 的目录结构。这个就是站点配置文件改变 hexo 生成方式的一个很好例子。</p>
-<p>permalink 支持的变量有：</p>
-<ul>
-<li>:year ：文章发表年份（4位数）</li>
-<li>:month：文章发表的月份（2位数）</li>
-<li>：i_month：文章的发表月份（去掉开头的零）</li>
-<li>:day    文章的发表日期 (2 位数)</li>
-<li>:i_day    文章的发表日期（去掉开头的零）</li>
-<li>:hour    文章发表时的小时 (2 位数)</li>
-<li>:minute    文章发表时的分钟 (2 位数)</li>
-<li>:second    文章发表时的秒钟 (2 位数)</li>
-<li>:title    文件名称 (relative to “source/_posts/“ folder)</li>
-<li>:name    文件名称</li>
-<li>:post_title    文章标题</li>
-<li>:id    文章 ID</li>
-<li>:category    分类。如果文章没有分类，则是 default_category</li>
-<li>:hash    SHA1  :title 和 date (12-hexadecimal) 加密</li>
-</ul>
-<p><strong>资源目录</strong></p>
-<p>为了便于管理资源文件，hexo 会在创建文章的同时创建同名目录，文章的资源如视频、照片等都会放在同名目录下。但这个并不是强制规定，你依然可以将资源文件放置在任何地方，只要你在文章内地址引用正确，但是不建议这么做。</p>
-<p>资源目录这个功能需要：<code>post_asset_folder: true</code> 开启。开启后，创建一个 test 文件：<code>hexo new test</code>，前往 source/_post 目录可以看到 test.md 文件和 test 目录。</p>
-<p>文章内引用资源是：<code>文件名/资源名</code>，例如我把 1.png 图片放在了 test 资源目录，test.md 里引用必然是 <code>test/1.png</code>，网站很多写的是 <code>1.png</code>，这是不对的，除非使用插件。在 Hexo 3 版本里，这类插件被集成到了核心代码中，现在可以使用如下格式来进行引用资源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>所以引用可以这么写：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img 1.png 图片说明 %&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>这类写法的好处是写法一致，引用链接、图片等都一样格式。但是以后你要迁移到其他博客系统，这个不符合 Markdown 写法的标签，需要你想办法改过来。。。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>这个是安装依赖包的说明文件，npm 就是通过参考这个文件来安装依赖的。这里不进行细究，直接把它当作插件，在安装 Hexo 的时候使用了命令 <code>npm install</code>，就是在照着 package.json 这个清单安装插件。</p>
-<p>例如：安装一个 hexo-generator-searchdb 插件，这个插件提供搜索功能，那么命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-
-<p>安装成功后，npm会把下载的 hexo-generator-searchdb 版本信息写进 package.json，同时写入 package.lock 文件里留作记录。更深入了解可以自行参考 npm 的依赖包管理。</p>
-<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>上文讲了，用于存储博客的未经修改的原始内容文件。source 目录下的文件和目录各有用途：一般文件表示 hexo 的 page 页面，用户存储独立页面； _post 目录存储表示 post 的文章，我们编写文章就在这里；draft 目录存储表示 draft 的草稿。</p>
-<p>使用命令 <code>hexo generate</code> 将 source 目录下的文件通过上述的规则生成 public 目录下的 html 文件，供博客使用。查看 source 和 public 两个目录，你就可以在 public 目录下找到所有 source 目录的对应文件。</p>
-<p>以 “_” 开头的文件和目录在 generate 时被忽略。当你的有文章没有写好但其他文章着急发布的时候，除了把没有写好的文章放进 draft 草稿里，还可以在其文件名前加 “_”。</p>
-<p>除了 html 和 Markdown 文件，source 目录下的文件会被原样放在 public 目录下相同的位置。在部署 Hexo 到 GitHub 时，我们可以直接在 source 目录下创建 CNAME 和 README.md 文件，CNAME 文件里写入 域名实现域名访问。README.md 写此仓库的说明，例如：个人博客。不能直接写在 public 目录下，虽然部署的时候没问题，但是下次 generate 时会被丢失的。</p>
-<ul>
-<li>hexo generate 可以简写：hexo g</li>
-<li>hexo new 可以简写：hexo n</li>
-</ul>
-<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p>定义新建的文章文件默认内容。例如查看 scaffolds/post.md：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<p>当我们一连创建好几篇 教程 分类下的文章时，我们可以增加 <code>categories: 教程</code>，来指定接下来创建的文章默认分类。当你的文章有重复内容时，借助这个可以提高你的写作效率。</p>
-<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题目录，你的主题都要放在这个目录下。启用某个主题时，例如下面要说的 NexT 主题，那么修改站点配置文件 _config.yml，指定 <code>theme: next</code>。</p>
-<h2 id="使用-NexT-主题"><a href="#使用-NexT-主题" class="headerlink" title="使用 NexT 主题"></a>使用 NexT 主题</h2><p>NexT 是 Hexo 博客下的一款极简、高效主题，本站使用的便是 NexT 主题。</p>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>可以使用 git 命令克隆源码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next.git</span><br></pre></td></tr></table></figure>
-
-<p>或者前往 <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/releases">release pages</a> 下载源码，重命名为 next 并放置在 themes 目录下。</p>
-<h3 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h3><p>修改站点配置文件 _config.yml，修改 theme 字段为 next。另外需要注意的是语言问题：next 提供的中文包只有 zh-CN.yml、zh-HK.yml 和 zh-TW.yml，所以在 站点配置文件里 language 字段应该修改为 zh-CN 才能使用中文。</p>
-<p>相对于站点配置文件 _config.yml，主题也有自己的配置文件 _config.yml，一样的文件名但是作用不一样，请注意区分。</p>
-<p><strong>主题配置文件位于 themes/next/_config.yml</strong></p>
-<h3 id="切换外观"><a href="#切换外观" class="headerlink" title="切换外观"></a>切换外观</h3><p>NexT 主题拥有四种外观，分别是 Muse、Mist、Pisces 和 Gemini，设置为主题配置文件的 scheme 字段。想要启用哪个外观就移除其前面的 # 。例如启用 Pisces：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p># 通常表示注释，可以认为注释就表示不存在，但对人类可见。</p>
-</blockquote>
-<h3 id="暗夜模式"><a href="#暗夜模式" class="headerlink" title="暗夜模式"></a>暗夜模式</h3><p>NexT 支持暗夜模式，修改主题配置文件 <code>darkmode: true</code> 即可开启。但是不会自动切换，这就是静态博客的弊端，它不会像 WordPress 动态读取变量实现更为丰富的变化。</p>
-<h3 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h3><p>对应的是主题配置文件 menu 字段，取消注释即可开启对应菜单图标。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home:</span> <span class="comment">#主页</span></span><br><span class="line"><span class="attr">about:</span> <span class="comment">#关于</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#标签</span></span><br><span class="line"><span class="attr">categories:</span> <span class="comment">#分类</span></span><br><span class="line"><span class="attr">archives:</span> <span class="comment">#归档</span></span><br><span class="line"><span class="attr">schedule:</span> <span class="comment">#日历</span></span><br><span class="line"><span class="attr">sitemap:</span> <span class="comment">#站点sitemap</span></span><br></pre></td></tr></table></figure>
-
-<p>此处的写法是：<code>home: / || fa fa-home</code>，第一个 home 表示显示的菜单名，第二个 “/” 表示链接，第三个 fa fa-home 表示图标。</p>
-<p>下面以 page 页面 gallery 图库为例：</p>
-<p>自定义一个菜单名：gallery，再修改 NexT 主题语言包：themes/next/languages/zh-CN.yml，在 menu 字段下新建一个子字段： <code>gallery: 图库</code>。这样就能使用中文语言了。</p>
-<p>链接使用的是相对路径，会自动补全当前域名。例如 / 会自动补全为 <code>https://yourdomain.com /</code>。这里链接为 /gallery。</p>
-<p>图标用的是 awesome，前往 <a target="_blank" rel="noopener" href="https://fontawesome.com/v5.15/icons">awesome 图标库</a>，搜索你要的图标，点击后进入后选择 Start Using This Icon，其中 i 标签的 class 就可以用在此处了。那些标着 PRO 的图标都是收费的，避开用。搜索 gallery 发现没有想要的图标，我们想要的是图片的图标，再次搜索 images，发现符合的图标了。fa fa-images 正合适。</p>
-<p>最后写法是：<code>gallery: /gallery || fa fa-images</code>。</p>
-<h3 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h3><p>字段：sidebar。下面的 社交、头像 能弄都弄，不能弄的也弄，图标太少不太好看。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">position: #指定侧边栏 居左 left；居右 right</span><br><span class="line">width: #指定侧边栏宽度，默认 300，单位像素</span><br><span class="line">display:</span><br><span class="line">  #post 文章页面展开侧边栏</span><br><span class="line">  #always 任何页面都展开侧边栏</span><br><span class="line">  #hide 隐藏侧边栏，但可以手动点击按钮呼出</span><br><span class="line">  #remove 隐藏侧边栏，并隐藏按钮</span><br><span class="line">avatar: #设定头像</span><br><span class="line">  url: #图片地址。如果想要使用 qq 头像：https://q1.qlogo.cn/g?b=qq&amp;nk=qq号&amp;s=640</span><br><span class="line">  rounded: #true 圆形头像</span><br><span class="line">  rotated：#true 方形头像，四个角弧形</span><br><span class="line">social: #社交账号，这里不列了。使用添加菜单的方法添加一个新的社交，如 QQ。</span><br><span class="line">  QQ: https://wpa.qq.com/msgrd?v=3&amp;uin=QQ号&amp;site=qq&amp;menu=yes || fab fa-qq</span><br><span class="line">  chat: #在线聊天</span><br><span class="line">    enable: #开启在线聊天</span><br><span class="line">    service: chatra # 使用chatra</span><br><span class="line">    service: tidio # 使用tidio</span><br></pre></td></tr></table></figure>
-
-<p>如果开了 在线聊天，如果指定 chatra，那么往下找 chatra 字段，填写 id；如果指定了 tidio，往下找 titio 字段，填写 key。这两个服务为第三方提供，需要自行前往注册。</p>
-<h3 id="设置动画"><a href="#设置动画" class="headerlink" title="设置动画"></a>设置动画</h3><p>NexT 提供多种动画。</p>
-<p><strong>一般动画</strong></p>
-<p>设置的对象有：文章块、文章头部、文章主题，针对 Gemini 和 Pisces 外观，还可以让侧边栏动起来。支持的动画有 渐入、抖动进入、从上弹跳进入、从左弹跳进入、从右弹跳进入 等等。</p>
-<p>开启动画</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">motion</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> // 开启动画</span><br></pre></td></tr></table></figure>
-
-<p>下面就请你折腾吧.</p>
-<p><strong>进度条</strong></p>
-<p>当页面在加载时，页面顶部进度条的动画。需要安装插件才能启用，插件安装方法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-pace <span class="built_in">source</span>/lib/pace</span><br></pre></td></tr></table></figure>
-<p>安装后设置主题配置问题，将 pace 字段设定 true。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>官方提供了 demo，可以自行对照着设置。</p>
-<p><a target="_blank" rel="noopener" href="https://codebyzach.github.io/pace/">https://codebyzach.github.io/pace/</a></p>
-<p><strong>背景动画</strong></p>
-<p>首先安装插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-three <span class="built_in">source</span>/lib/three</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置文件开启 three 字段</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">three:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  three_waves: <span class="literal">false</span></span><br><span class="line">  canvas_lines: <span class="literal">false</span></span><br><span class="line">  canvas_sphere: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>需要哪个动画就将其设置为 true 即可。</p>
-<p>除了上面，还有 彩带动画，需要额外安装插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置里开启 canvas_ribbon 字段：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">canvas_ribbon:</span><br><span class="line">  enable: true # 开启彩带背景</span><br><span class="line">  size: 300 # 彩带的宽度</span><br><span class="line">  alpha: 0.6 # 彩带的透明度 1 不透明；0 全透明</span><br><span class="line">  zIndex: -1 # 彩带在第几层，越大越会覆盖文字</span><br></pre></td></tr></table></figure>
-
-<h3 id="加入统计"><a href="#加入统计" class="headerlink" title="加入统计"></a>加入统计</h3><p>为网站、页面加入访客统计，开启主题配置文件里 busuanzi_count 字段</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p>本地搜索需要插件支持，使用如下命令下载插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置文件里开启 local_search 字段：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="string">//开启本地搜索</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span> <span class="string">//</span> <span class="string">auto</span> <span class="string">搜索结果实时显示；manual</span> <span class="string">搜索结果需要点击搜索按钮才显示</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span> <span class="string">//</span> <span class="string">每篇文章包含关键词的数量</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">true</span> <span class="string">//将</span> <span class="string">html</span> <span class="string">标签转化可阅读的字符</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span> <span class="string">//搜索预加载</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>这个比较麻烦。主题配置文件里对数学公式的配置简化一下看的清楚</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>可以看到 NexT 支持两种数学公式：mathjax 和 katex。per_page 设置为 true 时，只有开头定义了 <code>mathjax: true</code> 的页面才会使用数学公式渲染，fase 则对所有页都进行数学公式渲染。推荐 true，然后在要使用数学公式的文章开头定义一下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2021-06-27 16:42:58</span><br><span class="line">tags:</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>MathJax</strong></p>
-<p>要使用 mathjax，需要把默认的 Markdown 渲染器：hexo-renderer-marked 改用 hexo-renderer-pandoc 或者 hexo-renderer-kramed（不推荐）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-pandoc</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置文件里开启 mathjax。</p>
-<p><strong>Katex</strong></p>
-<p>katex 会比 mathjax 有更高的性能，不过支持没有 mathjax 全。如果你要使用的公式 katex 都支持，那么推荐使用 katex。</p>
-<p><a target="_blank" rel="noopener" href="https://khan.github.io/KaTeX/function-support.html">katex支持的功能列表</a></p>
-<p>如果选择使用 Katex 进行数学公式渲染，则需要使用 hexo-renderer-markdown-it-plus 或 hexo-renderer-markdown-it 这两种渲染器的其中一个。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure>
-
-<p>然后在主题配置文件开启 katex。</p>
-<p><strong>使用</strong></p>
-<p>默认可以使用 $$ 将公式左右包裹主即可，这是最简单的方法。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$m = c^2$$</span><br></pre></td></tr></table></figure>
-
-<p>如果想要公式编号，只需要把公式放在 equation 环境里；想要公式引用，添加 \label{} 标记即可。如下面对公式进行了编号，并使用了 eq1 标签。</p>
-  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;\label&#123;eq1&#125;</span><br><span class="line">e=mc^2</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>那么引用这个公式可以使用 \eqref{}。例如下面引用：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">著名的质能方程 $\eqref&#123;eq1&#125;$ 由爱因斯坦提出 ...</span><br></pre></td></tr></table></figure>
-
-<p>更多的写法支持参考：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md">https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/how-to-hexo-next.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -828,7 +551,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1015,61 +738,6 @@ setInterval("createtime()",250);
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
   <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
