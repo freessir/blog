@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"blog.mebi.me","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="(adsbygoogle &#x3D; window.adsbygoogle || []).push({});   介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强">
+  <meta name="description" content="介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。 场景 有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="clash-speed-other-devices">
 <meta property="og:url" content="https://blog.mebi.me/post/clash-speed-other-devices.html">
 <meta property="og:site_name" content="米白博客">
-<meta property="og:description" content="(adsbygoogle &#x3D; window.adsbygoogle || []).push({});   介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强">
+<meta property="og:description" content="介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。 场景 有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/1.png">
 <meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/2.jpg">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/5.jpeg">
 <meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/6.jpeg">
 <meta property="article:published_time" content="2021-06-28T03:22:59.000Z">
-<meta property="article:modified_time" content="2021-06-28T03:42:51.570Z">
+<meta property="article:modified_time" content="2021-06-28T03:46:21.215Z">
 <meta property="article:author" content="home again">
 <meta property="article:tag" content="米白博客,linux学习">
 <meta name="twitter:card" content="summary">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 11:42:51" itemprop="dateModified" datetime="2021-06-28T11:42:51+08:00">2021-06-28</time>
+                <time title="修改时间：2021-06-28 11:46:21" itemprop="dateModified" datetime="2021-06-28T11:46:21+08:00">2021-06-28</time>
               </span>
 
           
@@ -245,7 +245,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>698</span>
+              <span>697</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -264,7 +264,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
+<p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p>
+<p><strong>场景</strong></p>
+<p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p>
+<span id="more"></span>
+
+<h2 id="打开局域网连接"><a href="#打开局域网连接" class="headerlink" title="打开局域网连接"></a>打开局域网连接</h2><p>确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。</p>
+<p><strong>Clash for Windows</strong></p>
+<img data-src="/post/clash-speed-other-devices/1.png" class="">
+
+<p><strong>ClashX</strong></p>
+<p>点击 <strong>控制台</strong> —&gt; <strong>设置</strong>，打开 <strong>允许来自局域网的连接</strong>。</p>
+<img data-src="/post/clash-speed-other-devices/2.jpg" class="">
+<img data-src="/post/clash-speed-other-devices/3.jpeg" class="">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <p><ins class="adsbygoogle"
      style="display:block; text-align:center;"
      data-ad-layout="in-article"
@@ -275,20 +290,8 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
-<p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p>
-<p><strong>场景</strong></p>
-<p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p>
-<h2 id="打开局域网连接"><a href="#打开局域网连接" class="headerlink" title="打开局域网连接"></a>打开局域网连接</h2><p>确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。</p>
-<p><strong>Clash for Windows</strong></p>
-<img data-src="/post/clash-speed-other-devices/1.png" class="">
-
-<p>ClashX<br>点击 控制台 —&gt; 设置，打开 <strong>允许来自局域网的连接</strong>。</p>
-<img data-src="/post/clash-speed-other-devices/2.jpg" class="">
-<img data-src="/post/clash-speed-other-devices/3.jpeg" class="">
-
 <h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p>
-<p>*<em>Windows</em></p>
+<p><strong>Windows</strong></p>
 <p>使用组合键 <code>Win + R</code>，Win 键先按住不放，再按 R 键。在搜索框输入 <code>cmd</code> 回车，在接下来的窗口里输入 <code>ipconfig</code> 找到 <strong>无线局域网适配器</strong> <code>WLAN</code> 项，IPv4 地址 即为设备 A 在局域网里的 ip 地址。</p>
 <img data-src="/post/clash-speed-other-devices/4.png" class="">
 
