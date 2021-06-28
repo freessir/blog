@@ -380,6 +380,7 @@
 <img data-src="/post/clash-speed-other-devices/2.jpg" class="">
 <img data-src="/post/clash-speed-other-devices/3.jpeg" class="">
 
+<h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <p><ins class="adsbygoogle"
      style="display:block; text-align:center;"
@@ -391,7 +392,6 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p>
 <p><strong>Windows</strong></p>
 <p>使用组合键 <code>Win + R</code>，Win 键先按住不放，再按 R 键。在搜索框输入 <code>cmd</code> 回车，在接下来的窗口里输入 <code>ipconfig</code> 找到 <strong>无线局域网适配器</strong> <code>WLAN</code> 项，IPv4 地址 即为设备 A 在局域网里的 ip 地址。</p>
 <img data-src="/post/clash-speed-other-devices/4.png" class="">
