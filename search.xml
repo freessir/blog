@@ -1,96 +1,459 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>拔卡方式国内观看 TikTok</title>
-      <link href="//post/how-to-use-tiktok-with-pull-card.html"/>
-      <url>//post/how-to-use-tiktok-with-pull-card.html</url>
-      
-        <content type="html"><![CDATA[<p>国内观看 TikTok 比较麻烦，因为 TikTok 会自动检测当前的上网环境，检测包括但不限于 ip、设备语言、DNS、手机卡运营商 等。安卓可以借助框架修改这些，iOS 端就比较麻烦了，新版 iOS 系统越狱难度很大，不可能像安卓这般简单。下面介绍的是拔卡观看方法，如果你觉得插拔手机卡可以接受，或者你有一台备用机，那就继续往下看。</p><p>准备两个APP：Shadowrocket和 TikTok。国内 App Store 无法下载这两个软件，可以尝试购买<a href="https://high.scay.net/">米白云</a>，提供节点和美区账号（需购买正式套餐），售价2.99美元的Shadowrocket（小火箭）也可以免费下载。</p><span id="more"></span><h2 id="选择节点"><a href="#选择节点" class="headerlink" title="选择节点"></a>选择节点</h2><p>米白云 提供多个节点，我们以美国节点为例。选择一个美国节点后打开右上角按钮。</p><img data-src="/post/how-to-use-tiktok-with-pull-card/1.png" class="" width="500" title="使用米白云节点"><p>打开地址：whoer.net，这个网站会告诉我们接下来需要如何设置。</p><img data-src="/post/how-to-use-tiktok-with-pull-card/2.png" class="" width="500" title="查看修改项"><p>这里我们看到网站给出的伪装70%，扣分项目有开放端口、DNS不符、系统时间不符和语言不同四项，现在我们开始逐项解决。</p><h2 id="修改时间"><a href="#修改时间" class="headerlink" title="修改时间"></a>修改时间</h2><p>往下滑，找到 <strong>时间</strong> 区块，这里给出的时区是America/Chicago。</p><img data-src="/post/how-to-use-tiktok-with-pull-card/3.png" class="" width="500" title="查看节点时区"><p>所以我们打开手机里的“设置”-》“通用”-》“日期和时间”，先关闭自动设置，然后选择时区，在搜索栏搜索：Chicago，下面的结果里自动跳出“芝加哥（美国）”，选择。</p><img data-src="/post/how-to-use-tiktok-with-pull-card/4.png" class="" width="500" title="修改本地时区"><h2 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h2><p>打开手机里的“设置”-》“通用”-》“语言和地区”，点击“iPhone语言”，选择English。然后选择地区，搜索“us”，选择结果United States.</p><h2 id="修改-DNS"><a href="#修改-DNS" class="headerlink" title="修改 DNS"></a>修改 DNS</h2><p>打开小火箭底部的“配置”，按照米白云站内提供的教程，这里应该是Shadowrocket.conf，我们点击它，然后点击“编辑纯文本”，第7行是“ipv6 = true”，我们在它的上面添加一句 dns-server = 66.153.50.66,66.153.50.71，修改后效果如下(局部代码)：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">bypass-system</span> <span class="string">=</span> <span class="literal">true</span></span><br><span class="line"><span class="string">dns-server</span> <span class="string">=</span> <span class="number">66.153</span><span class="number">.50</span><span class="number">.66</span><span class="string">,66.153.50.71</span></span><br><span class="line"><span class="string">ipv6</span> <span class="string">=</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>然后点击右上角保存。点击小火箭底部的“首页”，重新打开右上角的开关。</p><blockquote><p>这里给几个地区的dns服务器。</p></blockquote><ul><li>美国：66.153.50.66,66.153.50.71</li><li>香港：203.198.7.66,218.102.23.228</li><li>日本：101.110.50.105,101.110.50.106</li><li>台湾：168.95.192.1,114.34.162.81</li><li>新加坡：58.185.2.212,58.185.177.165</li><li>英国：154.32.107.18,154.32.105.18</li></ul><h2 id="使用-TikTok"><a href="#使用-TikTok" class="headerlink" title="使用 TikTok"></a>使用 TikTok</h2><p>刷新 whoer 的页面，或者关闭页面重新打开，我们看到伪装程度达到了90%，剩下的开放端口不用管。这就可以了。</p><img data-src="/post/how-to-use-tiktok-with-pull-card/5.png" class="" width="500"><p>打开TikTok，不出意外的话就能正常播放了。登陆、关注、直播什么的都是没有问题的。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>使用 Clash 加速同一局域网下其他设备</title>
-      <link href="//post/clash-speed-other-devices.html"/>
-      <url>//post/clash-speed-other-devices.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p><p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p><p><strong>场景</strong></p><p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p><span id="more"></span><h2 id="打开局域网连接"><a href="#打开局域网连接" class="headerlink" title="打开局域网连接"></a>打开局域网连接</h2><p>确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。</p><p><strong>Clash for Windows</strong></p><img data-src="/post/clash-speed-other-devices/1.png" class=""><p><strong>ClashX</strong></p><p>点击 <strong>控制台</strong> —&gt; <strong>设置</strong>，打开 <strong>允许来自局域网的连接</strong>。</p><img data-src="/post/clash-speed-other-devices/2.jpg" class=""><img data-src="/post/clash-speed-other-devices/3.jpeg" class=""><h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><p><ins class="adsbygoogle"     style="display:block; text-align:center;"     data-ad-layout="in-article"     data-ad-format="fluid"     data-ad-client="ca-pub-8483648732447678"     data-ad-slot="8560939464"></ins></p><script>     (adsbygoogle = window.adsbygoogle || []).push({});</script><p><strong>Windows</strong></p><p>使用组合键 <code>Win + R</code>，Win 键先按住不放，再按 R 键。在搜索框输入 <code>cmd</code> 回车，在接下来的窗口里输入 <code>ipconfig</code> 找到 <strong>无线局域网适配器</strong> <code>WLAN</code> 项，IPv4 地址 即为设备 A 在局域网里的 ip 地址。</p><img data-src="/post/clash-speed-other-devices/4.png" class=""><p><strong>MacOS</strong></p><p>桌面右上角  —&gt; 系统偏好设置…，选择网络，可以立即看到当前 Wi—Fi 下的局域网 IP 地址。局域网 IP 地址一般都以 192.168 开头。</p><img data-src="/post/clash-speed-other-devices/5.jpeg" class=""><h2 id="设置设备B"><a href="#设置设备B" class="headerlink" title="设置设备B"></a>设置设备B</h2><p>确保设备 A 和设备 B 接入相同的 Wi—Fi下 。不同系统操作方法不太一样，一般的操作步骤：</p><ul><li>打开设置</li><li>打开无线局域网</li><li>点击已经连接的Wi-Fi</li><li>进入Wi—Fi设置页</li><li>点击配置 HTTP 代理</li></ul><p>HTTP 代理改 自动 为 手动，在服务器/主机 栏填写 设备 A 的局域网 IP，端口 栏填写 7890。如果有 认证，请关闭。最后保存。</p><img data-src="/post/clash-speed-other-devices/6.jpeg" class=""><p>不出意外，你的设备可以打开谷歌了。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>借助 GitHub 安装 hexo 博客并配置 NexT 主题</title>
-      <link href="//post/how-to-hexo-next.html"/>
-      <url>//post/how-to-hexo-next.html</url>
-      
-        <content type="html"><![CDATA[<p>Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。</p><p>Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。</p><span id="more"></span><h2 id="创建-GitHub-仓库"><a href="#创建-GitHub-仓库" class="headerlink" title="创建 GitHub 仓库"></a>创建 GitHub 仓库</h2><p>创建一个 GitHub 仓库可以算是 Git 基础中的基础了吧，这个不再这篇文章的讨论范围（太简单了。。）。当然你也可以将代码部署在自己的 VPS 上，Hexo 自带 web 服务，只需要通过 nginx 等程序反代到 80 端口即可。</p><p>不过 GitHub 的羊毛不要白不要，稳定不用自己操心，岂不是妙哉。</p><h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>hexo 是一款基于 Node.js 开发的博客框架，所以 首先要安装 Node.js。</p><h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>下载地址：<a href="https://nodejs.org/en/">官网下载</a></p><p>Node.js 提供可视化的安装方式，全程跟着步骤即可。需要注意的是 Windows 系统在安装过程中记得勾选  <strong>Add to PATH</strong>，方便在 cmd 命令行里使用。</p><p>安装技术后，打开 cmd 命令行，MacOS 用户打开终端，使用命令 <code>npm --version</code> 通过查看版本信息的方式检验是否安装成功。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure><h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>xxxx</p><h3 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>上面工作准备好之后，安装 Hexo 就非常容易，一句话搞定：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>同样我们通过查看版本信息的方式检查 Hexo 是否安装成功</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">xxx xxx</span><br></pre></td></tr></table></figure><p>使用 <code>cd</code> 命令切换一个目录，此目录就是操作 Hexo 博客的工作目录了。为了便于区分管理，新建一个目录 hexo-blog。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo &amp;&amp; cd hexo</span><br></pre></td></tr></table></figure><p>现在我们把 Hexo 博客代码下载到工作目录，此步骤只需要 Hexo 初始化命令即可完成</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>除了下载源代码，init 初始化命令还帮我们做了一些其他事情，例如下载并使用了 landscape 主题。另外还为我们执行了 <code>npm install</code> 命令帮我们安装了依赖。如果你是旧版，可能需要手动执行此命令。</p><p>现在你的工作目录结构如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure><p>使用如下两行命令开启预览一下吧</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>接下来在浏览器打开地址：<a href="localhost:4000">localhost:4000</a>，你就能一睹 Hexo 了。</p><img data-src="/post/how-to-hexo-next/hexo_index.jpg" class="" title="hexo 首次启动"><p>可以看到还有一篇名为 Hello World 的文章。接下来就是配置 Hexo 博客了，这些默认的设置显然不是我们想要的。</p><h2 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h2><p>先来了解一下 hexo 的原理。</p><p>新建一个文章，可以使用 <code>hexo new postname</code>，例如新建一个名为 test 的文章，那么：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="built_in">test</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ~/hexo-blog/<span class="built_in">source</span>/_posts/test.md</span><br></pre></td></tr></table></figure><p>通过提示信息 INFO 看到这篇文章生成在了 source/_posts/test.md。source 目录是 hexo 用来存放未经加工的原始文件的地方。还有一个 _posts 目录，这就是 hexo 的布局，可以理解为文章的类型。hexo 有三种文章类型，post、page 和 draft。post 表示普通文章，page 表示这个一个独立页面，draft 表示文章还只是草稿，还需要修改。</p><p>现在在 test.md 文件写个简单的 hello world，保存后使用命令 <code>hexo generate</code>，这一步就是要生成文章等内容了。为什么要生成文章呢？test.md 不就是文章么？要记住，hexo 是一个静态博客，我们写的只是 Markdown 格式的内容，gernerate 帮我们生成可以在网页浏览的 html 格式文件。最终我们的 test 文章就跑到了 hexo 目录下的 public/post/test.html。所以 hexo 真正的根目录其实是 public/。</p><p>查看 test.html 会发现，hexo 除了将 hello world 转换成了 <code>&lt;p&gt;hello world&lt;/p&gt;</code> 的 html 格式外，还多了一大堆 css、js 等完整的信息，这是怎么做到的？查看 hexo 目录，很明显的看到除了根目录 public 外，还有其他目录和文件，正是这些目录和文件共同规定了 hexo generate 的方式，才生成了一个标签完备的 test.html 文件。</p><p>顺利成章的，来看看这些目录和文件。</p><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h3><p>这个就是 hexo 的配置文件，也叫做 站点配置文件，可以对整个博客站进行全局配置。参考如下：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="comment"># 网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment"># 网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment"># 针对 seo 的网站描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="comment"># 针对 seo 的网站关键词</span></span><br><span class="line"><span class="attr">language:</span> <span class="comment"># 站点支持的语言</span></span><br><span class="line"><span class="attr">author:</span> <span class="comment"># 站点的作者</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="comment"># 站点的时区。默认使用本地电脑的时区</span></span><br><span class="line"><span class="attr">url:</span> <span class="comment"># 站点的地址。带 http 或 https 的域名</span></span><br><span class="line"><span class="attr">root:</span> <span class="comment"># 根目录。默认 /</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="comment"># 文章的链接，可以认为是 “伪静态”</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="comment"># 是否显示 index.html</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="comment"># 是否显示 .html 后缀</span></span><br><span class="line"><span class="attr">theme:</span> <span class="comment"># 指定使用的主题</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="comment"># 创建文章的同时创建同名的目录，用于存放资源</span></span><br></pre></td></tr></table></figure><p><strong>网站时区</strong></p><p>网站默认的时区就是本地电脑的时区，也可以指定时区，例如指定中国时区：<code>timezone: Asia/Shanghai</code></p><p><strong>二级目录</strong></p><p>如果我把 hexo 放在网站根目录下的 <code>blog/</code> 目录下，即所谓的把 hexo 部署在网站的二级目录，那么需要修改 root 为 /blog/，不要忘了前后两个斜号。否则你的站点除了首页，其他都无法通过链接打开。二级目录在网站虚拟机上比较常用。</p><p><strong>链接后缀</strong></p><p>如果我不想要 .html 后缀，设置 <code>trailing_html: false</code>；如果不想显示文件名：设置 <code>trailing_index: false</code></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 现在有一个链接：</span></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><p><strong>文章链接</strong></p><p>上面说 permalink 是 “伪静态”，因为效果跟 WordPress 等博客的伪静态一样，但事实上 hexo 是 “真静态”。</p><p>hexo 会在 generate 时生成和 permalink 设定的链接一样的目录层级。例如设定 <code>permalink：first/second:title.html</code>，然后命令 <code>hexo generate</code>，在 public/post 目录下会看到 first/second 的目录结构。这个就是站点配置文件改变 hexo 生成方式的一个很好例子。</p><p>permalink 支持的变量有：</p><ul><li>:year ：文章发表年份（4位数）</li><li>:month：文章发表的月份（2位数）</li><li>:i_month：文章的发表月份（去掉开头的零）</li><li>:day    文章的发表日期 (2 位数)</li><li>:i_day    文章的发表日期（去掉开头的零）</li><li>:hour    文章发表时的小时 (2 位数)</li><li>:minute    文章发表时的分钟 (2 位数)</li><li>:second    文章发表时的秒钟 (2 位数)</li><li>:title    文件名称 (relative to “source/_posts/“ folder)</li><li>:name    文件名称</li><li>:post_title    文章标题</li><li>:id    文章 ID</li><li>:category    分类。如果文章没有分类，则是 default_category</li><li>:hash    SHA1  :title 和 date (12-hexadecimal) 加密</li></ul><p><strong>资源目录</strong></p><p>为了便于管理资源文件，hexo 会在创建文章的同时创建同名目录，文章的资源如视频、照片等都会放在同名目录下。但这个并不是强制规定，你依然可以将资源文件放置在任何地方，只要你在文章内地址引用正确，但是不建议这么做。</p><p>资源目录这个功能需要：<code>post_asset_folder: true</code> 开启。开启后，创建一个 test 文件：<code>hexo new test</code>，前往 source/_post 目录可以看到 test.md 文件和 test 目录。</p><p>文章内引用资源是：<code>文件名/资源名</code>，例如我把 1.png 图片放在了 test 资源目录，test.md 里引用必然是 <code>test/1.png</code>，网站很多写的是 <code>1.png</code>，这是不对的，除非使用插件。在 Hexo 3 版本里，这类插件被集成到了核心代码中，现在可以使用如下格式来进行引用资源：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure><p>所以引用可以这么写：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img 1.png 图片说明 %&#125;</span></span><br></pre></td></tr></table></figure><p>这类写法的好处是写法一致，引用链接、图片等都一样格式。但是以后你要迁移到其他博客系统，这个不符合 Markdown 写法的标签，需要你想办法改过来。。。</p><h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>这个是安装依赖包的说明文件，npm 就是通过参考这个文件来安装依赖的。这里不进行细究，直接把它当作插件，在 init 初始化的时候默认使用了 <code>npm install</code>，就是在照着 package.json 这个清单安装插件。</p><p>当要安装指定插件，例如：安装一个 <code>hexo-generator-searchdb</code> 插件，这个插件提供搜索功能，那么命令如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure><p>安装成功后，npm会把下载的 hexo-generator-searchdb 版本信息写进 package.json，同时写入 package.lock 文件里留作记录。更深入了解可以自行参考 npm 的依赖包管理。</p><h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>上文讲了，用于存储博客的未经修改的原始内容文件。source 目录下的文件和目录各有用途：一般文件表示 hexo 的 page 页面，用户存储独立页面； _post 目录存储表示 post 的文章，我们编写文章就在这里；draft 目录存储表示 draft 的草稿。</p><p>使用命令 <code>hexo generate</code> 将 source 目录下的文件通过上述的规则生成 public 目录下的 html 文件，供博客使用。查看 source 和 public 两个目录，你就可以在 public 目录下找到所有 source 目录的对应文件。</p><p>以 “_” 开头的文件和目录在 generate 时被忽略。当你的有文章没有写好但其他文章着急发布的时候，除了把没有写好的文章放进 draft 草稿里，还可以在其文件名前加 “_”。</p><p>除了 html 和 Markdown 文件，source 目录下的文件会被原样放在 public 目录下相同的位置。在部署 Hexo 到 GitHub 时，我们可以直接在 source 目录下创建 CNAME 和 README.md 文件，CNAME 文件里写入 域名实现域名访问。README.md 写此仓库的说明，例如：个人博客。不能直接写在 public 目录下，虽然部署的时候没问题，但是下次 generate 时会被丢失的。</p><ul><li>hexo generate 可以简写：hexo g</li><li>hexo new 可以简写：hexo n</li></ul><h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p>定义新建的文章文件默认内容。例如查看 scaffolds/post.md：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><p>当我们一连创建好几篇 教程 分类下的文章时，我们可以增加 <code>categories: 教程</code>，来指定接下来创建的文章默认分类。当你的文章有重复内容时，借助这个可以提高你的写作效率。</p><h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题目录，你的主题都要放在这个目录下。启用某个主题时，例如下面要说的 NexT 主题，那么修改站点配置文件 _config.yml，指定 <code>theme: next</code>。</p><h2 id="使用-NexT-主题"><a href="#使用-NexT-主题" class="headerlink" title="使用 NexT 主题"></a>使用 NexT 主题</h2><p>NexT 是 Hexo 博客下的一款极简、高效主题，本站使用的便是 NexT 主题。</p><h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>可以使用 git 命令克隆源码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><p>或者前往 <a href="https://github.com/theme-next/hexo-theme-next/releases">release pages</a> 下载源码，重命名为 next 并放置在 themes 目录下。</p><blockquote><p>注意：上述使用的是保持更新的 NexT 新版本，NexT 老版本已经停止维护。</p></blockquote><h3 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h3><p>修改站点配置文件 _config.yml，修改 theme 字段为 next。另外需要注意的是语言问题：next 提供的中文包只有 zh-CN.yml、zh-HK.yml 和 zh-TW.yml，所以在 站点配置文件里 language 字段应该修改为 zh-CN 才能使用中文。</p><p>相对于站点配置文件 _config.yml，主题也有自己的配置文件 _config.yml，一样的文件名但是作用不一样，请注意区分。</p><p><strong>主题配置文件位于 themes/next/_config.yml</strong></p><h3 id="切换外观"><a href="#切换外观" class="headerlink" title="切换外观"></a>切换外观</h3><p>NexT 主题拥有四种外观，分别是 Muse、Mist、Pisces 和 Gemini，设置为主题配置文件的 scheme 字段。想要启用哪个外观就移除其前面的 # 。例如启用 Pisces：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure><blockquote><p># 通常表示注释，可以认为注释就表示不存在，但对人类可见。</p></blockquote><h3 id="暗夜模式"><a href="#暗夜模式" class="headerlink" title="暗夜模式"></a>暗夜模式</h3><p>NexT 支持暗夜模式，修改主题配置文件 <code>darkmode: true</code> 即可开启。但是不会自动切换，这就是静态博客的弊端，它不会像 WordPress 动态读取变量实现更为丰富的变化。</p><h3 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h3><p>对应的是主题配置文件 menu 字段，取消注释即可开启对应菜单图标。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home:</span> <span class="comment">#主页</span></span><br><span class="line"><span class="attr">about:</span> <span class="comment">#关于</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#标签</span></span><br><span class="line"><span class="attr">categories:</span> <span class="comment">#分类</span></span><br><span class="line"><span class="attr">archives:</span> <span class="comment">#归档</span></span><br><span class="line"><span class="attr">schedule:</span> <span class="comment">#日历</span></span><br><span class="line"><span class="attr">sitemap:</span> <span class="comment">#站点sitemap</span></span><br></pre></td></tr></table></figure><p>此处的写法是：<code>home: / || fa fa-home</code>，第一个 home 表示显示的菜单名，第二个 “/” 表示链接，第三个 fa fa-home 表示图标。</p><p>下面以 page 页面 gallery 图库为例：</p><p>自定义一个菜单名：gallery，再修改 NexT 主题语言包：themes/next/languages/zh-CN.yml，在 menu 字段下新建一个子字段： <code>gallery: 图库</code>。这样就能使用中文语言了。</p><p>链接使用的是相对路径，会自动补全当前域名。例如 / 会自动补全为 <code>https://yourdomain.com /</code>。这里链接为 /gallery。</p><p>图标用的是 awesome，前往 <a href="https://fontawesome.com/v5.15/icons">awesome 图标库</a>，搜索你要的图标，点击后进入后选择 Start Using This Icon，其中 i 标签的 class 就可以用在此处了。那些标着 PRO 的图标都是收费的，避开用。搜索 gallery 发现没有想要的图标，我们想要的是图片的图标，再次搜索 images，发现符合的图标了。fa fa-images 正合适。</p><p>最后写法是：<code>gallery: /gallery || fa fa-images</code>。</p><h3 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h3><p>字段：sidebar。下面的 社交、头像 能弄都弄，不能弄的也弄，图标太少不太好看。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">position: #指定侧边栏 居左 left；居右 right</span><br><span class="line">width: #指定侧边栏宽度，默认 300，单位像素</span><br><span class="line">display:</span><br><span class="line">  #post 文章页面展开侧边栏</span><br><span class="line">  #always 任何页面都展开侧边栏</span><br><span class="line">  #hide 隐藏侧边栏，但可以手动点击按钮呼出</span><br><span class="line">  #remove 隐藏侧边栏，并隐藏按钮</span><br><span class="line">avatar: #设定头像</span><br><span class="line">  url: #图片地址。如果想要使用 qq 头像：https://q1.qlogo.cn/g?b=qq&amp;nk=qq号&amp;s=640</span><br><span class="line">  rounded: #true 圆形头像</span><br><span class="line">  rotated：#true 方形头像，四个角弧形</span><br><span class="line">social: #社交账号，这里不列了。使用添加菜单的方法添加一个新的社交，如 QQ。</span><br><span class="line">  QQ: https://wpa.qq.com/msgrd?v=3&amp;uin=QQ号&amp;site=qq&amp;menu=yes || fab fa-qq</span><br><span class="line">  chat: #在线聊天</span><br><span class="line">    enable: #开启在线聊天</span><br><span class="line">    service: chatra # 使用chatra</span><br><span class="line">    service: tidio # 使用tidio</span><br></pre></td></tr></table></figure><p>如果开了 在线聊天，如果指定 chatra，那么往下找 chatra 字段，填写 id；如果指定了 tidio，往下找 titio 字段，填写 key。这两个服务为第三方提供，需要自行前往注册。</p><h3 id="设置动画"><a href="#设置动画" class="headerlink" title="设置动画"></a>设置动画</h3><p>NexT 提供多种动画。</p><p><strong>一般动画</strong></p><p>设置的对象有：文章块、文章头部、文章主题，针对 Gemini 和 Pisces 外观，还可以让侧边栏动起来。支持的动画有 渐入、抖动进入、从上弹跳进入、从左弹跳进入、从右弹跳进入 等等。</p><p>开启动画</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">motion</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> // 开启动画</span><br></pre></td></tr></table></figure><p>下面就请你折腾吧.</p><p><strong>进度条</strong></p><p>当页面在加载时，页面顶部进度条的动画。需要安装插件才能启用，插件安装方法：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-pace <span class="built_in">source</span>/lib/pace</span><br></pre></td></tr></table></figure><p>安装后设置主题配置问题，将 pace 字段设定 true。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>官方提供了 demo，可以自行对照着设置。</p><p><a href="https://codebyzach.github.io/pace/">https://codebyzach.github.io/pace/</a></p><p><strong>背景动画</strong></p><p>首先安装插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-three <span class="built_in">source</span>/lib/three</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>然后在主题配置文件开启 three 字段</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">three:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  three_waves: <span class="literal">false</span></span><br><span class="line">  canvas_lines: <span class="literal">false</span></span><br><span class="line">  canvas_sphere: <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>需要哪个动画就将其设置为 true 即可。</p><p>除了上面，还有 彩带动画，需要额外安装插件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure><p>然后在主题配置里开启 canvas_ribbon 字段：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">canvas_ribbon:</span><br><span class="line">  enable: true # 开启彩带背景</span><br><span class="line">  size: 300 # 彩带的宽度</span><br><span class="line">  alpha: 0.6 # 彩带的透明度 1 不透明；0 全透明</span><br><span class="line">  zIndex: -1 # 彩带在第几层，越大越会覆盖文字</span><br></pre></td></tr></table></figure><h3 id="加入统计"><a href="#加入统计" class="headerlink" title="加入统计"></a>加入统计</h3><p>为网站、页面加入访客统计，开启主题配置文件里 busuanzi_count 字段</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure><h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p>本地搜索需要插件支持，使用如下命令下载插件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure><p>然后在主题配置文件里开启 local_search 字段：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="string">//开启本地搜索</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span> <span class="string">//</span> <span class="string">auto</span> <span class="string">搜索结果实时显示；manual</span> <span class="string">搜索结果需要点击搜索按钮才显示</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span> <span class="string">//</span> <span class="string">每篇文章包含关键词的数量</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">true</span> <span class="string">//将</span> <span class="string">html</span> <span class="string">标签转化可阅读的字符</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span> <span class="string">//搜索预加载</span></span><br></pre></td></tr></table></figure><h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>这个比较麻烦。主题配置文件里对数学公式的配置简化一下看的清楚</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>可以看到 NexT 支持两种数学公式：mathjax 和 katex。per_page 设置为 true 时，只有开头定义了 <code>mathjax: true</code> 的页面才会使用数学公式渲染，false 则对所有页都进行数学公式渲染。推荐 true。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2021-06-27 16:42:58</span><br><span class="line">tags:</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><p><strong>KateX</strong></p><p>katex 会比 mathjax 有更高的性能，不过 katex 公式没有 mathjax 全面，NexT 主题对 katex 的支持也有些不足。</p><p>如果选择使用 Katex 进行数学公式渲染，则需要使用 <code>hexo-renderer-markdown-it-plus</code>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure><p>然后在主题配置文件开启 katex。使用很简单，公式的前后都用 $$ 包裹即可。例如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="variable">$c</span> \approx \pm\sqrt&#123;a^2 + b^2&#125;$$</span><br></pre></td></tr></table></figure><p>显示效果：</p><img data-src="/post/how-to-hexo-next/katex-01.jpg" class="" title="katex公式"><p>katex 公式写法参考：</p><p><a href="https://katex.org/docs/supported.html">https://katex.org/docs/supported.html</a></p><p><strong>MathJax</strong></p><p>要使用 mathjax，需要把默认的 Markdown 渲染器：hexo-renderer-marked 改用 <code>hexo-renderer-pandoc</code> 或者 <code>hexo-renderer-kramed</code>。个人测试 <code>hexo-renderer-pandoc</code> 使用数学公式报错，而 <code>hexo-renderer-kramed</code> 官方又不推荐，伤脑 😣</p><p>但是当你安装上面 Katex 的生成器 <code>hexo-renderer-markdown-it-plus</code>，发现没有问题，我直接好家伙 😺</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-pandoc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如有问题，使用下面命令</span></span><br><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure><p>然后在主题配置文件里开启 mathjax。和 KaTeX 一样，默认可以使用 $$ 将公式左右包裹主即可，这是最简单的方法。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$m = c^2$$</span><br></pre></td></tr></table></figure><p>但它还支持更强大的功能。如果想要公式编号，只需要把公式放在 equation 环境里；想要公式引用，添加 \label{} 标记即可。如下面对公式进行了编号，并使用了 eq1 标签。</p>  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;\label&#123;eq1&#125;</span><br><span class="line">e=mc^2</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure><img data-src="/post/how-to-hexo-next/mathjax_01.jpg" class="" title="mathjax公式"><p>那么引用这个公式可以使用 \eqref{}。例如下面引用：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">著名的质能方程 $\eqref&#123;eq1&#125;$ 由爱因斯坦提出 ...</span><br></pre></td></tr></table></figure><p>更多的写法支持参考：</p><p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md">https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md</a></p><p><strong>默认</strong></p><p>上面两种方法都需要卸载默认的 Markdown 生成器，如果当你写了一定数量的文章时，换用其他生成器可能会报错。我们也可以在不卸载默认的生成器的同时，安装插件 <code>hexo-math</code>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math</span><br></pre></td></tr></table></figure><p>这个插件就有点猛了，同时支持 mathjax 和 katex，而且默认就是对所有页进行数学公式渲染。也就是说有了它，不用操心什么配置问题。不过使用方法也跟下面不太一样。</p><blockquote><p>上面两种是 NexT 主题支持的渲染公式的方法，hexo-math 则是 Hexo 支持的渲染公式的方法，所以你会看到 hexo-math 无法通过 主题配置文件即可使用。<br> hexo-math 可以支持 $$ 包裹的写法，不过避免混淆，这里给出它自己的写法。</p></blockquote><p>使用 KaTeX</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">写法：</span><br><span class="line">&#123;% katex &#x27;&#123;options&#125;&#x27; %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endkatex %&#125;</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">&#123;% katex %&#125;</span><br><span class="line">c = \pm\sqrt&#123;a^2 + b^2&#125;</span><br><span class="line">&#123;% endkatex %&#125;</span><br></pre></td></tr></table></figure><p>使用 MathJax</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">写法：</span><br><span class="line">&#123;% mathjax &#x27;&#123;options&#125;&#x27; %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endmathjax %&#125;</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">&#123;% mathjax %&#125;</span><br><span class="line">\frac&#123;1&#125;&#123;x^2-1&#125;</span><br><span class="line">&#123;% endmathjax %&#125;</span><br></pre></td></tr></table></figure><p>和上面两个不同的是，math-ajax 默认渲染所有页面，如果不想渲染，请使用下面方法手动禁用</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2021-06-27 16:42:58</span><br><span class="line">tags:</span><br><span class="line">katex: false</span><br><span class="line"><span class="section">mathjax: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><p>hexo-math 也支持一些配置，不过针对的是站点配置文件，如对默认的显示格式不满意，可以参考 👉 <a href="https://www.npmjs.com/package/hexo-math#global-options">这里</a>。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> next主题, hexo博客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>iptables 使用学习</title>
-      <link href="//post/iptables-use-study.html"/>
-      <url>//post/iptables-use-study.html</url>
-      
-        <content type="html"><![CDATA[<p>Linux 防火墙分为 应用层防火墙 和 包过滤防火墙，iptables 属于包过滤防火墙，底层使用的是 Linux 内核模块 netfilter，性能佳稳定性好。</p><h2 id="原理简析"><a href="#原理简析" class="headerlink" title="原理简析"></a>原理简析</h2><p>iptables 基本结构：</p><blockquote><p>iptables -&gt; 规则表 -&gt; 规则链 -&gt; 具体规则</p></blockquote><span id="more"></span><p>可以看出 iptables 通过参数 t 指定要操作的规则表，使用命令（如添加、删除、替换、清空、查看等）控制规则链，再指定规则的条件，最后使用参数 j 控制数据包的行为。</p><p>iptables 用的最多的是 filter 表和 nat 表。filter 表用于数据过滤，nat 表用于网络地址转换。</p><p>filter 表有 INPUT、OUTPUT 和 FORWARD 等规则链。INPUT 链控制数据包的流入，PUTPUT 链控制数据包的流出，FORWARD 链控制数据的转发。</p><p>nat 表有 PREROUTING、POSTROUTING 和 OUTPUT 规则链，PREROUTING 链用来修改数据包的目标端口和地址，POSTROUTING 链用来修改数据的源端口和地址，OUTPUT 链作用类似 PREROUTING 链，不过是用来修改本机发出的数据的 目标端口和地址。</p><p>这几个规则链的关系如下：</p><img data-src="/post/iptables-use-study/iptables_01.gif" class="" title="流量在 iptables 链的流动途径"><p>当外面的数据包进入本机，首先会经过 PREROUTING 链，对修改后的目标地址进行路由判断，如果发现其目标就是本机，那就走 A 经过 INPUT 链的筛选，符合条件就放行至本应用处理；如果发现目标地址是其他主机，那就走 B 使用 FORWARD 链进行转发，最后通过 POSTROOUTING 链出去。POSTROUTING 链很重要的工作是修改来源地址为本机，并记录这个修改关系。数据回传的时候本机通过这个修改关系转发数据给源主机。</p><p>当本机要发出数据包，先经过路由判断进入 nat 表的 OUTPUT 链，用来修改目标主机，然后经过 filter 表的 OUTPUT 链的筛选，符合条件就放行到 POSTROUTING 链，修改源地址就包并发出。</p><p>用来修改目标地址的 PREROUTING 链必须放在最前面，放在路由后面将无法选择 A 还是 B。POSTROUTING 链必须放在最后，等到所有链判断完成后再修改源地址，如果放在前面，倘若数据包都出不来，提前修改源地址纯属浪费力气。所以这这个链的位置是有讲究的，并不是随意放置。</p><h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><p>iptables 语法格式：</p><blockquote><p>iptables [-t 表名] 命令选项 [链名] [条件匹配] [-j 目标动作或跳转]</p></blockquote><h3 id="命令选项"><a href="#命令选项" class="headerlink" title="命令选项"></a>命令选项</h3><p>iptables 常用的命令选项：</p><ul><li>-A：–append，在规则链的尾部插入规则</li><li>-I： –insert，默认在规则链的头部插入规则，可以指定位置</li><li>-D：删除规则链中指定规则</li><li>-F：清空指定链的规则。不指定则清空所有链</li><li>-L：–list，查看指定链的规则。不指定则显示所有链</li><li>-v：查看规则时显示详细信息</li><li>-n：不将 ip 地址反解析为域名</li></ul><h3 id="条件匹配"><a href="#条件匹配" class="headerlink" title="条件匹配"></a>条件匹配</h3><p>条件匹配分为基本匹配和扩展匹配，扩展匹配又可以分为隐式扩展匹配和显式扩展匹配。基本匹配命令：</p><ul><li>-p：指定协议规则，tcp、ip 和 icmp</li><li>-s：指定数据包的源地址</li><li>-d：指定数据包的目标地址</li><li>-i ：指定入站流量的网卡</li><li>-o：指定出站流量的网卡</li></ul><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><strong>放行 80 端口</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t filter -I INPUT --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure><p>iptables 默认操作 filter 表，因此可以省略；INPUT 表示流量流入，方向是客户机到本机，所以客户机 ip 是源 ip，放行的本地端口就是目标端口；可以增加参数 i 指定网卡，增加参数 s 指定客户机 ip。</p><p><strong>允许来自 10.0.0.1 流量通过 80 端口</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -s 10.0.0.1 -i eth0 -p tcp --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure><p>上面使用了参数 p，表示指定协议为 tcp。</p><p><strong>查看规则</strong></p><p>只要没有语法问题，设置了规则后 iptables 默认没有任何提示。当我们想要查看规则，可以使用命令 L 查看。结合参数 vn 就可以显示更为现实的规则信息并只显示 ip。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables --line-numbers -vnL</span><br></pre></td></tr></table></figure><p>上面使用参数 –line-numbers 可以显示每条规则的编号，便于定位。</p><p>一般网上使用命令 iptables -F 来清空 iptables，认为 iptables 太复杂，直接清空不要防火墙了。虽然 -F 参数有清空的作用，但是情况前需要格外注意默认的规则。当我们使用 -vnL 显示规则时，在第一行会看到如下类似信息：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Chain INPUT (policy REJECT 285 packets, 48260 bytes)</span><br></pre></td></tr></table></figure><p>上面表示 input 规则链的默认 policy 是 reject，这种情况下你胆敢 -F 清空 iptables，你就惊奇发现：怎么动不了了？</p><p>使用 -P 参数更改默认 policy 为 accept，再清空。或者直接卸载 iptables。。。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br></pre></td></tr></table></figure><p><strong>高级模块</strong></p><p>再看看比较高级的模块。如果想要限制连接数量，使用 –connlimit，例如只允许最多 5 个用户使用 ssh 连接主机：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -m connlimit --connlimit-above 5 -j DROP</span><br></pre></td></tr></table></figure><p>使用 –limit 来限制连接频率，例如限制 ping 速度。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p icmp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 10/s --limit-burst 12 -j ACCEPT</span><br></pre></td></tr></table></figure><p>不过我测试 limit 好像限制不了 icmp，听说就是这样？</p><p>除了 limit，还可以使用 recent 模块。recent 涉及到地址列表，首先使用 –set 参数将连接到本机的 源ip 加入到地址列表里，将地址列表取名为 restricted-ping。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m --<span class="built_in">set</span> --name restricted-ping</span><br></pre></td></tr></table></figure><p>因为目的还没有达到，就不用 -j 指定操作。然后使用参数 name 指定上面的地址列表，使用 –seconds 参数指定时间，使用 –hitcount 指定次数，来实现频率限制。例如在半个小时内只允许 10 个用户连接 ssh。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -m recet --rcheck --seconds 1800 --hitcount 10</span><br><span class="line">--name restricted-ping -j ACCEPT</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>iptables 使用学习</title>
+    <url>//post/iptables-use-study.html</url>
+    <content><![CDATA[<p>Linux 防火墙分为 应用层防火墙 和 包过滤防火墙，iptables 属于包过滤防火墙，底层使用的是 Linux 内核模块 netfilter，性能佳稳定性好。</p>
+<h2 id="原理简析"><a href="#原理简析" class="headerlink" title="原理简析"></a>原理简析</h2><p>iptables 基本结构：</p>
+<blockquote>
+<p>iptables -&gt; 规则表 -&gt; 规则链 -&gt; 具体规则</p>
+</blockquote>
+<span id="more"></span>
+
+<p>可以看出 iptables 通过参数 t 指定要操作的规则表，使用命令（如添加、删除、替换、清空、查看等）控制规则链，再指定规则的条件，最后使用参数 j 控制数据包的行为。</p>
+<p>iptables 用的最多的是 filter 表和 nat 表。filter 表用于数据过滤，nat 表用于网络地址转换。</p>
+<p>filter 表有 INPUT、OUTPUT 和 FORWARD 等规则链。INPUT 链控制数据包的流入，PUTPUT 链控制数据包的流出，FORWARD 链控制数据的转发。</p>
+<p>nat 表有 PREROUTING、POSTROUTING 和 OUTPUT 规则链，PREROUTING 链用来修改数据包的目标端口和地址，POSTROUTING 链用来修改数据的源端口和地址，OUTPUT 链作用类似 PREROUTING 链，不过是用来修改本机发出的数据的 目标端口和地址。</p>
+<p>这几个规则链的关系如下：</p>
+<img data-src="/post/iptables-use-study/iptables_01.gif" class="" title="流量在 iptables 链的流动途径">
+
+<p>当外面的数据包进入本机，首先会经过 PREROUTING 链，对修改后的目标地址进行路由判断，如果发现其目标就是本机，那就走 A 经过 INPUT 链的筛选，符合条件就放行至本应用处理；如果发现目标地址是其他主机，那就走 B 使用 FORWARD 链进行转发，最后通过 POSTROOUTING 链出去。POSTROUTING 链很重要的工作是修改来源地址为本机，并记录这个修改关系。数据回传的时候本机通过这个修改关系转发数据给源主机。</p>
+<p>当本机要发出数据包，先经过路由判断进入 nat 表的 OUTPUT 链，用来修改目标主机，然后经过 filter 表的 OUTPUT 链的筛选，符合条件就放行到 POSTROUTING 链，修改源地址就包并发出。</p>
+<p>用来修改目标地址的 PREROUTING 链必须放在最前面，放在路由后面将无法选择 A 还是 B。POSTROUTING 链必须放在最后，等到所有链判断完成后再修改源地址，如果放在前面，倘若数据包都出不来，提前修改源地址纯属浪费力气。所以这这个链的位置是有讲究的，并不是随意放置。</p>
+<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><p>iptables 语法格式：</p>
+<blockquote>
+<p>iptables [-t 表名] 命令选项 [链名] [条件匹配] [-j 目标动作或跳转]</p>
+</blockquote>
+<h3 id="命令选项"><a href="#命令选项" class="headerlink" title="命令选项"></a>命令选项</h3><p>iptables 常用的命令选项：</p>
+<ul>
+<li>-A：–append，在规则链的尾部插入规则</li>
+<li>-I： –insert，默认在规则链的头部插入规则，可以指定位置</li>
+<li>-D：删除规则链中指定规则</li>
+<li>-F：清空指定链的规则。不指定则清空所有链</li>
+<li>-L：–list，查看指定链的规则。不指定则显示所有链</li>
+<li>-v：查看规则时显示详细信息</li>
+<li>-n：不将 ip 地址反解析为域名</li>
+</ul>
+<h3 id="条件匹配"><a href="#条件匹配" class="headerlink" title="条件匹配"></a>条件匹配</h3><p>条件匹配分为基本匹配和扩展匹配，扩展匹配又可以分为隐式扩展匹配和显式扩展匹配。基本匹配命令：</p>
+<ul>
+<li>-p：指定协议规则，tcp、ip 和 icmp</li>
+<li>-s：指定数据包的源地址</li>
+<li>-d：指定数据包的目标地址</li>
+<li>-i ：指定入站流量的网卡</li>
+<li>-o：指定出站流量的网卡</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><strong>放行 80 端口</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -t filter -I INPUT --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>iptables 默认操作 filter 表，因此可以省略；INPUT 表示流量流入，方向是客户机到本机，所以客户机 ip 是源 ip，放行的本地端口就是目标端口；可以增加参数 i 指定网卡，增加参数 s 指定客户机 ip。</p>
+<p><strong>允许来自 10.0.0.1 流量通过 80 端口</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -s 10.0.0.1 -i eth0 -p tcp --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>上面使用了参数 p，表示指定协议为 tcp。</p>
+<p><strong>查看规则</strong></p>
+<p>只要没有语法问题，设置了规则后 iptables 默认没有任何提示。当我们想要查看规则，可以使用命令 L 查看。结合参数 vn 就可以显示更为现实的规则信息并只显示 ip。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables --line-numbers -vnL</span><br></pre></td></tr></table></figure>
+
+<p>上面使用参数 –line-numbers 可以显示每条规则的编号，便于定位。</p>
+<p>一般网上使用命令 iptables -F 来清空 iptables，认为 iptables 太复杂，直接清空不要防火墙了。虽然 -F 参数有清空的作用，但是情况前需要格外注意默认的规则。当我们使用 -vnL 显示规则时，在第一行会看到如下类似信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Chain INPUT (policy REJECT 285 packets, 48260 bytes)</span><br></pre></td></tr></table></figure>
+<p>上面表示 input 规则链的默认 policy 是 reject，这种情况下你胆敢 -F 清空 iptables，你就惊奇发现：怎么动不了了？</p>
+<p>使用 -P 参数更改默认 policy 为 accept，再清空。或者直接卸载 iptables。。。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p><strong>高级模块</strong></p>
+<p>再看看比较高级的模块。如果想要限制连接数量，使用 –connlimit，例如只允许最多 5 个用户使用 ssh 连接主机：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -m connlimit --connlimit-above 5 -j DROP</span><br></pre></td></tr></table></figure>
+<p>使用 –limit 来限制连接频率，例如限制 ping 速度。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p icmp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 10/s --limit-burst 12 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>不过我测试 limit 好像限制不了 icmp，听说就是这样？</p>
+<p>除了 limit，还可以使用 recent 模块。recent 涉及到地址列表，首先使用 –set 参数将连接到本机的 源ip 加入到地址列表里，将地址列表取名为 restricted-ping。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -m --<span class="built_in">set</span> --name restricted-ping</span><br></pre></td></tr></table></figure>
+
+<p>因为目的还没有达到，就不用 -j 指定操作。然后使用参数 name 指定上面的地址列表，使用 –seconds 参数指定时间，使用 –hitcount 指定次数，来实现频率限制。例如在半个小时内只允许 10 个用户连接 ssh。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -m recet --rcheck --seconds 1800 --hitcount 10</span><br><span class="line">--name restricted-ping -j ACCEPT</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-          
-          <category> linux study </category>
-          
+        <category>linux study</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> iptables </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计划任务：crontab 对比 anacron</title>
-      <link href="//post/crontab-vs-anacron.html"/>
-      <url>//post/crontab-vs-anacron.html</url>
-      
-        <content type="html"><![CDATA[<p>cron 用于周期性执行定时任务，它的 daemon 叫做 crond，常驻内存。crontab 是用于编辑管理 cron 的指令。同样的，anacron 是指令，anacrontab 是其配置文件。</p><p>作为系统服务，cron 可以由 systemctl 管理，能够以分钟精度执行任务。而 anacron 仅是一个指令，需要 cron 调用才能运行。cron 认为主机会 24 小时不间断运行。 anacron 考虑到宕机等实际问题，认为主机不可能不出意外一直连续运行下去，因此会定时执行因意外导致无法被 cron 执行的任务。anacron 可以算是 cron 的补充和完善。</p><span id="more"></span><p>查看 cron 帮助文档，知道 cron 会检查的文件和目录有：</p><ul><li>/etc/crontab</li><li>/etc/cron.d/</li><li>/var/spool/cron/</li></ul><h2 id="var-spool-cron"><a href="#var-spool-cron" class="headerlink" title="/var/spool/cron/"></a>/var/spool/cron/</h2><p>一般我们使用命令：『crontab -e』来设定定时任务，实际上此命令会在 <code>/var/spool/cron/</code> 目录下创建一个以当前用户为文件名的文件，内容即是 <code>crontab -e</code> 的内容。例如使用 root 用户设置如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 3 * * * <span class="built_in">echo</span> hello world &gt; /tmp/hello.txt</span><br></pre></td></tr></table></figure><p>我们会在 /var/spool/cron/root 文件里看到同样的内容。虽然我们可以直接编辑此文件来设定定时任务，但是还是建议使用 <code>crontab -e</code> 命令，因为 crontab 可以自动判断语法问题。例如：我错误的写成 0 3 * * 少写一个 * 符号，保存退出后会提示错误信息：bad day-of-week。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 3 * * <span class="built_in">echo</span> hello world &gt; /tmp/hello.txt</span><br><span class="line">crontab: installing new crontab <span class="string">&quot;/tmp/crontab.gCbZsp&quot;</span>:1: bad day-of-week errors <span class="keyword">in</span> crontab file, can\<span class="string">&#x27;t install.Do you want to retry the same edit?</span></span><br></pre></td></tr></table></figure><h2 id="etc-crontab"><a href="#etc-crontab" class="headerlink" title="/etc/crontab"></a>/etc/crontab</h2><p>cron 除了会读取 crontab -e 命令设置的 <code>/var/spool/cron</code> 目录下的文件外，它自己的配置文件：/etc/crontab 也是设定定时任务的地方。跟前面不同的是，配置文件处需要标明执行命令的用户身份。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01  *  *  *  *   root      run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure><p>上面说的是每小时 01 分以 root 用户身份执行 run-parts /etc/cron.hourly。通过 which 命令查找知道，run-parts 是一个系统定义的用于执行某个目录下所有脚本的 bash 脚本而已。因此当我们写了一个想要定时执行的脚本，可以根据定时执行的频率将脚本丢到对应的 cron 目录去，目录有 cron.hourly、cron.daily、cron.weekly 和 cron.monthly。</p><p>但你查看 /etc/crontab 文件，你是看不到上面的定时任务的。因为现在默认不在此处设置定时任务，原因是 anacron 同样会有如上的定时任务命令，避免冲突就给 anacron 设置了。帮助文档说法：</p><p><strong>By default  these jobs are now run through anacron which reads /etc/anacrontab configuration file.</strong></p><p>也就是说 /etc/crontab 文件就只剩下环境变量的设定，定时任务 “全权” 交由 anacron 管理。</p><h2 id="etc-cron-d"><a href="#etc-cron-d" class="headerlink" title="/etc/cron.d/"></a>/etc/cron.d/</h2><p>一直藏着不见的 anacron 就是在这里被 cron 调用的。cron 除了会读取上面两个文件外，还会读取这个目录下的所有文件。其中有个名为 0hourly 的文件内容：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Run the hourly jobs</span></span><br><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure><p>可以看到定义了每小时使用 root 身份使用 run-parts 命令运行 /etc/cron.hourly 目录下的所有脚本。然后前往 /etc/cron.hourly 目录，发现有且只有一个 0anacron 文件，内容最后一行分明写着：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/sbin/anacron -s</span><br></pre></td></tr></table></figure><p>cron 就是这样调用 anacron 的，而anacron 的配置文件 /etc/anacrontab 就可以明确找到对  cron.daily、cron.weekly 和 cron.monthly  四个目录的定时任务命令了。没有 cron.hourly 是因为 anacron 的精度只到 “天” 级别。另外 /etc/cron.d/ 通过放置 0hourly 文件来间接调用 cron.hourly，也没丢掉 “小时” 级别精度下的控制。</p><p>查阅 anacrontab 的帮助文档，下面的原文大意是：如果想要禁用 anacron，将 0anacron 文件移动到 /etc/cron.hourly/jobs.deny 目录下。</p><p> <strong>In case you want to disable Anacron, add the 0anacron cron job (which is a part of crontab(1)) into the /etc/cron.hourly/jobs.deny directory.</strong></p><p>这样也反向证明了 cron 的确是通过读取 /etc/cron.d/0hourly 调用 /etc/cron.hourly/0anacron 脚本来运行 anacron 的。</p><h2 id="anacron"><a href="#anacron" class="headerlink" title="anacron"></a>anacron</h2><p>crontab 配置文件内的定时任务交给 anacron 管理后，anacron 会到点儿执行任务，并在执行完成后将当前时间精确到 “天” 记录到 /var/spool/anacron/ 对应的文件里，标记这次执行成功的时间。等到下次执行任务时，首先对比上次执行成功的时间，再决定是否执行。</p><p>例如：在 3 月 10 号因为意外导致主机宕机，原定每天凌晨 1:00 的任务没有执行，那么 anacron 记录的任务成功执行的时间是在 3 月 9 日。因为 anacron 是通过 cron 的 cron.hourly 以 ”小时” 为精度被调用的，假设主机在凌晨 2:00 恢复运行，那么 cron 会在 2:01 调用 anacron，anacron 读取记录知道上次执行任务是在 3 月 9 日，需要再次执行任务。所以 anacron 可以在任何时间执行未执行的任务。</p><p>anacron 在执行任务过程中，如果有信息输出，默认会邮件给执行 anacron 的用户；如果指定了变量 MAILTO，那么会优先发送给他。日志信息会记录在 cron 里，级别为 notice。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SHELL=/bin/sh</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line"><span class="comment"># the maximal random delay added to the base delay of the jobs</span></span><br><span class="line">RANDOM_DELAY=45</span><br><span class="line"><span class="comment"># the jobs will be started during the following hours only</span></span><br><span class="line">START_HOURS_RANGE=3-22</span><br><span class="line"></span><br><span class="line"><span class="comment">#period in days   delay in minutes   job-identifier   command</span></span><br><span class="line">15cron.dailynice run-parts /etc/cron.daily</span><br><span class="line">725cron.weeklynice run-parts /etc/cron.weekly</span><br><span class="line">@monthly 45cron.monthlynice run-parts /etc/cron.monthly</span><br></pre></td></tr></table></figure><p>anacrontab 的定时任务格式跟 crontab 很像。第一个数字表示执行任务的间隔，单位天，第一个数字表示延迟时间，单位分钟。设置延迟是为了避免所有任务都在同一时间执行造成拥堵，因此在此基础上增加了变量 RANDOM_DELAY，最大随机延迟。</p><p>​</p>]]></content>
-      
-      
+      <tags>
+        <tag>iptables</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>借助 GitHub 安装 hexo 博客并配置 NexT 主题</title>
+    <url>//post/how-to-hexo-next.html</url>
+    <content><![CDATA[<p>Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。</p>
+<p>Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。</p>
+<span id="more"></span>
+
+<h2 id="创建-GitHub-仓库"><a href="#创建-GitHub-仓库" class="headerlink" title="创建 GitHub 仓库"></a>创建 GitHub 仓库</h2><p>创建一个 GitHub 仓库可以算是 Git 基础中的基础了吧，这个不再这篇文章的讨论范围（太简单了。。）。当然你也可以将代码部署在自己的 VPS 上，Hexo 自带 web 服务，只需要通过 nginx 等程序反代到 80 端口即可。</p>
+<p>不过 GitHub 的羊毛不要白不要，稳定不用自己操心，岂不是妙哉。</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>hexo 是一款基于 Node.js 开发的博客框架，所以 首先要安装 Node.js。</p>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>下载地址：<a href="https://nodejs.org/en/">官网下载</a></p>
+<p>Node.js 提供可视化的安装方式，全程跟着步骤即可。需要注意的是 Windows 系统在安装过程中记得勾选  <strong>Add to PATH</strong>，方便在 cmd 命令行里使用。</p>
+<p>安装技术后，打开 cmd 命令行，MacOS 用户打开终端，使用命令 <code>npm --version</code> 通过查看版本信息的方式检验是否安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm --version</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>xxxx</p>
+<h3 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>上面工作准备好之后，安装 Hexo 就非常容易，一句话搞定：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>同样我们通过查看版本信息的方式检查 Hexo 是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo --version</span><br><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">xxx xxx</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>cd</code> 命令切换一个目录，此目录就是操作 Hexo 博客的工作目录了。为了便于区分管理，新建一个目录 hexo-blog。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir hexo &amp;&amp; cd hexo</span><br></pre></td></tr></table></figure>
+
+<p>现在我们把 Hexo 博客代码下载到工作目录，此步骤只需要 Hexo 初始化命令即可完成</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>除了下载源代码，init 初始化命令还帮我们做了一些其他事情，例如下载并使用了 landscape 主题。另外还为我们执行了 <code>npm install</code> 命令帮我们安装了依赖。如果你是旧版，可能需要手动执行此命令。</p>
+<p>现在你的工作目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<p>使用如下两行命令开启预览一下吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>接下来在浏览器打开地址：<a href="localhost:4000">localhost:4000</a>，你就能一睹 Hexo 了。</p>
+<img data-src="/post/how-to-hexo-next/hexo_index.jpg" class="" title="hexo 首次启动">
+
+<p>可以看到还有一篇名为 Hello World 的文章。接下来就是配置 Hexo 博客了，这些默认的设置显然不是我们想要的。</p>
+<h2 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h2><p>先来了解一下 hexo 的原理。</p>
+<p>新建一个文章，可以使用 <code>hexo new postname</code>，例如新建一个名为 test 的文章，那么：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="built_in">test</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ~/hexo-blog/<span class="built_in">source</span>/_posts/test.md</span><br></pre></td></tr></table></figure>
+
+<p>通过提示信息 INFO 看到这篇文章生成在了 source/_posts/test.md。source 目录是 hexo 用来存放未经加工的原始文件的地方。还有一个 _posts 目录，这就是 hexo 的布局，可以理解为文章的类型。hexo 有三种文章类型，post、page 和 draft。post 表示普通文章，page 表示这个一个独立页面，draft 表示文章还只是草稿，还需要修改。</p>
+<p>现在在 test.md 文件写个简单的 hello world，保存后使用命令 <code>hexo generate</code>，这一步就是要生成文章等内容了。为什么要生成文章呢？test.md 不就是文章么？要记住，hexo 是一个静态博客，我们写的只是 Markdown 格式的内容，gernerate 帮我们生成可以在网页浏览的 html 格式文件。最终我们的 test 文章就跑到了 hexo 目录下的 public/post/test.html。所以 hexo 真正的根目录其实是 public/。</p>
+<p>查看 test.html 会发现，hexo 除了将 hello world 转换成了 <code>&lt;p&gt;hello world&lt;/p&gt;</code> 的 html 格式外，还多了一大堆 css、js 等完整的信息，这是怎么做到的？查看 hexo 目录，很明显的看到除了根目录 public 外，还有其他目录和文件，正是这些目录和文件共同规定了 hexo generate 的方式，才生成了一个标签完备的 test.html 文件。</p>
+<p>顺利成章的，来看看这些目录和文件。</p>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="config.yml"></a>config.yml</h3><p>这个就是 hexo 的配置文件，也叫做 站点配置文件，可以对整个博客站进行全局配置。参考如下：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="comment"># 网站标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="comment"># 网站副标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment"># 针对 seo 的网站描述</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="comment"># 针对 seo 的网站关键词</span></span><br><span class="line"><span class="attr">language:</span> <span class="comment"># 站点支持的语言</span></span><br><span class="line"><span class="attr">author:</span> <span class="comment"># 站点的作者</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="comment"># 站点的时区。默认使用本地电脑的时区</span></span><br><span class="line"><span class="attr">url:</span> <span class="comment"># 站点的地址。带 http 或 https 的域名</span></span><br><span class="line"><span class="attr">root:</span> <span class="comment"># 根目录。默认 /</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="comment"># 文章的链接，可以认为是 “伪静态”</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="comment"># 是否显示 index.html</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="comment"># 是否显示 .html 后缀</span></span><br><span class="line"><span class="attr">theme:</span> <span class="comment"># 指定使用的主题</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="comment"># 创建文章的同时创建同名的目录，用于存放资源</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>网站时区</strong></p>
+<p>网站默认的时区就是本地电脑的时区，也可以指定时区，例如指定中国时区：<code>timezone: Asia/Shanghai</code></p>
+<p><strong>二级目录</strong></p>
+<p>如果我把 hexo 放在网站根目录下的 <code>blog/</code> 目录下，即所谓的把 hexo 部署在网站的二级目录，那么需要修改 root 为 /blog/，不要忘了前后两个斜号。否则你的站点除了首页，其他都无法通过链接打开。二级目录在网站虚拟机上比较常用。</p>
+<p><strong>链接后缀</strong></p>
+<p>如果我不想要 .html 后缀，设置 <code>trailing_html: false</code>；如果不想显示文件名：设置 <code>trailing_index: false</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 现在有一个链接：</span></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/index</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># http://example.com/foo/bar/</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>文章链接</strong></p>
+<p>上面说 permalink 是 “伪静态”，因为效果跟 WordPress 等博客的伪静态一样，但事实上 hexo 是 “真静态”。</p>
+<p>hexo 会在 generate 时生成和 permalink 设定的链接一样的目录层级。例如设定 <code>permalink：first/second:title.html</code>，然后命令 <code>hexo generate</code>，在 public/post 目录下会看到 first/second 的目录结构。这个就是站点配置文件改变 hexo 生成方式的一个很好例子。</p>
+<p>permalink 支持的变量有：</p>
+<ul>
+<li>:year ：文章发表年份（4位数）</li>
+<li>:month：文章发表的月份（2位数）</li>
+<li>:i_month：文章的发表月份（去掉开头的零）</li>
+<li>:day    文章的发表日期 (2 位数)</li>
+<li>:i_day    文章的发表日期（去掉开头的零）</li>
+<li>:hour    文章发表时的小时 (2 位数)</li>
+<li>:minute    文章发表时的分钟 (2 位数)</li>
+<li>:second    文章发表时的秒钟 (2 位数)</li>
+<li>:title    文件名称 (relative to “source/_posts/“ folder)</li>
+<li>:name    文件名称</li>
+<li>:post_title    文章标题</li>
+<li>:id    文章 ID</li>
+<li>:category    分类。如果文章没有分类，则是 default_category</li>
+<li>:hash    SHA1  :title 和 date (12-hexadecimal) 加密</li>
+</ul>
+<p><strong>资源目录</strong></p>
+<p>为了便于管理资源文件，hexo 会在创建文章的同时创建同名目录，文章的资源如视频、照片等都会放在同名目录下。但这个并不是强制规定，你依然可以将资源文件放置在任何地方，只要你在文章内地址引用正确，但是不建议这么做。</p>
+<p>资源目录这个功能需要：<code>post_asset_folder: true</code> 开启。开启后，创建一个 test 文件：<code>hexo new test</code>，前往 source/_post 目录可以看到 test.md 文件和 test 目录。</p>
+<p>文章内引用资源是：<code>文件名/资源名</code>，例如我把 1.png 图片放在了 test 资源目录，test.md 里引用必然是 <code>test/1.png</code>，网站很多写的是 <code>1.png</code>，这是不对的，除非使用插件。在 Hexo 3 版本里，这类插件被集成到了核心代码中，现在可以使用如下格式来进行引用资源：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以引用可以这么写：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img 1.png 图片说明 %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这类写法的好处是写法一致，引用链接、图片等都一样格式。但是以后你要迁移到其他博客系统，这个不符合 Markdown 写法的标签，需要你想办法改过来。。。</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>这个是安装依赖包的说明文件，npm 就是通过参考这个文件来安装依赖的。这里不进行细究，直接把它当作插件，在 init 初始化的时候默认使用了 <code>npm install</code>，就是在照着 package.json 这个清单安装插件。</p>
+<p>当要安装指定插件，例如：安装一个 <code>hexo-generator-searchdb</code> 插件，这个插件提供搜索功能，那么命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，npm会把下载的 hexo-generator-searchdb 版本信息写进 package.json，同时写入 package.lock 文件里留作记录。更深入了解可以自行参考 npm 的依赖包管理。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>上文讲了，用于存储博客的未经修改的原始内容文件。source 目录下的文件和目录各有用途：一般文件表示 hexo 的 page 页面，用户存储独立页面； _post 目录存储表示 post 的文章，我们编写文章就在这里；draft 目录存储表示 draft 的草稿。</p>
+<p>使用命令 <code>hexo generate</code> 将 source 目录下的文件通过上述的规则生成 public 目录下的 html 文件，供博客使用。查看 source 和 public 两个目录，你就可以在 public 目录下找到所有 source 目录的对应文件。</p>
+<p>以 “_” 开头的文件和目录在 generate 时被忽略。当你的有文章没有写好但其他文章着急发布的时候，除了把没有写好的文章放进 draft 草稿里，还可以在其文件名前加 “_”。</p>
+<p>除了 html 和 Markdown 文件，source 目录下的文件会被原样放在 public 目录下相同的位置。在部署 Hexo 到 GitHub 时，我们可以直接在 source 目录下创建 CNAME 和 README.md 文件，CNAME 文件里写入 域名实现域名访问。README.md 写此仓库的说明，例如：个人博客。不能直接写在 public 目录下，虽然部署的时候没问题，但是下次 generate 时会被丢失的。</p>
+<ul>
+<li>hexo generate 可以简写：hexo g</li>
+<li>hexo new 可以简写：hexo n</li>
+</ul>
+<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p>定义新建的文章文件默认内容。例如查看 scaffolds/post.md：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们一连创建好几篇 教程 分类下的文章时，我们可以增加 <code>categories: 教程</code>，来指定接下来创建的文章默认分类。当你的文章有重复内容时，借助这个可以提高你的写作效率。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>主题目录，你的主题都要放在这个目录下。启用某个主题时，例如下面要说的 NexT 主题，那么修改站点配置文件 _config.yml，指定 <code>theme: next</code>。</p>
+<h2 id="使用-NexT-主题"><a href="#使用-NexT-主题" class="headerlink" title="使用 NexT 主题"></a>使用 NexT 主题</h2><p>NexT 是 Hexo 博客下的一款极简、高效主题，本站使用的便是 NexT 主题。</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>可以使用 git 命令克隆源码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>或者前往 <a href="https://github.com/theme-next/hexo-theme-next/releases">release pages</a> 下载源码，重命名为 next 并放置在 themes 目录下。</p>
+<blockquote>
+<p>注意：上述使用的是保持更新的 NexT 新版本，NexT 老版本已经停止维护。</p>
+</blockquote>
+<h3 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h3><p>修改站点配置文件 _config.yml，修改 theme 字段为 next。另外需要注意的是语言问题：next 提供的中文包只有 zh-CN.yml、zh-HK.yml 和 zh-TW.yml，所以在 站点配置文件里 language 字段应该修改为 zh-CN 才能使用中文。</p>
+<p>相对于站点配置文件 _config.yml，主题也有自己的配置文件 _config.yml，一样的文件名但是作用不一样，请注意区分。</p>
+<p><strong>主题配置文件位于 themes/next/_config.yml</strong></p>
+<h3 id="切换外观"><a href="#切换外观" class="headerlink" title="切换外观"></a>切换外观</h3><p>NexT 主题拥有四种外观，分别是 Muse、Mist、Pisces 和 Gemini，设置为主题配置文件的 scheme 字段。想要启用哪个外观就移除其前面的 # 。例如启用 Pisces：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p># 通常表示注释，可以认为注释就表示不存在，但对人类可见。</p>
+</blockquote>
+<h3 id="暗夜模式"><a href="#暗夜模式" class="headerlink" title="暗夜模式"></a>暗夜模式</h3><p>NexT 支持暗夜模式，修改主题配置文件 <code>darkmode: true</code> 即可开启。但是不会自动切换，这就是静态博客的弊端，它不会像 WordPress 动态读取变量实现更为丰富的变化。</p>
+<h3 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h3><p>对应的是主题配置文件 menu 字段，取消注释即可开启对应菜单图标。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">home:</span> <span class="comment">#主页</span></span><br><span class="line"><span class="attr">about:</span> <span class="comment">#关于</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#标签</span></span><br><span class="line"><span class="attr">categories:</span> <span class="comment">#分类</span></span><br><span class="line"><span class="attr">archives:</span> <span class="comment">#归档</span></span><br><span class="line"><span class="attr">schedule:</span> <span class="comment">#日历</span></span><br><span class="line"><span class="attr">sitemap:</span> <span class="comment">#站点sitemap</span></span><br></pre></td></tr></table></figure>
+
+<p>此处的写法是：<code>home: / || fa fa-home</code>，第一个 home 表示显示的菜单名，第二个 “/” 表示链接，第三个 fa fa-home 表示图标。</p>
+<p>下面以 page 页面 gallery 图库为例：</p>
+<p>自定义一个菜单名：gallery，再修改 NexT 主题语言包：themes/next/languages/zh-CN.yml，在 menu 字段下新建一个子字段： <code>gallery: 图库</code>。这样就能使用中文语言了。</p>
+<p>链接使用的是相对路径，会自动补全当前域名。例如 / 会自动补全为 <code>https://yourdomain.com /</code>。这里链接为 /gallery。</p>
+<p>图标用的是 awesome，前往 <a href="https://fontawesome.com/v5.15/icons">awesome 图标库</a>，搜索你要的图标，点击后进入后选择 Start Using This Icon，其中 i 标签的 class 就可以用在此处了。那些标着 PRO 的图标都是收费的，避开用。搜索 gallery 发现没有想要的图标，我们想要的是图片的图标，再次搜索 images，发现符合的图标了。fa fa-images 正合适。</p>
+<p>最后写法是：<code>gallery: /gallery || fa fa-images</code>。</p>
+<h3 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h3><p>字段：sidebar。下面的 社交、头像 能弄都弄，不能弄的也弄，图标太少不太好看。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">position: #指定侧边栏 居左 left；居右 right</span><br><span class="line">width: #指定侧边栏宽度，默认 300，单位像素</span><br><span class="line">display:</span><br><span class="line">  #post 文章页面展开侧边栏</span><br><span class="line">  #always 任何页面都展开侧边栏</span><br><span class="line">  #hide 隐藏侧边栏，但可以手动点击按钮呼出</span><br><span class="line">  #remove 隐藏侧边栏，并隐藏按钮</span><br><span class="line">avatar: #设定头像</span><br><span class="line">  url: #图片地址。如果想要使用 qq 头像：https://q1.qlogo.cn/g?b=qq&amp;nk=qq号&amp;s=640</span><br><span class="line">  rounded: #true 圆形头像</span><br><span class="line">  rotated：#true 方形头像，四个角弧形</span><br><span class="line">social: #社交账号，这里不列了。使用添加菜单的方法添加一个新的社交，如 QQ。</span><br><span class="line">  QQ: https://wpa.qq.com/msgrd?v=3&amp;uin=QQ号&amp;site=qq&amp;menu=yes || fab fa-qq</span><br><span class="line">  chat: #在线聊天</span><br><span class="line">    enable: #开启在线聊天</span><br><span class="line">    service: chatra # 使用chatra</span><br><span class="line">    service: tidio # 使用tidio</span><br></pre></td></tr></table></figure>
+
+<p>如果开了 在线聊天，如果指定 chatra，那么往下找 chatra 字段，填写 id；如果指定了 tidio，往下找 titio 字段，填写 key。这两个服务为第三方提供，需要自行前往注册。</p>
+<h3 id="设置动画"><a href="#设置动画" class="headerlink" title="设置动画"></a>设置动画</h3><p>NexT 提供多种动画。</p>
+<p><strong>一般动画</strong></p>
+<p>设置的对象有：文章块、文章头部、文章主题，针对 Gemini 和 Pisces 外观，还可以让侧边栏动起来。支持的动画有 渐入、抖动进入、从上弹跳进入、从左弹跳进入、从右弹跳进入 等等。</p>
+<p>开启动画</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">motion</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> // 开启动画</span><br></pre></td></tr></table></figure>
+
+<p>下面就请你折腾吧.</p>
+<p><strong>进度条</strong></p>
+<p>当页面在加载时，页面顶部进度条的动画。需要安装插件才能启用，插件安装方法：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-pace <span class="built_in">source</span>/lib/pace</span><br></pre></td></tr></table></figure>
+<p>安装后设置主题配置问题，将 pace 字段设定 true。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pace:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>官方提供了 demo，可以自行对照着设置。</p>
+<p><a href="https://codebyzach.github.io/pace/">https://codebyzach.github.io/pace/</a></p>
+<p><strong>背景动画</strong></p>
+<p>首先安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-three <span class="built_in">source</span>/lib/three</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置文件开启 three 字段</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">three:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  three_waves: <span class="literal">false</span></span><br><span class="line">  canvas_lines: <span class="literal">false</span></span><br><span class="line">  canvas_sphere: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>需要哪个动画就将其设置为 true 即可。</p>
+<p>除了上面，还有 彩带动画，需要额外安装插件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置里开启 canvas_ribbon 字段：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">canvas_ribbon:</span><br><span class="line">  enable: true # 开启彩带背景</span><br><span class="line">  size: 300 # 彩带的宽度</span><br><span class="line">  alpha: 0.6 # 彩带的透明度 1 不透明；0 全透明</span><br><span class="line">  zIndex: -1 # 彩带在第几层，越大越会覆盖文字</span><br></pre></td></tr></table></figure>
+
+<h3 id="加入统计"><a href="#加入统计" class="headerlink" title="加入统计"></a>加入统计</h3><p>为网站、页面加入访客统计，开启主题配置文件里 busuanzi_count 字段</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_visitors_icon:</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">total_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br><span class="line">  <span class="attr">post_views:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post_views_icon:</span> <span class="string">fa</span> <span class="string">fa-eye</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p>本地搜索需要插件支持，使用如下命令下载插件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置文件里开启 local_search 字段：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="string">//开启本地搜索</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span> <span class="string">//</span> <span class="string">auto</span> <span class="string">搜索结果实时显示；manual</span> <span class="string">搜索结果需要点击搜索按钮才显示</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span> <span class="string">//</span> <span class="string">每篇文章包含关键词的数量</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">true</span> <span class="string">//将</span> <span class="string">html</span> <span class="string">标签转化可阅读的字符</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span> <span class="string">//搜索预加载</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>这个比较麻烦。主题配置文件里对数学公式的配置简化一下看的清楚</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 NexT 支持两种数学公式：mathjax 和 katex。per_page 设置为 true 时，只有开头定义了 <code>mathjax: true</code> 的页面才会使用数学公式渲染，false 则对所有页都进行数学公式渲染。推荐 true。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2021-06-27 16:42:58</span><br><span class="line">tags:</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>KateX</strong></p>
+<p>katex 会比 mathjax 有更高的性能，不过 katex 公式没有 mathjax 全面，NexT 主题对 katex 的支持也有些不足。</p>
+<p>如果选择使用 Katex 进行数学公式渲染，则需要使用 <code>hexo-renderer-markdown-it-plus</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置文件开启 katex。使用很简单，公式的前后都用 $$ 包裹即可。例如：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$<span class="variable">$c</span> \approx \pm\sqrt&#123;a^2 + b^2&#125;$$</span><br></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<img data-src="/post/how-to-hexo-next/katex-01.jpg" class="" title="katex公式">
+
+<p>katex 公式写法参考：</p>
+<p><a href="https://katex.org/docs/supported.html">https://katex.org/docs/supported.html</a></p>
+<p><strong>MathJax</strong></p>
+<p>要使用 mathjax，需要把默认的 Markdown 渲染器：hexo-renderer-marked 改用 <code>hexo-renderer-pandoc</code> 或者 <code>hexo-renderer-kramed</code>。个人测试 <code>hexo-renderer-pandoc</code> 使用数学公式报错，而 <code>hexo-renderer-kramed</code> 官方又不推荐，伤脑 😣</p>
+<p>但是当你安装上面 Katex 的生成器 <code>hexo-renderer-markdown-it-plus</code>，发现没有问题，我直接好家伙 😺</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-pandoc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如有问题，使用下面命令</span></span><br><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-markdown-it-plus</span><br></pre></td></tr></table></figure>
+
+<p>然后在主题配置文件里开启 mathjax。和 KaTeX 一样，默认可以使用 $$ 将公式左右包裹主即可，这是最简单的方法。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$$m = c^2$$</span><br></pre></td></tr></table></figure>
+
+<p>但它还支持更强大的功能。如果想要公式编号，只需要把公式放在 equation 环境里；想要公式引用，添加 \label{} 标记即可。如下面对公式进行了编号，并使用了 eq1 标签。</p>
+  <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;\label&#123;eq1&#125;</span><br><span class="line">e=mc^2</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure>
+<img data-src="/post/how-to-hexo-next/mathjax_01.jpg" class="" title="mathjax公式">
+
+<p>那么引用这个公式可以使用 \eqref{}。例如下面引用：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">著名的质能方程 $\eqref&#123;eq1&#125;$ 由爱因斯坦提出 ...</span><br></pre></td></tr></table></figure>
+
+<p>更多的写法支持参考：</p>
+<p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md">https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/MATH.md</a></p>
+<p><strong>默认</strong></p>
+<p>上面两种方法都需要卸载默认的 Markdown 生成器，如果当你写了一定数量的文章时，换用其他生成器可能会报错。我们也可以在不卸载默认的生成器的同时，安装插件 <code>hexo-math</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-math</span><br></pre></td></tr></table></figure>
+
+<p>这个插件就有点猛了，同时支持 mathjax 和 katex，而且默认就是对所有页进行数学公式渲染。也就是说有了它，不用操心什么配置问题。不过使用方法也跟下面不太一样。</p>
+<blockquote>
+<p>上面两种是 NexT 主题支持的渲染公式的方法，hexo-math 则是 Hexo 支持的渲染公式的方法，所以你会看到 hexo-math 无法通过 主题配置文件即可使用。<br> hexo-math 可以支持 $$ 包裹的写法，不过避免混淆，这里给出它自己的写法。</p>
+</blockquote>
+<p>使用 KaTeX</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">写法：</span><br><span class="line">&#123;% katex &#x27;&#123;options&#125;&#x27; %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endkatex %&#125;</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">&#123;% katex %&#125;</span><br><span class="line">c = \pm\sqrt&#123;a^2 + b^2&#125;</span><br><span class="line">&#123;% endkatex %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 MathJax</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">写法：</span><br><span class="line">&#123;% mathjax &#x27;&#123;options&#125;&#x27; %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endmathjax %&#125;</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">&#123;% mathjax %&#125;</span><br><span class="line">\frac&#123;1&#125;&#123;x^2-1&#125;</span><br><span class="line">&#123;% endmathjax %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和上面两个不同的是，math-ajax 默认渲染所有页面，如果不想渲染，请使用下面方法手动禁用</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: test</span><br><span class="line">date: 2021-06-27 16:42:58</span><br><span class="line">tags:</span><br><span class="line">katex: false</span><br><span class="line"><span class="section">mathjax: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>hexo-math 也支持一些配置，不过针对的是站点配置文件，如对默认的显示格式不满意，可以参考 👉 <a href="https://www.npmjs.com/package/hexo-math#global-options">这里</a>。</p>
+]]></content>
+      <tags>
+        <tag>next主题, hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计划任务：crontab 对比 anacron</title>
+    <url>//post/crontab-vs-anacron.html</url>
+    <content><![CDATA[<p>cron 用于周期性执行定时任务，它的 daemon 叫做 crond，常驻内存。crontab 是用于编辑管理 cron 的指令。同样的，anacron 是指令，anacrontab 是其配置文件。</p>
+<p>作为系统服务，cron 可以由 systemctl 管理，能够以分钟精度执行任务。而 anacron 仅是一个指令，需要 cron 调用才能运行。cron 认为主机会 24 小时不间断运行。 anacron 考虑到宕机等实际问题，认为主机不可能不出意外一直连续运行下去，因此会定时执行因意外导致无法被 cron 执行的任务。anacron 可以算是 cron 的补充和完善。</p>
+<span id="more"></span>
+
+<p>查看 cron 帮助文档，知道 cron 会检查的文件和目录有：</p>
+<ul>
+<li>/etc/crontab</li>
+<li>/etc/cron.d/</li>
+<li>/var/spool/cron/</li>
+</ul>
+<h2 id="var-spool-cron"><a href="#var-spool-cron" class="headerlink" title="/var/spool/cron/"></a>/var/spool/cron/</h2><p>一般我们使用命令：『crontab -e』来设定定时任务，实际上此命令会在 <code>/var/spool/cron/</code> 目录下创建一个以当前用户为文件名的文件，内容即是 <code>crontab -e</code> 的内容。例如使用 root 用户设置如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">0 3 * * * <span class="built_in">echo</span> hello world &gt; /tmp/hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>我们会在 /var/spool/cron/root 文件里看到同样的内容。虽然我们可以直接编辑此文件来设定定时任务，但是还是建议使用 <code>crontab -e</code> 命令，因为 crontab 可以自动判断语法问题。例如：我错误的写成 0 3 * * 少写一个 * 符号，保存退出后会提示错误信息：bad day-of-week。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">0 3 * * <span class="built_in">echo</span> hello world &gt; /tmp/hello.txt</span><br><span class="line">crontab: installing new crontab <span class="string">&quot;/tmp/crontab.gCbZsp&quot;</span>:1: bad day-of-week errors <span class="keyword">in</span> crontab file, can\<span class="string">&#x27;t install.Do you want to retry the same edit?</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="etc-crontab"><a href="#etc-crontab" class="headerlink" title="/etc/crontab"></a>/etc/crontab</h2><p>cron 除了会读取 crontab -e 命令设置的 <code>/var/spool/cron</code> 目录下的文件外，它自己的配置文件：/etc/crontab 也是设定定时任务的地方。跟前面不同的是，配置文件处需要标明执行命令的用户身份。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">01  *  *  *  *   root      run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure>
+
+<p>上面说的是每小时 01 分以 root 用户身份执行 run-parts /etc/cron.hourly。通过 which 命令查找知道，run-parts 是一个系统定义的用于执行某个目录下所有脚本的 bash 脚本而已。因此当我们写了一个想要定时执行的脚本，可以根据定时执行的频率将脚本丢到对应的 cron 目录去，目录有 cron.hourly、cron.daily、cron.weekly 和 cron.monthly。</p>
+<p>但你查看 /etc/crontab 文件，你是看不到上面的定时任务的。因为现在默认不在此处设置定时任务，原因是 anacron 同样会有如上的定时任务命令，避免冲突就给 anacron 设置了。帮助文档说法：</p>
+<p><strong>By default  these jobs are now run through anacron which reads /etc/anacrontab configuration file.</strong></p>
+<p>也就是说 /etc/crontab 文件就只剩下环境变量的设定，定时任务 “全权” 交由 anacron 管理。</p>
+<h2 id="etc-cron-d"><a href="#etc-cron-d" class="headerlink" title="/etc/cron.d/"></a>/etc/cron.d/</h2><p>一直藏着不见的 anacron 就是在这里被 cron 调用的。cron 除了会读取上面两个文件外，还会读取这个目录下的所有文件。其中有个名为 0hourly 的文件内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Run the hourly jobs</span></span><br><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure>
+
+<p>可以看到定义了每小时使用 root 身份使用 run-parts 命令运行 /etc/cron.hourly 目录下的所有脚本。然后前往 /etc/cron.hourly 目录，发现有且只有一个 0anacron 文件，内容最后一行分明写着：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/sbin/anacron -s</span><br></pre></td></tr></table></figure>
+
+<p>cron 就是这样调用 anacron 的，而anacron 的配置文件 /etc/anacrontab 就可以明确找到对  cron.daily、cron.weekly 和 cron.monthly  四个目录的定时任务命令了。没有 cron.hourly 是因为 anacron 的精度只到 “天” 级别。另外 /etc/cron.d/ 通过放置 0hourly 文件来间接调用 cron.hourly，也没丢掉 “小时” 级别精度下的控制。</p>
+<p>查阅 anacrontab 的帮助文档，下面的原文大意是：如果想要禁用 anacron，将 0anacron 文件移动到 /etc/cron.hourly/jobs.deny 目录下。</p>
+<p> <strong>In case you want to disable Anacron, add the 0anacron cron job (which is a part of crontab(1)) into the /etc/cron.hourly/jobs.deny directory.</strong></p>
+<p>这样也反向证明了 cron 的确是通过读取 /etc/cron.d/0hourly 调用 /etc/cron.hourly/0anacron 脚本来运行 anacron 的。</p>
+<h2 id="anacron"><a href="#anacron" class="headerlink" title="anacron"></a>anacron</h2><p>crontab 配置文件内的定时任务交给 anacron 管理后，anacron 会到点儿执行任务，并在执行完成后将当前时间精确到 “天” 记录到 /var/spool/anacron/ 对应的文件里，标记这次执行成功的时间。等到下次执行任务时，首先对比上次执行成功的时间，再决定是否执行。</p>
+<p>例如：在 3 月 10 号因为意外导致主机宕机，原定每天凌晨 1:00 的任务没有执行，那么 anacron 记录的任务成功执行的时间是在 3 月 9 日。因为 anacron 是通过 cron 的 cron.hourly 以 ”小时” 为精度被调用的，假设主机在凌晨 2:00 恢复运行，那么 cron 会在 2:01 调用 anacron，anacron 读取记录知道上次执行任务是在 3 月 9 日，需要再次执行任务。所以 anacron 可以在任何时间执行未执行的任务。</p>
+<p>anacron 在执行任务过程中，如果有信息输出，默认会邮件给执行 anacron 的用户；如果指定了变量 MAILTO，那么会优先发送给他。日志信息会记录在 cron 里，级别为 notice。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SHELL=/bin/sh</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line"><span class="comment"># the maximal random delay added to the base delay of the jobs</span></span><br><span class="line">RANDOM_DELAY=45</span><br><span class="line"><span class="comment"># the jobs will be started during the following hours only</span></span><br><span class="line">START_HOURS_RANGE=3-22</span><br><span class="line"></span><br><span class="line"><span class="comment">#period in days   delay in minutes   job-identifier   command</span></span><br><span class="line">1	5	cron.daily		nice run-parts /etc/cron.daily</span><br><span class="line">7	25	cron.weekly		nice run-parts /etc/cron.weekly</span><br><span class="line">@monthly 45	cron.monthly		nice run-parts /etc/cron.monthly</span><br></pre></td></tr></table></figure>
+
+<p>anacrontab 的定时任务格式跟 crontab 很像。第一个数字表示执行任务的间隔，单位天，第一个数字表示延迟时间，单位分钟。设置延迟是为了避免所有任务都在同一时间执行造成拥堵，因此在此基础上增加了变量 RANDOM_DELAY，最大随机延迟。</p>
+<p>​</p>
+]]></content>
       <categories>
-          
-          <category> linux study </category>
-          
+        <category>linux study</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-  
-  
+  </entry>
+  <entry>
+    <title>使用 Clash 加速同一局域网下其他设备</title>
+    <url>//post/clash-speed-other-devices.html</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
+<p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p>
+<p><strong>场景</strong></p>
+<p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p>
+<span id="more"></span>
+
+<h2 id="打开局域网连接"><a href="#打开局域网连接" class="headerlink" title="打开局域网连接"></a>打开局域网连接</h2><p>确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。</p>
+<p><strong>Clash for Windows</strong></p>
+<img data-src="/post/clash-speed-other-devices/1.png" class="">
+
+<p><strong>ClashX</strong></p>
+<p>点击 <strong>控制台</strong> —&gt; <strong>设置</strong>，打开 <strong>允许来自局域网的连接</strong>。</p>
+<img data-src="/post/clash-speed-other-devices/2.jpg" class="">
+<img data-src="/post/clash-speed-other-devices/3.jpeg" class="">
+
+<h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<p><ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8483648732447678"
+     data-ad-slot="8560939464"></ins></p>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p><strong>Windows</strong></p>
+<p>使用组合键 <code>Win + R</code>，Win 键先按住不放，再按 R 键。在搜索框输入 <code>cmd</code> 回车，在接下来的窗口里输入 <code>ipconfig</code> 找到 <strong>无线局域网适配器</strong> <code>WLAN</code> 项，IPv4 地址 即为设备 A 在局域网里的 ip 地址。</p>
+<img data-src="/post/clash-speed-other-devices/4.png" class="">
+
+<p><strong>MacOS</strong></p>
+<p>桌面右上角  —&gt; 系统偏好设置…，选择网络，可以立即看到当前 Wi—Fi 下的局域网 IP 地址。局域网 IP 地址一般都以 192.168 开头。</p>
+<img data-src="/post/clash-speed-other-devices/5.jpeg" class="">
+
+<h2 id="设置设备B"><a href="#设置设备B" class="headerlink" title="设置设备B"></a>设置设备B</h2><p>确保设备 A 和设备 B 接入相同的 Wi—Fi下 。不同系统操作方法不太一样，一般的操作步骤：</p>
+<ul>
+<li>打开设置</li>
+<li>打开无线局域网</li>
+<li>点击已经连接的Wi-Fi</li>
+<li>进入Wi—Fi设置页</li>
+<li>点击配置 HTTP 代理</li>
+</ul>
+<p>HTTP 代理改 自动 为 手动，在服务器/主机 栏填写 设备 A 的局域网 IP，端口 栏填写 7890。如果有 认证，请关闭。最后保存。</p>
+<img data-src="/post/clash-speed-other-devices/6.jpeg" class="">
+
+<p>不出意外，你的设备可以打开谷歌了。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>拔卡方式国内观看 TikTok</title>
+    <url>//post/how-to-use-tiktok-with-pull-card.html</url>
+    <content><![CDATA[<p>国内观看 TikTok 比较麻烦，因为 TikTok 会自动检测当前的上网环境，检测包括但不限于 ip、设备语言、DNS、手机卡运营商 等。安卓可以借助框架修改这些，iOS 端就比较麻烦了，新版 iOS 系统越狱难度很大，不可能像安卓这般简单。下面介绍的是拔卡观看方法，如果你觉得插拔手机卡可以接受，或者你有一台备用机，那就继续往下看。</p>
+<p>准备两个APP：Shadowrocket和 TikTok。国内 App Store 无法下载这两个软件，可以尝试购买<a href="https://high.scay.net/">米白云</a>，提供节点和美区账号（需购买正式套餐），售价2.99美元的Shadowrocket（小火箭）也可以免费下载。</p>
+<span id="more"></span>
+
+<h2 id="选择节点"><a href="#选择节点" class="headerlink" title="选择节点"></a>选择节点</h2><p>米白云 提供多个节点，我们以美国节点为例。选择一个美国节点后打开右上角按钮。</p>
+<img data-src="/post/how-to-use-tiktok-with-pull-card/1.png" class="" width="500" title="使用米白云节点">
+
+<p>打开地址：whoer.net，这个网站会告诉我们接下来需要如何设置。</p>
+<img data-src="/post/how-to-use-tiktok-with-pull-card/2.png" class="" width="500" title="查看修改项">
+
+<p>这里我们看到网站给出的伪装70%，扣分项目有开放端口、DNS不符、系统时间不符和语言不同四项，现在我们开始逐项解决。</p>
+<h2 id="修改时间"><a href="#修改时间" class="headerlink" title="修改时间"></a>修改时间</h2><p>往下滑，找到 <strong>时间</strong> 区块，这里给出的时区是America/Chicago。</p>
+<img data-src="/post/how-to-use-tiktok-with-pull-card/3.png" class="" width="500" title="查看节点时区">
+
+<p>所以我们打开手机里的“设置”-》“通用”-》“日期和时间”，先关闭自动设置，然后选择时区，在搜索栏搜索：Chicago，下面的结果里自动跳出“芝加哥（美国）”，选择。</p>
+<img data-src="/post/how-to-use-tiktok-with-pull-card/4.png" class="" width="500" title="修改本地时区">
+
+<h2 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h2><p>打开手机里的“设置”-》“通用”-》“语言和地区”，点击“iPhone语言”，选择English。然后选择地区，搜索“us”，选择结果United States.</p>
+<h2 id="修改-DNS"><a href="#修改-DNS" class="headerlink" title="修改 DNS"></a>修改 DNS</h2><p>打开小火箭底部的“配置”，按照米白云站内提供的教程，这里应该是Shadowrocket.conf，我们点击它，然后点击“编辑纯文本”，第7行是“ipv6 = true”，我们在它的上面添加一句 dns-server = 66.153.50.66,66.153.50.71，修改后效果如下(局部代码)：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">bypass-system</span> <span class="string">=</span> <span class="literal">true</span></span><br><span class="line"><span class="string">dns-server</span> <span class="string">=</span> <span class="number">66.153</span><span class="number">.50</span><span class="number">.66</span><span class="string">,66.153.50.71</span></span><br><span class="line"><span class="string">ipv6</span> <span class="string">=</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>然后点击右上角保存。点击小火箭底部的“首页”，重新打开右上角的开关。</p>
+<blockquote>
+<p>这里给几个地区的dns服务器。</p>
+</blockquote>
+<ul>
+<li>美国：66.153.50.66,66.153.50.71</li>
+<li>香港：203.198.7.66,218.102.23.228</li>
+<li>日本：101.110.50.105,101.110.50.106</li>
+<li>台湾：168.95.192.1,114.34.162.81</li>
+<li>新加坡：58.185.2.212,58.185.177.165</li>
+<li>英国：154.32.107.18,154.32.105.18</li>
+</ul>
+<h2 id="使用-TikTok"><a href="#使用-TikTok" class="headerlink" title="使用 TikTok"></a>使用 TikTok</h2><p>刷新 whoer 的页面，或者关闭页面重新打开，我们看到伪装程度达到了90%，剩下的开放端口不用管。这就可以了。</p>
+<img data-src="/post/how-to-use-tiktok-with-pull-card/5.png" class="" width="500">
+
+<p>打开TikTok，不出意外的话就能正常播放了。登陆、关注、直播什么的都是没有问题的。</p>
+]]></content>
+  </entry>
 </search>
