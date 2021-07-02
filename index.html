@@ -1,950 +1,416 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.mebi.me","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="爱折腾、搞分享">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>米白博客</title><meta name="keywords" content="米白博客,linux学习"><meta name="author" content="home again"><meta name="copyright" content="home again"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="爱折腾、搞分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="米白博客">
 <meta property="og:url" content="https://blog.mebi.me/index.html">
 <meta property="og:site_name" content="米白博客">
 <meta property="og:description" content="爱折腾、搞分享">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
 <meta property="article:author" content="home again">
 <meta property="article:tag" content="米白博客,linux学习">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://blog.mebi.me/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>米白博客</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.mebi.me/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '米白博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-07-02 17:56:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">米白博客</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/how-to-use-tiktok-with-pull-card.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/how-to-use-tiktok-with-pull-card.html" class="post-title-link" itemprop="url">拔卡方式国内观看 TikTok</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 12:21:21" itemprop="dateModified" datetime="2021-06-28T12:21:21+08:00">2021-06-28</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/how-to-use-tiktok-with-pull-card.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/how-to-use-tiktok-with-pull-card.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>国内观看 TikTok 比较麻烦，因为 TikTok 会自动检测当前的上网环境，检测包括但不限于 ip、设备语言、DNS、手机卡运营商 等。安卓可以借助框架修改这些，iOS 端就比较麻烦了，新版 iOS 系统越狱难度很大，不可能像安卓这般简单。下面介绍的是拔卡观看方法，如果你觉得插拔手机卡可以接受，或者你有一台备用机，那就继续往下看。</p>
-<p>准备两个APP：Shadowrocket和 TikTok。国内 App Store 无法下载这两个软件，可以尝试购买<a target="_blank" rel="noopener" href="https://high.scay.net/">米白云</a>，提供节点和美区账号（需购买正式套餐），售价2.99美元的Shadowrocket（小火箭）也可以免费下载。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/how-to-use-tiktok-with-pull-card.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/clash-speed-other-devices.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/clash-speed-other-devices.html" class="post-title-link" itemprop="url">使用 Clash 加速同一局域网下其他设备</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-29 10:38:42" itemprop="dateModified" datetime="2021-06-29T10:38:42+08:00">2021-06-29</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/clash-speed-other-devices.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/clash-speed-other-devices.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>697</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
-<p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p>
-<p><strong>场景</strong></p>
-<p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/clash-speed-other-devices.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/how-to-hexo-next.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/how-to-hexo-next.html" class="post-title-link" itemprop="url">借助 GitHub 安装 hexo 博客并配置 NexT 主题</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 09:09:34" itemprop="dateModified" datetime="2021-06-28T09:09:34+08:00">2021-06-28</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/how-to-hexo-next.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/how-to-hexo-next.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。</p>
-<p>Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/how-to-hexo-next.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/iptables-use-study.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/iptables-use-study.html" class="post-title-link" itemprop="url">iptables 使用学习</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-27 09:52:06" itemprop="dateModified" datetime="2021-06-27T09:52:06+08:00">2021-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux-study/" itemprop="url" rel="index"><span itemprop="name">linux study</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/iptables-use-study.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/iptables-use-study.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Linux 防火墙分为 应用层防火墙 和 包过滤防火墙，iptables 属于包过滤防火墙，底层使用的是 Linux 内核模块 netfilter，性能佳稳定性好。</p>
-<h2 id="原理简析"><a href="#原理简析" class="headerlink" title="原理简析"></a>原理简析</h2><p>iptables 基本结构：</p>
-<blockquote>
-<p>iptables -&gt; 规则表 -&gt; 规则链 -&gt; 具体规则</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/iptables-use-study.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/crontab-vs-anacron.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/crontab-vs-anacron.html" class="post-title-link" itemprop="url">计划任务：crontab 对比 anacron</a>
-        </h2>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-27 23:05:50" itemprop="dateModified" datetime="2021-06-27T23:05:50+08:00">2021-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux-study/" itemprop="url" rel="index"><span itemprop="name">linux study</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/crontab-vs-anacron.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/crontab-vs-anacron.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>cron 用于周期性执行定时任务，它的 daemon 叫做 crond，常驻内存。crontab 是用于编辑管理 cron 的指令。同样的，anacron 是指令，anacrontab 是其配置文件。</p>
-<p>作为系统服务，cron 可以由 systemctl 管理，能够以分钟精度执行任务。而 anacron 仅是一个指令，需要 cron 调用才能运行。cron 认为主机会 24 小时不间断运行。 anacron 考虑到宕机等实际问题，认为主机不可能不出意外一直连续运行下去，因此会定时执行因意外导致无法被 cron 执行的任务。anacron 可以算是 cron 的补充和完善。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/crontab-vs-anacron.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
   
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">米白博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">米白博客</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="/post/how-to-register-foreign-appleid/1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无需信用卡注册美区苹果账号"></a></div><div class="recent-post-info"><a class="article-title" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号">无需信用卡注册美区苹果账号</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-07-02T08:48:00.000Z" title="发表于 2021-07-02 16:48:00">2021-07-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/how-to-register-foreign-appleid.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">##介绍苹果账号有地区之分，苹果公司会根据你的苹果账号 地区属性  提供服务，例如：苹果电视 服务国内看不了，当你切换到美区（非大陆）账号就能看了。在 App Store 里，很多软件因为大陆的法律限制而被下架，拥有一个美区账号就能找到这些软件。
+说明
+下面以美区账号为例，其他地区同样的方法
+一个美国身份生成网站：haoweichi
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+优点
+自己注册外区账号有如下优点：
+注册全程无须代理、信用卡；
+不受限下载任何软件；
+账号属于自己，更安全；
+可以注册任何地区苹果账号。
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
+注册打开苹果官网 Apple ID 注册页面。下图所示位置，右上角 创建您的 Apple ID。appleid.apple.com
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="home again"
-      src="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-  <p class="site-author-name" itemprop="name">home again</p>
-  <div class="site-description" itemprop="description">爱折腾、搞分享</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/freessir" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;freessir" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:admin@mebi.me" title="E-Mail → mailto:admin@mebi.me" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
+填写信息
+名字 和 姓氏：可以填写你自己的姓名。
+国家或地区：选择 美国。如果你要其他地区账号，选择对应地区即可。没有特别要求推荐 美区。
+出生日期：填写自己的出生日期。因为以后要找回密码，出生日期是需要提供的。
+邮箱：此邮箱将是你的 美区 Apple ID 账号。如有条件，请找一个国外的邮箱。
+密码：按照要求的格式填写密码。
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- hexo 侧边栏 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8483648732447678"
-     data-ad-slot="4230812210"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
+
+手机号：可以是中国 +86 手机号。现在苹果对 Ap ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/post/download-ios-software.html" title="米白云 iOS 软件下载">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="/post/download-ios-software/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="米白云 iOS 软件下载"></a></div><div class="recent-post-info"><a class="article-title" href="/post/download-ios-software.html" title="米白云 iOS 软件下载">米白云 iOS 软件下载</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-07-02T08:10:31.000Z" title="发表于 2021-07-02 16:10:31">2021-07-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/download-ios-software.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">介绍米白云用户下载安装 iOS 软件有两种方法： 首次使用  和 再次使用 。
+首次安装
+适合从未在设备上的 App Store 登陆 米白云 账号并下载过 软件 的新用户。请参考本篇文章 登陆账号 使用 米白云 美区账号 登陆 App Store，并结合 软件教程 下载使用对应软件。
+再次安装
+适合 首次安装 过软件的老用户。可以满足 软件更新、软件重装 等需求。优点：无需再次使用米白云的账号密码，更加方便快捷。
+首次安装请严格按照下述方法登陆 米白云 美区账号。不要在 iPhone/iPad 设置里、网页网站、itunes软件端登陆米白云提供的账号，否则米白云不承担由此造成的一切损失。
+
+
+使用米白云提供的美区账号登陆 App Store，下面提供了 文字版  和 图片版 ，请根据自身需求切换参考。
+文字版图片版
+打开 App Store
+点击右上角的头像
+滑动屏幕到底部
+退出登录
+登陆新注册美区账号
+iOS12 及以前系统iOS13 及以后系统
+ 
+
+再次安装在线安装Shadowrocket：在线安装QuantumultX：在线安装QuantumultX：在线安装Potatso  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="/post/how-to-use-Tiktok-with-pull-card/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拔卡方式国内观看 TikTok"></a></div><div class="recent-post-info"><a class="article-title" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok">拔卡方式国内观看 TikTok</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-28T03:47:58.000Z" title="发表于 2021-06-28 11:47:58">2021-06-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/how-to-use-tiktok-with-pull-card.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">国内观看 TikTok 比较麻烦，因为 TikTok 会自动检测当前的上网环境，检测包括但不限于 ip、设备语言、DNS、手机卡运营商 等。安卓可以借助框架修改这些，iOS 端就比较麻烦了，新版 iOS 系统越狱难度很大，不可能像安卓这般简单。下面介绍的是拔卡观看方法，如果你觉得插拔手机卡可以接受，或者你有一台备用机，那就继续往下看。
+准备两个APP：Shadowrocket和 TikTok。国内 App Store 无法下载这两个软件，可以尝试购买米白云，提供节点和美区账号（需购买正式套餐），售价2.99美元的Shadowrocket（小火箭）也可以免费下载。
+
+
+选择节点米白云 提供多个节点，我们以美国节点为例。选择一个美国节点后打开右上角按钮。
+
+
+打开地址：whoer.net，这个网站会告诉我们接下来需要如何设置。
+
+
+这里我们看到网站给出的伪装70%，扣分项目有开放端口、DNS不符、系统时间不符和语言不同四项，现在我们开始逐项解决。
+修改时间往下滑，找到 时间 区块，这里给出的时区是America/Chicago。
+
+
+所以我们打开手机里的“设置”-》“通用”-》“日期和时间 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Clash 加速同一局域网下其他设备"></a></div><div class="recent-post-info"><a class="article-title" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备">使用 Clash 加速同一局域网下其他设备</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-28T03:22:59.000Z" title="发表于 2021-06-28 11:22:59">2021-06-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/clash-speed-other-devices.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。
+这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。
+场景
+有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。
+
+
+打开局域网连接确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。
+Clash for Windows
+
+
+ClashX
+点击 控制台 —&gt; 设置，打开 允许来自局域网的连接。
+
+
+
+获取局域网IP这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。
+
+
+
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
+Windows
+使用组合键 Win + R，Win 键先按住不放，再按 R 键。在搜索框输入 cmd 回车，在接下来的窗口里输入 ipconfig 找到 无线局域网适配器 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="/post/how-to-hexo-next/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="借助 GitHub 安装 hexo 博客并配置 NexT 主题"></a></div><div class="recent-post-info"><a class="article-title" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">借助 GitHub 安装 hexo 博客并配置 NexT 主题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-27T06:12:43.000Z" title="发表于 2021-06-27 14:12:43">2021-06-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/how-to-hexo-next.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Hexo 是一款开源的博客框架，使用 Markdown 编写文章并生成静态网页， 博客整体更加简洁高效。对性能有较高要求的用户可以考虑使用这个。
+Hexo 出色的性能，是需要一定的代价的。相比与 WordPress 这类博客系统，Hexo 没有后台管理，无法提供更多的个性化动态响应，此外对你提出了更高的要求：有一定的 Git 基础、懂 Markdown 语法、一定基础的代码阅读能力。。。这些你都会在后面的介绍里认识到。
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
 
-        
+创建 GitHub 仓库创建一个 GitHub 仓库可以算是 Git 基础中的基础了吧，这个不再这篇文章的讨论范围（太简单了。。）。当然你也可以将代码部署在自己的 VPS 上，Hexo 自带 web 服务，只需要通过 nginx 等程序反代到 80 端口即可。
+不过 GitHub 的羊毛不要白不要，稳定不用自己操心，岂不是妙哉。
+安装 Hexohexo 是一款基于 Node.js 开发的博客框架，所以 首先要安装 Node.js。
+安装 Node.js下载地址：官网下载
+Node.js 提供可视化的安装方式，全程跟着步骤即可。需要注意的是 Windows 系统在安装 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/post/iptables-use-study.html" title="iptables 使用学习">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="iptables 使用学习"></a></div><div class="recent-post-info"><a class="article-title" href="/post/iptables-use-study.html" title="iptables 使用学习">iptables 使用学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-26T09:08:09.000Z" title="发表于 2021-06-26 17:08:09">2021-06-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux-study/">linux study</a></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/iptables-use-study.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Linux 防火墙分为 应用层防火墙 和 包过滤防火墙，iptables 属于包过滤防火墙，底层使用的是 Linux 内核模块 netfilter，性能佳稳定性好。
+原理简析iptables 基本结构：
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">true</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">18k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
-</div><!--添加网站运行时间 -->
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("01/01/2021 13:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+iptables -&gt; 规则表 -&gt; 规则链 -&gt; 具体规则
+
+
+
+可以看出 iptables 通过参数 t 指定要操作的规则表，使用命令（如添加、删除、替换、清空、查看等）控制规则链，再指定规则的条件，最后使用参数 j 控制数据包的行为。
+iptables 用的最多的是 filter 表和 nat 表。filter 表用于数据过滤，nat 表用于网络地址转换。
+filter 表有 INPUT、OUTPUT 和 FORWARD 等规则链。INPUT 链控制数据包的流入，PUTPUT 链控制数据包的流出，FORWARD 链控制数据的转发。
+nat 表有 PREROUTING、POSTROUTING 和 OUTPUT 规则链，PREROUTING 链用来修改数据包的目标端口和地址，POSTROUTING 链用来修改数据的源端口和地址，OUTPUT 链作用类似 PRERO ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/post/crontab-vs-anacron.html" title="计划任务：crontab 对比 anacron">     <img class="post_bg" src= "/img/loading.gif" data-lazy-src="/post/crontab-vs-anacron/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计划任务：crontab 对比 anacron"></a></div><div class="recent-post-info"><a class="article-title" href="/post/crontab-vs-anacron.html" title="计划任务：crontab 对比 anacron">计划任务：crontab 对比 anacron</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-06-26T08:28:54.000Z" title="发表于 2021-06-26 16:28:54">2021-06-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux-study/">linux study</a></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/post/crontab-vs-anacron.html#post-comment"></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">cron 用于周期性执行定时任务，它的 daemon 叫做 crond，常驻内存。crontab 是用于编辑管理 cron 的指令。同样的，anacron 是指令，anacrontab 是其配置文件。
+作为系统服务，cron 可以由 systemctl 管理，能够以分钟精度执行任务。而 anacron 仅是一个指令，需要 cron 调用才能运行。cron 认为主机会 24 小时不间断运行。 anacron 考虑到宕机等实际问题，认为主机不可能不出意外一直连续运行下去，因此会定时执行因意外导致无法被 cron 执行的任务。anacron 可以算是 cron 的补充和完善。
+
+
+查看 cron 帮助文档，知道 cron 会检查的文件和目录有：
+
+/etc/crontab
+/etc/cron.d/
+/var/spool/cron/
+
+/var/spool/cron/一般我们使用命令：『crontab -e』来设定定时任务，实际上此命令会在 /var/spool/cron/ 目录下创建一个以当前用户为文件名的文件，内容即是 crontab -e 的内容。例如使用 root 用户设置如下：
+10 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">home again</div><div class="author-info__description">爱折腾、搞分享</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-register-foreign-appleid/1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无需信用卡注册美区苹果账号"/></a><div class="content"><a class="title" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号">无需信用卡注册美区苹果账号</a><time datetime="2021-07-02T08:48:00.000Z" title="发表于 2021-07-02 16:48:00">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/download-ios-software.html" title="米白云 iOS 软件下载"><img src= "/img/loading.gif" data-lazy-src="/post/download-ios-software/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="米白云 iOS 软件下载"/></a><div class="content"><a class="title" href="/post/download-ios-software.html" title="米白云 iOS 软件下载">米白云 iOS 软件下载</a><time datetime="2021-07-02T08:10:31.000Z" title="发表于 2021-07-02 16:10:31">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-use-Tiktok-with-pull-card/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拔卡方式国内观看 TikTok"/></a><div class="content"><a class="title" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok">拔卡方式国内观看 TikTok</a><time datetime="2021-06-28T03:47:58.000Z" title="发表于 2021-06-28 11:47:58">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Clash 加速同一局域网下其他设备"/></a><div class="content"><a class="title" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备">使用 Clash 加速同一局域网下其他设备</a><time datetime="2021-06-28T03:22:59.000Z" title="发表于 2021-06-28 11:22:59">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-hexo-next/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="借助 GitHub 安装 hexo 博客并配置 NexT 主题"/></a><div class="content"><a class="title" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">借助 GitHub 安装 hexo 博客并配置 NexT 主题</a><time datetime="2021-06-27T06:12:43.000Z" title="发表于 2021-06-27 14:12:43">2021-06-27</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux-study/"><span class="card-category-list-name">linux study</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/crontab/" style="font-size: 1.1em; color: #999">crontab</a> <a href="/tags/iptables/" style="font-size: 1.1em; color: #999">iptables</a> <a href="/tags/next%E4%B8%BB%E9%A2%98-hexo%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">next主题, hexo博客</a> <a href="/tags/%E7%B1%B3%E7%99%BD%E4%BA%91/" style="font-size: 1.1em; color: #999">米白云</a> <a href="/tags/%E7%BE%8E%E5%8C%BA%E8%8B%B9%E6%9E%9C%E8%B4%A6%E5%8F%B7/" style="font-size: 1.1em; color: #999">美区苹果账号</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-08-01T05:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">11.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-07-02T09:56:04.590Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By home again</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.0-alpha.5/dist/twikoo.all.min.js"></script><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'https://twikoos-nine.vercel.app/',
+        region: 'us-east-1',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.innerText = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
     }
-setInterval("createtime()",250);
-</script>
-</div>
-<!-- 添加网站运行时间 -->
 
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        runTwikoo
+      }
+  }
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
 
+})()</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        var from = '出自 ' + data.from
+        var sub = "今日事&#44;今日毕,Never put off till tomorrow what you can do today".length == 0 ? new Array() : "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(',')
+        var both = sub.unshift(data.hitokoto, from)
+        var typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.hitokoto
+      }
+    })
+}
 
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
 
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
 
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
 
+document.addEventListener('pjax:send', function () {
 
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
 
-
-      </div>
-    </footer>
-  </div>
-
+  typeof preloader === 'object' && preloader.initLoading()
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-<script src="/js/utils.js"></script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="/js/motion.js"></script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
+})
 
-<script src="/js/schemes/pisces.js"></script>
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script src="/js/next-boot.js"></script>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
 
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-  
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
 
+  typeof preloader === 'object' && preloader.endLoading()
+})
 
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.mebi.me/',]
-      });
-      });
-  </script>
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'tspWsDzfzhOkjEwEUSTbJw6V-MdYXbMMI',
-      appKey     : 'bPowmLvDaPWL7c5HA7RgXDEj',
-      placeholder: "Just go go",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

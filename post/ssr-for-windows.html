@@ -1,281 +1,139 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.mebi.me","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="简介ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。 米白云 提供 SS、SSR 和 vmess 三种类型节点，使用 SSR 软件只能获取 SS 和 SSR 类型节点，如需所有类型节点，请使用： Clash for Windows。 适用于 Windows 系统的软件及其教程：">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>米白云 SSR 软件使用教程 | 米白博客</title><meta name="robots" content="noindex"><meta name="keywords" content="米白云"><meta name="author" content="home again"><meta name="copyright" content="home again"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简介ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。 米白云 提供 SS、SSR 和 vmess 三种类型节点，使用 SSR 软件只能获取 SS 和 SSR 类型节点，如需所有类型节点，请使用： Clash for Windows。 Windows 系统其他软件：  V2rayN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="米白云 SSR 软件使用教程">
 <meta property="og:url" content="https://blog.mebi.me/post/ssr-for-windows.html">
 <meta property="og:site_name" content="米白博客">
-<meta property="og:description" content="简介ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。 米白云 提供 SS、SSR 和 vmess 三种类型节点，使用 SSR 软件只能获取 SS 和 SSR 类型节点，如需所有类型节点，请使用： Clash for Windows。 适用于 Windows 系统的软件及其教程：">
+<meta property="og:description" content="简介ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。 米白云 提供 SS、SSR 和 vmess 三种类型节点，使用 SSR 软件只能获取 SS 和 SSR 类型节点，如需所有类型节点，请使用： Clash for Windows。 Windows 系统其他软件：  V2rayN">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/1.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/2.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/3.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/4.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/5.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/6.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/7.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/8.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/ssr-for-windows/9.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-06-28T08:04:42.000Z">
-<meta property="article:modified_time" content="2021-06-29T04:34:56.787Z">
+<meta property="article:modified_time" content="2021-07-02T07:15:16.895Z">
 <meta property="article:author" content="home again">
 <meta property="article:tag" content="米白云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.mebi.me/post/ssr-for-windows/1.jpeg">
-
-<link rel="canonical" href="https://blog.mebi.me/post/ssr-for-windows.html">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>米白云 SSR 软件使用教程 | 米白博客</title><meta name="robots" content="noindex">
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.mebi.me/post/ssr-for-windows"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '米白云 SSR 软件使用教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-02 15:15:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-</head>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">米白博客</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- hexo 横向 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8483648732447678"
-     data-ad-slot="7013684380"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/ssr-for-windows.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          米白云 SSR 软件使用教程
-        </h1>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-29 12:34:56" itemprop="dateModified" datetime="2021-06-29T12:34:56+08:00">2021-06-29</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/ssr-for-windows.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/ssr-for-windows.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。</p>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">米白博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">米白云 SSR 软件使用教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-28T08:04:42.000Z" title="发表于 2021-06-28 16:04:42">2021-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-02T07:15:16.895Z" title="更新于 2021-07-02 15:15:16">2021-07-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">786</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="米白云 SSR 软件使用教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ShadowsocksR 简写 SSR，常被叫做 “酸酸乳“、“小飞机“、“纸飞机“ 等。目前此软件已经停止更新，仅有志愿者提供维护。下面提供的就是志愿者维护的版本。</p>
 <p>米白云 提供 SS、SSR 和 vmess 三种类型节点，使用 SSR 软件只能获取 SS 和 SSR 类型节点，如需所有类型节点，请使用： <a href="http://blog.mebi.me/post/clash-for-windows.html">Clash for Windows</a>。</p>
-<p>适用于 Windows 系统的软件及其教程：</p>
+<p>Windows 系统其他软件：</p>
 <ul>
 <li><a href="http://blog.mebi.me/post/v2rayn-for-windows.html">V2rayN</a></li>
 <li><a href="http://blog.mebi.me/post/sstap-for-windows.html">SSTap</a></li>
@@ -285,350 +143,181 @@
 </ul>
 <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>下载列表选其一下载：</p>
 <ul>
-<li>蓝奏网盘 ✅</li>
-<li>Github官网</li>
-<li>阿里云镜像站 ✅</li>
+<li><a target="_blank" rel="noopener" href="https://mebi.lanzoui.com/ihgARo9pjob">蓝奏网盘</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/HMBSbige/ShadowsocksR-Windows/releases">GitHub 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com.cnpmjs.org/HMBSbige/ShadowsocksR-Windows/releases">阿里云镜像站</a></li>
 <li>微软云加速（download.fastgit.org）</li>
 </ul>
-<p>为了便于管理，右键下载的压缩包，选择 解压到当前文件夹(X)，解压会在同目录下出现 ShadowsocksR 文件夹。</p>
-<img data-src="/post/ssr-for-windows/1.jpeg" class="">
-
+<p>为了便于管理，右键下载的压缩包，选择 **解压到当前文件夹(X)**，解压会在同目录下出现 ShadowsocksR 文件夹。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/1.jpeg"></p>
 <p>进入文件夹后双击小飞机运行。这是一款免安装的绿色开源软件，使用前最好关闭国内的电脑管家如：360、腾讯电脑管家、百度电脑管家。</p>
-<img data-src="/post/ssr-for-windows/2.jpeg" class="">
-
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/2.jpeg"></p>
 <p>第一次使用点 否，软件自动打开订阅设置窗口。</p>
-<img data-src="/post/ssr-for-windows/3.jpeg" class="">
-
-<h2 id="导入订阅"><a href="#导入订阅" class="headerlink" title="导入订阅"></a>导入订阅</h2><p>打开 <a target="_blank" rel="noopener" href="https://high.scay.net/user">米白云首页</a>，找到 <strong>⚡️便捷导入</strong>，位置在电脑端的右下角、手机端的最下方。点击 <strong>SSR订阅链接</strong> =&gt; <strong>复制 SSR 订阅链接</strong>。</p>
-<img data-src="/post/ssr-for-windows/4.jpeg" class="">
-
-<p>打开订阅设置窗口，或者在桌面右下角小飞机图标上右键，依次点击 <strong>订阅</strong> =&gt; <strong>设置</strong>。</p>
-<img data-src="/post/ssr-for-windows/5.jpeg" class="">
-
-<p>点击左下角 <strong>添加</strong>，然后删除右上角 <strong>订阅地址</strong>，右键粘贴就能填入刚才复制的 米白云SSR订阅链接，再点击 <strong>更新当前订阅</strong>，当订阅备注变为 米白云 表示更新成功，最后关闭窗口。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/3.jpeg"></p>
+<h2 id="导入订阅"><a href="#导入订阅" class="headerlink" title="导入订阅"></a>导入订阅</h2><p>打开 <a target="_blank" rel="noopener" href="https://high.scay.net/user">米白云首页</a>，找到 <mark class="hl-label default">⚡️便捷导入</mark> ，位置在电脑端的右下角、手机端的最下方。点击 <strong>SSR订阅链接</strong> -&gt; <strong>复制 SSR 订阅链接</strong>。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/4.jpeg"></p>
+<p>打开订阅设置窗口，或者在桌面右下角小飞机图标上右键，依次点击 <strong>订阅</strong> -&gt; <strong>设置</strong>。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/5.jpeg"></p>
+<p>点击左下角 <strong>添加</strong>，然后删除右上角 <strong>订阅地址</strong>，右键粘贴就能填入刚才复制的 米白云SSR订阅链接，再点击 <strong>更新当前订阅</strong>，当订阅备注变为 <mark class="hl-label default">米白云</mark>  表示更新成功，最后关闭窗口。</p>
 <p>如果无法更新成功，请把更新订阅使用的代理类型由 <strong>自动</strong> 改为 <strong>直连</strong>，改动位置下图所示。</p>
-<img data-src="/post/ssr-for-windows/6.jpeg" class="">
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/6.jpeg"></p>
+<h2 id="开启SSR"><a href="#开启SSR" class="headerlink" title="开启SSR"></a>开启SSR</h2><p>如果对节点ip无要求，开启负载均衡可以帮助你获得更好的上网体验。在桌面右下角小飞机图标右键，依次 <strong>服务器</strong> -&gt; <strong>负载均衡</strong>，点击即可开启负载均衡。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/7.jpeg"></p>
+<p>再次桌面由下角小飞机图标右键，依次 <strong>系统代理</strong> -&gt; <strong>PAC</strong>，现在你可以尝试上外网了。如果你不想使用，可以将系统代理改为不修改。</p>
+<div class="note icon modern"><i class="note-icon fas fa-lightbulb"></i><p>PAC模式允许你只在海外网站走代理，国内如微信、QQ、百度等不走代理。</p>
+</div>
 
-<h2 id="开启SSR"><a href="#开启SSR" class="headerlink" title="开启SSR"></a>开启SSR</h2><p>如果对节点ip无要求，开启负载均衡可以帮助你获得更好的上网体验。在桌面右下角小飞机图标右键，依次 <strong>服务器</strong> =&gt; <strong>负载均衡</strong>，点击即可开启负载均衡。</p>
-<img data-src="/post/ssr-for-windows/7.jpeg" class="">
-
-<p>再次桌面由下角小飞机图标右键，依次 <strong>系统代理</strong> =&gt; <strong>PAC</strong>，现在你可以尝试上外网了。如果你不想使用，可以将系统代理改为不修改。</p>
-<blockquote>
-<p>PAC模式允许你只在海外网站走代理，国内如微信、QQ、百度等不走代理。</p>
-</blockquote>
-<img data-src="/post/ssr-for-windows/8.jpeg" class="">
-
-<p>浏览器打开谷歌：google.com，没有问题的话就能正常打开，配置成功。</p>
-<img data-src="/post/ssr-for-windows/9.jpeg" class="">
-
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/8.jpeg"></p>
+<p>浏览器打开谷歌：<a target="_blank" rel="noopener" href="https://google.com/">google.com</a>，没有问题的话就能正常打开，配置成功。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="ssr-for-windows/9.jpeg"></p>
 <h2 id="一般问题"><a href="#一般问题" class="headerlink" title="一般问题"></a>一般问题</h2><h3 id="浏览器无法上网"><a href="#浏览器无法上网" class="headerlink" title="浏览器无法上网"></a>浏览器无法上网</h3><p>确定按照教程所有都没问题，浏览器仍然无法上网，请为你的浏览器：<a href="/intall-switchyomega.html">安装 SwitchyOmega</a>。</p>
 <h3 id="打开米白云才能使用"><a href="#打开米白云才能使用" class="headerlink" title="打开米白云才能使用"></a>打开米白云才能使用</h3><p>首次配置后无需再次配置，也不需要再打开米白云网页，下次打开 SSR 软件即可使用。</p>
-<h3 id="更换套餐后无法使用"><a href="#更换套餐后无法使用" class="headerlink" title="更换套餐后无法使用"></a>更换套餐后无法使用</h3><p>如果你更换了套餐，更新订阅即可使用。方法：在桌面有下角图标右键，点击 <strong>订阅</strong> =&gt; <strong>更新</strong>。</p>
+<h3 id="更换套餐后无法使用"><a href="#更换套餐后无法使用" class="headerlink" title="更换套餐后无法使用"></a>更换套餐后无法使用</h3><p>如果你更换了套餐，更新订阅即可使用。方法：在桌面有下角图标右键，点击 <strong>订阅</strong> -&gt; <strong>更新</strong>。</p>
 <h3 id="不使用如何关闭"><a href="#不使用如何关闭" class="headerlink" title="不使用如何关闭"></a>不使用如何关闭</h3><p>在桌面有下角图标右键，选择 系统代理，选择 直连 即可。或者直接右键退出软件。</p>
-<!-- flag of hidden posts -->
-    </div>
+<!-- flag of hidden posts --></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">home again</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.mebi.me/post/ssr-for-windows.html">https://blog.mebi.me/post/ssr-for-windows.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.mebi.me" target="_blank">米白博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B1%B3%E7%99%BD%E4%BA%91/">米白云</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a target="_blank" rel="noopener" href="//post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-28</div><div class="title">使用 Clash 加速同一局域网下其他设备</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">home again</div><div class="author-info__description">爱折腾、搞分享</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E8%AE%A2%E9%98%85"><span class="toc-number">3.</span> <span class="toc-text">导入订阅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AFSSR"><span class="toc-number">4.</span> <span class="toc-text">开启SSR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">一般问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8A%E7%BD%91"><span class="toc-number">5.1.</span> <span class="toc-text">浏览器无法上网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E7%B1%B3%E7%99%BD%E4%BA%91%E6%89%8D%E8%83%BD%E4%BD%BF%E7%94%A8"><span class="toc-number">5.2.</span> <span class="toc-text">打开米白云才能使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E5%A5%97%E9%A4%90%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="toc-number">5.3.</span> <span class="toc-text">更换套餐后无法使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%AD"><span class="toc-number">5.4.</span> <span class="toc-text">不使用如何关闭</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-register-foreign-appleid/1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无需信用卡注册美区苹果账号"/></a><div class="content"><a class="title" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号">无需信用卡注册美区苹果账号</a><time datetime="2021-07-02T08:48:00.000Z" title="发表于 2021-07-02 16:48:00">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/download-ios-software.html" title="米白云 iOS 软件下载"><img src= "/img/loading.gif" data-lazy-src="/post/download-ios-software/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="米白云 iOS 软件下载"/></a><div class="content"><a class="title" href="/post/download-ios-software.html" title="米白云 iOS 软件下载">米白云 iOS 软件下载</a><time datetime="2021-07-02T08:10:31.000Z" title="发表于 2021-07-02 16:10:31">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-use-Tiktok-with-pull-card/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拔卡方式国内观看 TikTok"/></a><div class="content"><a class="title" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok">拔卡方式国内观看 TikTok</a><time datetime="2021-06-28T03:47:58.000Z" title="发表于 2021-06-28 11:47:58">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Clash 加速同一局域网下其他设备"/></a><div class="content"><a class="title" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备">使用 Clash 加速同一局域网下其他设备</a><time datetime="2021-06-28T03:22:59.000Z" title="发表于 2021-06-28 11:22:59">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-hexo-next/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="借助 GitHub 安装 hexo 博客并配置 NexT 主题"/></a><div class="content"><a class="title" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">借助 GitHub 安装 hexo 博客并配置 NexT 主题</a><time datetime="2021-06-27T06:12:43.000Z" title="发表于 2021-06-27 14:12:43">2021-06-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By home again</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
 
-    
-    
-    
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%B1%B3%E7%99%BD%E4%BA%91/" rel="tag"># 米白云</a>
-          </div>
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.0-alpha.5/dist/twikoo.all.min.js"></script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos-nine.vercel.app/',
+      region: 'us-east-1'
+    }, null))
+  }
 
-        
-
-
-        
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos-nine.vercel.app/',
+      region: 'us-east-1',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
     });
   }
-</script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%AE%A2%E9%98%85"><span class="nav-number">3.</span> <span class="nav-text">导入订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AFSSR"><span class="nav-number">4.</span> <span class="nav-text">开启SSR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">一般问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%97%A0%E6%B3%95%E4%B8%8A%E7%BD%91"><span class="nav-number">5.1.</span> <span class="nav-text">浏览器无法上网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%B1%B3%E7%99%BD%E4%BA%91%E6%89%8D%E8%83%BD%E4%BD%BF%E7%94%A8"><span class="nav-number">5.2.</span> <span class="nav-text">打开米白云才能使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E5%A5%97%E9%A4%90%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="nav-number">5.3.</span> <span class="nav-text">更换套餐后无法使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%AD"><span class="nav-number">5.4.</span> <span class="nav-text">不使用如何关闭</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="home again"
-      src="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-  <p class="site-author-name" itemprop="name">home again</p>
-  <div class="site-description" itemprop="description">爱折腾、搞分享</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/freessir" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;freessir" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:admin@mebi.me" title="E-Mail → mailto:admin@mebi.me" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- hexo 侧边栏 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8483648732447678"
-     data-ad-slot="4230812210"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">true</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">18k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
-</div><!--添加网站运行时间 -->
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("01/01/2021 13:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
     }
-setInterval("createtime()",250);
-</script>
-</div>
-<!-- 添加网站运行时间 -->
+  }
 
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
 
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
 
+document.addEventListener('pjax:send', function () {
 
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
 
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
+  typeof preloader === 'object' && preloader.initLoading()
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-<script src="/js/utils.js"></script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="/js/motion.js"></script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
+})
 
-<script src="/js/schemes/pisces.js"></script>
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script src="/js/next-boot.js"></script>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
 
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-  
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
 
+  typeof preloader === 'object' && preloader.endLoading()
+})
 
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.mebi.me/post/ssr-for-windows.html',]
-      });
-      });
-  </script>
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'tspWsDzfzhOkjEwEUSTbJw6V-MdYXbMMI',
-      appKey     : 'bPowmLvDaPWL7c5HA7RgXDEj',
-      placeholder: "Just go go",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

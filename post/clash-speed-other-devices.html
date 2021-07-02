@@ -1,276 +1,137 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Arial:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.mebi.me","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。 场景 有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用 Clash 加速同一局域网下其他设备 | 米白博客</title><meta name="keywords" content="米白云"><meta name="author" content="home again"><meta name="copyright" content="home again"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。 场景 有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Clash 加速同一局域网下其他设备">
 <meta property="og:url" content="https://blog.mebi.me/post/clash-speed-other-devices.html">
 <meta property="og:site_name" content="米白博客">
 <meta property="og:description" content="介绍无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。 这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。 场景 有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/1.png">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/2.jpg">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/3.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/4.png">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/5.jpeg">
-<meta property="og:image" content="https://blog.mebi.me/post/clash-speed-other-devices/6.jpeg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-06-28T03:22:59.000Z">
 <meta property="article:modified_time" content="2021-06-29T02:38:42.503Z">
 <meta property="article:author" content="home again">
 <meta property="article:tag" content="米白云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.mebi.me/post/clash-speed-other-devices/1.png">
-
-<link rel="canonical" href="https://blog.mebi.me/post/clash-speed-other-devices.html">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>使用 Clash 加速同一局域网下其他设备 | 米白博客</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.mebi.me/post/clash-speed-other-devices"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用 Clash 加速同一局域网下其他设备',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-29 10:38:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-</head>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">米白博客</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="reading-progress-bar"></div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- hexo 横向 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8483648732447678"
-     data-ad-slot="7013684380"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.mebi.me/post/clash-speed-other-devices.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-      <meta itemprop="name" content="home again">
-      <meta itemprop="description" content="爱折腾、搞分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="米白博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          使用 Clash 加速同一局域网下其他设备
-        </h1>
-
-        <div class="post-meta">
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-29 10:38:42" itemprop="dateModified" datetime="2021-06-29T10:38:42+08:00">2021-06-29</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/post/clash-speed-other-devices.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/clash-speed-other-devices.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>697</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">米白博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用 Clash 加速同一局域网下其他设备</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-28T03:22:59.000Z" title="发表于 2021-06-28 11:22:59">2021-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-29T02:38:42.503Z" title="更新于 2021-06-29 10:38:42">2021-06-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">477</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用 Clash 加速同一局域网下其他设备"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无论是 安卓、苹果、平板、Windows、MacOS、Linux 还是 路由器，都是各自的软件可用，但是遇到一些特殊情况：苹果iOS下载不了软件、Switch等设备不支持代理软件等，可以借助Clash的局域网代理功能解决这个问题。</p>
 <p>这是一个临时解决方法，如果会使用路由器，强烈建议使用路由器。</p>
 <p><strong>场景</strong></p>
 <p>有一台设备 A 和一台设备 B，设备A装了Clash，现在要通过设备 A 实现设备 B 上网。</p>
@@ -278,12 +139,12 @@
 
 <h2 id="打开局域网连接"><a href="#打开局域网连接" class="headerlink" title="打开局域网连接"></a>打开局域网连接</h2><p>确保设备 A 可以浏览器打开谷歌。然后打开 Clash 的 Allow LAN。</p>
 <p><strong>Clash for Windows</strong></p>
-<img data-src="/post/clash-speed-other-devices/1.png" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/1.png" class="">
 
 <p><strong>ClashX</strong></p>
 <p>点击 <strong>控制台</strong> —&gt; <strong>设置</strong>，打开 <strong>允许来自局域网的连接</strong>。</p>
-<img data-src="/post/clash-speed-other-devices/2.jpg" class="">
-<img data-src="/post/clash-speed-other-devices/3.jpeg" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/2.jpg" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/3.jpeg" class="">
 
 <h2 id="获取局域网IP"><a href="#获取局域网IP" class="headerlink" title="获取局域网IP"></a>获取局域网IP</h2><p>这里获取的是设备 A 的局域网IP，也就是安装了 Clash 的设备。</p>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -299,11 +160,11 @@
 
 <p><strong>Windows</strong></p>
 <p>使用组合键 <code>Win + R</code>，Win 键先按住不放，再按 R 键。在搜索框输入 <code>cmd</code> 回车，在接下来的窗口里输入 <code>ipconfig</code> 找到 <strong>无线局域网适配器</strong> <code>WLAN</code> 项，IPv4 地址 即为设备 A 在局域网里的 ip 地址。</p>
-<img data-src="/post/clash-speed-other-devices/4.png" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/4.png" class="">
 
 <p><strong>MacOS</strong></p>
 <p>桌面右上角  —&gt; 系统偏好设置…，选择网络，可以立即看到当前 Wi—Fi 下的局域网 IP 地址。局域网 IP 地址一般都以 192.168 开头。</p>
-<img data-src="/post/clash-speed-other-devices/5.jpeg" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/5.jpeg" class="">
 
 <h2 id="设置设备B"><a href="#设置设备B" class="headerlink" title="设置设备B"></a>设置设备B</h2><p>确保设备 A 和设备 B 接入相同的 Wi—Fi下 。不同系统操作方法不太一样，一般的操作步骤：</p>
 <ul>
@@ -314,323 +175,153 @@
 <li>点击配置 HTTP 代理</li>
 </ul>
 <p>HTTP 代理改 自动 为 手动，在服务器/主机 栏填写 设备 A 的局域网 IP，端口 栏填写 7890。如果有 认证，请关闭。最后保存。</p>
-<img data-src="/post/clash-speed-other-devices/6.jpeg" class="">
+<img src= "/img/loading.gif" data-lazy-src="/post/clash-speed-other-devices/6.jpeg" class="">
 
 <p>不出意外，你的设备可以打开谷歌了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">home again</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.mebi.me/post/clash-speed-other-devices.html">https://blog.mebi.me/post/clash-speed-other-devices.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.mebi.me" target="_blank">米白博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B1%B3%E7%99%BD%E4%BA%91/">米白云</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/how-to-use-tiktok-with-pull-card.html"><img class="prev-cover" src= "/img/loading.gif" data-lazy-src="/post/how-to-use-Tiktok-with-pull-card/cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">拔卡方式国内观看 TikTok</div></div></a></div><div class="next-post pull-right"><a href="/post/how-to-hexo-next.html"><img class="next-cover" src= "/img/loading.gif" data-lazy-src="/post/how-to-hexo-next/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">借助 GitHub 安装 hexo 博客并配置 NexT 主题</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "/img/loading.gif" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1059902360&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">home again</div><div class="author-info__description">爱折腾、搞分享</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%B1%80%E5%9F%9F%E7%BD%91%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">打开局域网连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B1%80%E5%9F%9F%E7%BD%91IP"><span class="toc-number">3.</span> <span class="toc-text">获取局域网IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AE%BE%E5%A4%87B"><span class="toc-number">4.</span> <span class="toc-text">设置设备B</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-register-foreign-appleid/1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无需信用卡注册美区苹果账号"/></a><div class="content"><a class="title" href="/post/how-to-register-foreign-appleid.html" title="无需信用卡注册美区苹果账号">无需信用卡注册美区苹果账号</a><time datetime="2021-07-02T08:48:00.000Z" title="发表于 2021-07-02 16:48:00">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/download-ios-software.html" title="米白云 iOS 软件下载"><img src= "/img/loading.gif" data-lazy-src="/post/download-ios-software/cover.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="米白云 iOS 软件下载"/></a><div class="content"><a class="title" href="/post/download-ios-software.html" title="米白云 iOS 软件下载">米白云 iOS 软件下载</a><time datetime="2021-07-02T08:10:31.000Z" title="发表于 2021-07-02 16:10:31">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-use-Tiktok-with-pull-card/cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拔卡方式国内观看 TikTok"/></a><div class="content"><a class="title" href="/post/how-to-use-tiktok-with-pull-card.html" title="拔卡方式国内观看 TikTok">拔卡方式国内观看 TikTok</a><time datetime="2021-06-28T03:47:58.000Z" title="发表于 2021-06-28 11:47:58">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备"><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Clash 加速同一局域网下其他设备"/></a><div class="content"><a class="title" href="/post/clash-speed-other-devices.html" title="使用 Clash 加速同一局域网下其他设备">使用 Clash 加速同一局域网下其他设备</a><time datetime="2021-06-28T03:22:59.000Z" title="发表于 2021-06-28 11:22:59">2021-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题"><img src= "/img/loading.gif" data-lazy-src="/post/how-to-hexo-next/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="借助 GitHub 安装 hexo 博客并配置 NexT 主题"/></a><div class="content"><a class="title" href="/post/how-to-hexo-next.html" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">借助 GitHub 安装 hexo 博客并配置 NexT 主题</a><time datetime="2021-06-27T06:12:43.000Z" title="发表于 2021-06-27 14:12:43">2021-06-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By home again</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
 
-    </div>
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
 
-    
-    
-    
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.0-alpha.5/dist/twikoo.all.min.js"></script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos-nine.vercel.app/',
+      region: 'us-east-1'
+    }, null))
+  }
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%B1%B3%E7%99%BD%E4%BA%91/" rel="tag"># 米白云</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/post/how-to-hexo-next.html" rel="prev" title="借助 GitHub 安装 hexo 博客并配置 NexT 主题">
-      <i class="fa fa-chevron-left"></i> 借助 GitHub 安装 hexo 博客并配置 NexT 主题
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/post/how-to-use-tiktok-with-pull-card.html" rel="next" title="拔卡方式国内观看 TikTok">
-      拔卡方式国内观看 TikTok <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-          </div>
-          
-    <div class="comments" id="valine-comments"></div>
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos-nine.vercel.app/',
+      region: 'us-east-1',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
     });
   }
-</script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E5%B1%80%E5%9F%9F%E7%BD%91%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">打开局域网连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%B1%80%E5%9F%9F%E7%BD%91IP"><span class="nav-number">3.</span> <span class="nav-text">获取局域网IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AE%BE%E5%A4%87B"><span class="nav-number">4.</span> <span class="nav-text">设置设备B</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="home again"
-      src="https://q1.qlogo.cn/g?b=qq&nk=1059902360&s=640">
-  <p class="site-author-name" itemprop="name">home again</p>
-  <div class="site-description" itemprop="description">爱折腾、搞分享</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/freessir" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;freessir" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:admin@mebi.me" title="E-Mail → mailto:admin@mebi.me" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- hexo 侧边栏 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8483648732447678"
-     data-ad-slot="4230812210"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">true</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">18k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">16 分钟</span>
-</div><!--添加网站运行时间 -->
-<div>
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-<script>
-    var now = new Date();
-    function createtime() {
-        var grt= new Date("01/01/2021 13:00:00");
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
     }
-setInterval("createtime()",250);
-</script>
-</div>
-<!-- 添加网站运行时间 -->
+  }
 
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
 
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
 
+document.addEventListener('pjax:send', function () {
 
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
 
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
+  typeof preloader === 'object' && preloader.initLoading()
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-<script src="/js/utils.js"></script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="/js/motion.js"></script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
+})
 
-<script src="/js/schemes/pisces.js"></script>
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script src="/js/next-boot.js"></script>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
 
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-  
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
 
+  typeof preloader === 'object' && preloader.endLoading()
+})
 
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://blog.mebi.me/post/clash-speed-other-devices.html',]
-      });
-      });
-  </script>
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'tspWsDzfzhOkjEwEUSTbJw6V-MdYXbMMI',
-      appKey     : 'bPowmLvDaPWL7c5HA7RgXDEj',
-      placeholder: "Just go go",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
