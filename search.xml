@@ -49,6 +49,19 @@
     
     
     <entry>
+      <title>免拔卡观看 TikTok，支持 Android 和 iOS</title>
+      <link href="//post/how-to-use-tiktok-without-pull-card.html"/>
+      <url>//post/how-to-use-tiktok-without-pull-card.html</url>
+      
+        <content type="html"><![CDATA[<p>TikTok，俗称海外版抖音。因为 TikTok 软件本身的限制，国内观看一直是比较麻烦的事情。下面介绍可以在 iOS 和 Android 系统都可以使用方法，免拔卡，正常观看、点赞、评论。</p><h2 id="iOS系统"><a href="#iOS系统" class="headerlink" title="iOS系统"></a>iOS系统</h2><p>这里借助 Shadowrocket（下称：小火箭）软件，这是一款售价 $2.99 的付费软件，米白云用户请先参考网站内教程免费安装并配置好 Shadowrocket，这里不过多赘述。</p><h3 id="下载-TikTok"><a href="#下载-TikTok" class="headerlink" title="下载 TikTok"></a>下载 TikTok</h3><p>提前下载好 TikTok，使用国内苹果账号是下载不到的，米白云用户可以使用提供的美区账号去 App Store 搜索下载即可。下载后不要先打开 TikTok。</p><h3 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h3><p>点击下方链接下载配置文件，电脑端可以通过QQ、微信等工具将配置文件传送到手机。或者直接使用 Safari 浏览器打开本页下载下方配置文件。</p><p>[米白云 TikTok 配置文件](how-to-use-tiktok-without-pull-card/米白云 TikTok 配置.conf)</p><h3 id="导入配置文件"><a href="#导入配置文件" class="headerlink" title="导入配置文件"></a>导入配置文件</h3><p>这里以微信为例，点击打开，使用 Shadowrocket 打开。</p><h3 id="配置-HTTPS-解密"><a href="#配置-HTTPS-解密" class="headerlink" title="配置 HTTPS 解密"></a>配置 HTTPS 解密</h3><p>配置文件会自动导入到小火箭，然后点击导入成功的 “米白云 TikTok 配置.conf”，在弹出的窗口里点击 “编辑配置”。</p><p><img src="how-to-use-tiktok-without-pull-card/1.jpg"></p><p>点击 “HTTPS 解密”，然后打开 “HTTPS 解密” 开关。</p><p><img src="how-to-use-tiktok-pull-card/2.jpg"></p><p>点击 “安装证书”，在弹出的提示框右下角点 “允许”，之后会跳出提示<strong>已下载描述文件</strong>。</p><p><img src="how-to-use-tiktok-without-pull-card/3.jpg"></p><p>接下来不要对小火箭进行操作，直接退到桌面，打开手机的<strong>设置</strong>。设置里开头会多处一个选项：“已下载描述文件”，点击它来安装描述文件，点击右上角的“安装”，然后手机会让你输入解锁密码才能继续后面的操作。</p><p><img src="how-to-use-tiktok-without-pull-card/4.jpg"></p><p>再次点击右上角的 “安装”，然后下方 “安装”，现在我们就完成了描述文件的安装，点击右上角的 “完成”。</p><p><img src="how-to-use-tiktok-without-pull-card/5.jpg"></p><h3 id="信任证书"><a href="#信任证书" class="headerlink" title="信任证书"></a>信任证书</h3><p>下面还是在 “设置”里，依次点击 “通用” -&gt; “关于本机” -&gt; “证书信任设置（在最底部）”，在这里我们会看到以 “Shadowrocket” 开头的证书，打开它的开关，在弹出的 <strong>根证书</strong> 警告里点击左下角的 “继续”。</p><p><img src="how-to-use-tiktok-without-pull-card/5.1.jpg"></p><p>重新回到小火箭，依次点击左上角的 “关闭”、右上角的 <i class="fas fa-check"></i>，、右上角的 <i class="fas fa-check"></i>。到此，我们已经成功配置 HTTPS 解密。</p><p><img src="how-to-use-tiktok-without-pull-card/6.jpg"></p><h3 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h3><p>快要成功了！打开小火箭，点击下方的 “配置”，然后点击 “米白云 TikTok 配置.conf”，这次点击 “使用配置”，之后会看到左侧的小黄点移动到了 “米白云 TikTok 配置.conf” 前面。</p><p><img src="how-to-use-tiktok-without-pull-card/7.jpg"></p><p>点击小火箭下方的 “首页”，选择一个节点并开启小火箭，此处不做过多介绍，米白云有关于如何使用小火箭的详细教程。</p><h3 id="打开-TikTok"><a href="#打开-TikTok" class="headerlink" title="打开 TikTok"></a>打开 TikTok</h3><p>首次打开 TikTok 可能会有点耗时，如果长时间黑屏，请尝试下划刷新、重新打开 或者 更换节点。不出意外的话，TikTok 就顺利打开了。iOS 观看 TikTok 的关键就是配置文件，配置文件如果失效导致 TikTok 无法播放请联系客服。</p><h2 id="Android-系统"><a href="#Android-系统" class="headerlink" title="Android 系统"></a>Android 系统</h2><p>相对于 iOS 系统，Android 系统因为较宽松的软件审核政策，可以下载到各样的第三方软件，所以使用起来比较简单。Android 有很多第三方软件，你可以谷歌搜索：安卓如果观看TikTok 查看更多教程。这里提供一种教程：</p><p>首先下载安装下面两个软件：</p><ul><li><a href="how-to-use-tiktok-pull-card/%E7%8C%B4%E7%8E%8B.apk">猴王.apk</a></li><li><a href="how-to-use-tiktok-without-pull-card/%E6%8A%96%E9%9F%B3%E5%9B%BD%E9%99%85.apk">抖音国际.apk</a></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用 Clash 加速同一局域网下其他设备</title>
       <link href="//post/clash-speed-other-devices.html"/>
       <url>//post/clash-speed-other-devices.html</url>
