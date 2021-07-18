@@ -583,4 +583,69 @@
 <p>如果无法观看，请更换节点，具体方法参考各软件教程。</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>搭建基于 ssh 协议的 Git 服务器</title>
+    <url>//post/build-git-with-ssh.html</url>
+    <content><![CDATA[<p>基于 ssh 协议传输的 Git 服务器搭建非常简单，就是在服务器上找个地方放置仓库，然后创建一个专门用于 Git 服务的用户就可以了。比较麻烦的可能就是用户的权限管理问题，这个就是 Linux 的范畴了。</p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>先找个目录用来放置仓库，选择在 <code>/opt/</code> 目录下创建 <code>git/</code> 目录，用来专门放置仓库。因为打算要创建一个名为 git 的用户用来管理 git 服务，所以这里预先把 <code>git/</code> 目录的所有者和所属组都给 git。<code>git/</code> 现在是个空目录，以后也只有 git 用户活动，就不用 chmod 也就不用 -R 参数递归了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /opt/git</span><br><span class="line">chmod git:git /opt/git</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-git-用户"><a href="#创建-git-用户" class="headerlink" title="创建 git 用户"></a>创建 git 用户</h2><p>git 用户就是专门用来负责 git 服务的。useradd 命令用来创建一个新用户，当不指定用户的用户组时，默认会自动创建一个同名的群组并将用户加入其中。下面的写法就是创建了一个 git 用户 和 git 群组，git 群组是 git 用户的初始群组，可以不写入 /etc/group 里，换句话说 /etc/group 里的群组是用户的附加群组。跑题了。。。</p>
+<p>后面使用了 -s 参数来指明用户的 shell 环境，git-shell 是安装 git 时附带的，可以实现正常使用 git 服务但无法登陆服务器，保证服务器安全。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">useradd git -s /usr/bin/git-shell</span><br></pre></td></tr></table></figure>
+
+<p>这里演示的是虚拟机，特意将 gitserver 和 虚拟机 ip 绑定在 hosts 里，就不会记繁琐的 ip 地址了。当 git 用户登陆服务器时，就会遇到下面的错误提示：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ssh git@gitserver</span></span><br><span class="line">fatal: Interactive git shell is not enabled.</span><br><span class="line">hint: ~/git-shell-commands should exist and have <span class="built_in">read</span> and execute access.</span><br><span class="line">Connection to gitserver closed.</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-ssh-密钥"><a href="#创建-ssh-密钥" class="headerlink" title="创建 ssh 密钥"></a>创建 ssh 密钥</h2><p>如果每次和 ssh 服务器交互都要输入密码，想想都麻烦，用 ssh 密钥免密码就不错。先切换到 git 用户，首次创建的用户默认都是没有密码的，好在我们是从 root 身份切换用户，管它什么密码。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su git</span><br></pre></td></tr></table></figure>
+
+<p>切换到 git 用户后，现在应该在 /root/git 目录下吧，这是用户默认的家目录。在家目录下创建一个 .ssh/ 目录，并在其目录下创建一个 authorized_keys 文件，使用密钥登陆时，ssh 默认会从这个文件里搜寻公钥。</p>
+<p>为了安全起见，把 .ssh 目录的权限设置为 700，把 authorized_keys 文件权限设置为 600。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir .ssh</span><br><span class="line">touch authorized_keys</span><br><span class="line">chmod 700 .ssh/</span><br><span class="line">chmod 600 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>现在回到本地，我们使用 ssh-keygen 命令来创建密钥，这个命令默认会在 ~/.ssh/ 目录下生成两个文件：id_rsa 和 id_rsa.pub，分别是密钥和公钥。将公钥写入到 git 服务器的 .ssh/authorized_keys 里，当本地 ssh 连接到 git 服务器时，自动使用本地 ~/.ssh/id_rsa 密钥去匹配 git 服务器 git 用户家目录下 ~/.ssh/authorized_keys 的记录的公钥。</p>
+<p>ssh-keygen 命令，-t 参数指定密钥的类型，这里为 rsa，-C 参数是写备注，一般习惯写自己的邮箱。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;备注&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>github 也提供 ssh 密钥登陆，只要 ssh-keygen 将生成的密钥保留在本地，将生成的公钥放在 github 上，然后就可以通过 <code>git@github.com:用户名/项目名</code> 就可以访问到。之所以不用指定密钥，是因为ssh默认会使用 ~/.ssh/id_rsa 作为密钥。</p>
+<p>如果 ssh-keygen 创建密钥的过程中，指定密钥保存在一个其他地方，例如：/etc/.ssh/id_rsa，ssh 可以通过参数 -i 来指定密钥路径，也可以通过 -p 参数指定 ssh 端口，但是 git 命令就尴尬了，如何解决呢？</p>
+<p>查看 ssh_config 帮助，可以看到在 .ssh/config 文件可以自定义 ssh 选项。将不常规的端口、密钥路径等选项放在 .ssh/config 里，瞬间可以使用 ssh 连接 git 服务器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br><span class="line"></span><br><span class="line">Host gitserver</span><br><span class="line">  HostName gitserver</span><br><span class="line">  User git</span><br><span class="line">  Port 22</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa_gitserver</span><br><span class="line"></span><br><span class="line">Host github</span><br><span class="line">  HostName github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 22</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Host：别名。用来引用自己下面的配置选项。跟远程仓库创建别名类似。</li>
+<li>HostName：ssh服务器的域名，或者 ip 地址</li>
+<li>Port：指定ssh端口号</li>
+<li>User：用户名</li>
+<li>IdentityFile：密钥路径</li>
+</ul>
+<p>除了生成 id_rsa 密钥外，还会在同级目录下生成 id_rsa.pub 公钥，只需要把公钥写入 git 服务器 git 用户的家目录下 ~/.ssh/authorized_keys 里。这个文件可以存放多个公钥。</p>
+<h2 id="开启-ssh-密钥登陆"><a href="#开启-ssh-密钥登陆" class="headerlink" title="开启 ssh 密钥登陆"></a>开启 ssh 密钥登陆</h2><p>ssh 的配置文件一般在 /etc/ssh/sshd_config 里，或者自行寻找 sshd_config 文件，然后找到 PubkeyAuthentication 选项，将其打开，前面有注释就把注释符号 # 删了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/ssh/sshd_config</span></span><br><span class="line">...</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>保存后重启ssh服务。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 Ubuntu/Debian 里应该叫 ssh</span></span><br><span class="line"> service sshd restart</span><br></pre></td></tr></table></figure>
+
+<p>上面步骤完成后验证一下，只要有下面的报错就表示可以了：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ssh -T git@gitserver</span></span><br><span class="line">fatal: Interactive git shell is not enabled.</span><br><span class="line">hint: ~/git-shell-commands should exist and have <span class="built_in">read</span> and execute access.</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建一个空仓库"><a href="#创建一个空仓库" class="headerlink" title="创建一个空仓库"></a>创建一个空仓库</h2><p>回到 git 服务器，使用 git 身份在 <code>/opt/git/</code> 目录下创建一个空仓库，并使用 –bare 来一个不带工作目录的初始化操作。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /opt/git/project.git</span><br><span class="line"><span class="built_in">cd</span> /opt/git/project.git</span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure>
+
+<h2 id="push-项目"><a href="#push-项目" class="headerlink" title="push 项目"></a>push 项目</h2><p>万事俱备，可以开始了。假设你在本地有一个 project 的项目，现在要把它推送到 git 服务器供其他人使用，先添加远程仓库。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@gitserver:/opt/git/project.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果如上面所示配置了 .ssh/config 文件，这里可以简写成</span></span><br><span class="line">git remote add origin gitserver:/opt/git/project.git</span><br></pre></td></tr></table></figure>
+
+<p>下面就是正常的推送操作。origin 可以算是远程仓库的别名或引用。后面跟的是要推送的分支，master:master 表示推送本地仓库 master 分支到远程仓库的 master 分支，很啰嗦，简写称 master 就可以了，仅限两个分支同名的情况。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin master:master</span><br></pre></td></tr></table></figure>
+
+<h2 id="clone-项目"><a href="#clone-项目" class="headerlink" title="clone 项目"></a>clone 项目</h2><p>push 后你的朋友就可以 clone 你的项目。clone 是一个厉害的命令，帮你做了很多事。先把远程项目地址默认添加为 origin，当你使用 <code>git remote -v</code> 就能看到。然后把项目完整下载到本地。把项目的分支设为 origin/分支名，以示其为远程分支。在本地创建 master 分支并自动追踪 origin/master，以便本地工作。使用 <code>git branch -vv</code> 就可以看到追踪情况。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@gitserver:/opt/git/project.git</span><br></pre></td></tr></table></figure>
+
+<p>当你继续 push 版本，你的朋友就可以 <code>fetch</code> 抓取你的后续版本，然后使用 <code>git branch -vv</code> 命令查看当前本地相较于远程差了多少个提交。如果他要在你后续 push 提交的基础上工作，最简单最准确的就是 rebase 了。rebase 会让提交更加简洁易读。不过在版本控制里，简洁并不总是优点。。。</p>
+<p>pull 可以有 fetch 的“功效”，不过 pull 在抓取之后会自动合并提交。更多时候我们还是不希望它这么直接，使用 fetch 可以有时间查看比较一下。</p>
+]]></content>
+      <tags>
+        <tag>git 服务器</tag>
+      </tags>
+  </entry>
 </search>
