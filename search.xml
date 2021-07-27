@@ -648,4 +648,47 @@
         <tag>git 服务器</tag>
       </tags>
   </entry>
+  <entry>
+    <title>docker的网络管理</title>
+    <url>//post/docker-network.html</url>
+    <content><![CDATA[<p>docker利用linux内核提供的 namespace 资源隔离来实现虚拟化，资源隔离包括很多方面，其中一项就是网络隔离（Network namespace），让运行在docker内的进程彷佛置身于一个独立的网络环境。因为网络隔离，就要解决docker容器和宿主机（运行docker的服务器）之间的通信问题。</p>
+<h2 id="veth"><a href="#veth" class="headerlink" title="veth"></a>veth</h2><p>veth是虚拟网络设备，因为其成对出现，所以也叫 veth-pair。它的特点是一头接收到了数据，就会自动发送到另外一头，就像是一根网线一样，所以它被docker用来连接两个宿主机和docker之间的网络namespace，这样就实现了不同namespace之间互相通信。</p>
+<p>先跑一个 busybox，busybox有比较全的功能。可以先pull一个busybox镜像然后运行，也可以直接运行，docker会自动寻找busybox镜像。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull busybox</span><br><span class="line">docker run -it --rm --name busybox busybox</span><br></pre></td></tr></table></figure>
+<p>然后另外开一个终端观察宿主机上的网卡情况，会发现当一个docker运行后，宿主机上就会多出一个以 “veth” 开头的虚拟设备。例如我这里有个 “veth4c90e69”，使用 ethtool 命令查看它的另一头：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ethtool -S veth4c90e69</span><br><span class="line">NIC statistics:</span><br><span class="line">     peer_ifindex: 7</span><br></pre></td></tr></table></figure>
+
+<p>这是只显示它另一头的设备编号是7，那么这个另一头到底在哪儿呢？回到busybox，查看一下ip情况：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ip addr show</span></span><br><span class="line">1: lo &lt;LOOKBACK,UP,LOWER_UP&gt; mtu 65536...</span><br><span class="line">   ......</span><br><span class="line"></span><br><span class="line">7: eth0:if8: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500...</span><br><span class="line">   ......</span><br><span class="line">   inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0</span><br><span class="line">   ......</span><br></pre></td></tr></table></figure>
+
+<p>这下清楚了，eth0 网卡前面的编号就是 7，所以说veth一头在宿主机，一头在busybox这个docker里，把两个隔离的网络连在一起。当然仔细的朋友也发现了，eth0后面接的if8 不就说的是它对应的是编号8的网络接口嘛，去宿主机查看 veth4c90e69，它的编号就是8。</p>
+<h2 id="docker0网桥"><a href="#docker0网桥" class="headerlink" title="docker0网桥"></a>docker0网桥</h2><p>除了上面的 vnet-pair，docker还会自动创建一个名为 docker0 的网桥。网桥字面意思网段的桥梁，他可以实现加入到它的网卡设备进行通信。使用 brctl 命令查看一下 docker0 里加入了那些设备。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brctl show</span><br><span class="line">bridge name	 bridge id		      STP   enabled	interfaces</span><br><span class="line">docker0		   8000.0242ede3ad75	      no		  veth4c90e69</span><br></pre></td></tr></table></figure>
+
+<p>是不是很眼熟，veth4c90e69 设备就是上面 veth-pair 放在宿主机上的一头。所以到此就知道了，docker先创建一个名为 docker0 的网桥，当busybox运行时，docker会为其拉出来一根 veth-pair “网线”，连接到 docker0 网桥；又因为 docker0 网桥在宿主机里，自然就实现了busybox容器和宿主机之间的通信。</p>
+<p>交换机是类似于网桥的物理设备，差别就是网桥只有两端口，交换机有多个端口。网桥和交换机一样处在网络模型的第二层：数据链路层，只能解析数据帧的MAC地址，所以网桥应该没有ip地址才对，但事实上docker0会被默认分配一个172.17.0.1。原因是docker0网桥在这里兼职为busybox的默认网关，网关处在网络模型的第三层：传输层，就要有一个ip地址。去docker实例查看它的路由表：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># route -n</span></span><br><span class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</span><br><span class="line">0.0.0.0         172.17.0.1      0.0.0.0         UG    0      0        0 eth0</span><br><span class="line">172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 eth0</span><br></pre></td></tr></table></figure>
+
+<p>清楚的看到它的默认网关是172.17.0.1，就是docker0网桥嘛。</p>
+<h2 id="docker流量怎么出来"><a href="#docker流量怎么出来" class="headerlink" title="docker流量怎么出来"></a>docker流量怎么出来</h2><p>上面知道了busybox的ip是 172.17.0.2，如果它要访问 Internet，比如要ping一下bing.com域名，根据它的路由表走向，我们知道它会找到172.17.0.1，也就是docker0，然后借助宿主机正常出去。但是你这个出去的数据包里的源地址是172.17.0.2呀，bing.com后面要响应你，但是面对一个内网ip也只能迷茫。。。</p>
+<p>docker怎么解决这个问题呢？docker会借助宿主机上的iptables，使用源地址转换（SNAT）将原本源地址是内网的ip转换成宿主机上的公网ip，bing.com响应后根据源地址将数据包回传给宿主机，宿主机上的iptables查找记录的SNAT转换情况，发现这个数据包是给 172.17.0.2的，也就回传到了docker里。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -s 172.17.0.0/16 ! -o docker0 -j MASQUERADE</span><br></pre></td></tr></table></figure>
+<p>MASQUERADE跟SNAT一样，不过它能动态获取当前主机ip。</p>
+<h2 id="流量怎么进入docker"><a href="#流量怎么进入docker" class="headerlink" title="流量怎么进入docker"></a>流量怎么进入docker</h2><p>busybox有一个httpd服务，我现在让httpd监听80端口。虽然bosybox的ip是172.17.0.2，但是外面怎么可能访问到这个内网ip，就只能通过宿主机来间接访问busybox的80端口了。为了便于区别，这个使用宿主机的8080端口访问busybox的80端口。还是通过iptables，使用目标地址转换（DNAT）将访问宿主机8080端口的流量全都转发都172.17.0.2的80端口上去。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING ! -i docker0 -p tcp -m tcp --dport 8080 -j DNAT --to-destination 172.17.0.2:80</span><br></pre></td></tr></table></figure>
+
+<p>busybox里的httpd要响应请求，会先根据路由表到172.17.0.1也是docker0，然后根据刚才的DNAT记录把源地址修改为宿主机ip。这就让外面的误以为就是宿主机在提供httpd服务，因为这些操作都是在宿主机内部完成的，对外不可见。</p>
+<p>幸运的是我们不需要自己手动去创建8080到80的映射，只需要退出busybox，使用一个-p参数标明映射关系，docker会自动实现iptables的DNAT。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it --p 8080:80 --rm --name busybox busybox</span><br></pre></td></tr></table></figure>
+
+<p>更幸运的是，上面的一切docker都会自动帮你实现好了。但是了解docker的网络管理也不是坏事。</p>
+<h2 id="其他网络驱动"><a href="#其他网络驱动" class="headerlink" title="其他网络驱动"></a>其他网络驱动</h2><p>docker默认使用 bridge 也就是网桥，默认的网桥名为 docker0。除了bridge，还有host、container、none。</p>
+<p>host不创建 Network namespace，而是跟宿主机共用一个 Network namespace。在docker run的时候指定参数：–net=host即可，在这个docker里你会看到和宿主机同样的网卡信息和路由表等，宿主机占用的端口docker就不能再使用了。除了共用一个网络，其他都是独立的。</p>
+<p>container也是不创建 Network namespace，但是跟已存在的docker共用一个 Network namespace，情况跟host一样。在docker run的时候指定参数：net=container:busybox。</p>
+<p>none的话会创建 Network namespace，但是ip、路由什么都为空，需要自己配置。</p>
+]]></content>
+      <tags>
+        <tag>docker网络</tag>
+      </tags>
+  </entry>
 </search>
