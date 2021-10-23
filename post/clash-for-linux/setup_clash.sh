@@ -15,10 +15,12 @@ elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
 else
    arch="amd64"
    echo -e "${red}检测架构失败，将使用默认架构: ${arch}${plain}"
+   read
 fi
 
 pre_setup () {
-   read -p "input your sublink: " sublink
+   echo -e "${yellow}订阅链接获取方法参考: blog.mebi.me/post/clash-for-linux${plain}"
+   read -p "请输入米白云clash订阅链接: " sublink
    apt --version > /dev/null 2>&1
    [ $? -eq 0 ] && tool="apt" 
    yum --version > /dev/null 2>&1
@@ -62,16 +64,15 @@ update_sublink () {
         exit 1
     fi 
     sudo wget -O /etc/clash/config.yaml "$sublink&new=1" > /dev/null 2>&1
-    echo -e "${green}订阅更新成功！${plain}"
-    read
+    echo -e "${green}手动订阅更新成功！重启clash后生效。${plain}"
 }
 
 modify_sublink () {
+    echo -e "${yellow}订阅链接获取方法参考: blog.mebi.me/post/clash-for-linux${plain}"
     read -p "输入你最新的订阅链接: " sublink
     sudo wget -O /etc/clash/config.yaml "$sublink&new=1" > /dev/null 2>&1
     sudo echo "$sublink" > /etc/clash/.sublink
-    echo -e "${green}订阅链接修改成功，下次重启clash后生效！${plain}"
-    read
+    echo -e "${green}订阅链接修改成功！重启clash后生效。${plain}"
 }
 
 run_clash () {
@@ -79,10 +80,8 @@ run_clash () {
     ps -ef | grep "clash -d" | grep -v grep >> /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo -e "${green}clash启动成功！打开 clash.razord.top 进行节点选择(非必需)${plain}"
-        read
     else
         echo -e "${red}启动失败！${plain}"
-        read
     fi
 }
 
@@ -101,7 +100,6 @@ stop_clash () {
         kill -9 "$clash_pid"
     fi
     echo -e "${green}停止成功！${plain}"
-    read
 }
 
 restart_clash () {
@@ -114,13 +112,28 @@ restart_clash () {
     ps -ef | grep "clash -d" | grep -v grep > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo -e "${green}重启成功！${plain}"
-        read
     else
         echo -e "${red}重启失败！${plain}"
-        read
     fi
 }
 
+setup_crontab () {
+    crontab -l > /tmp/crontab.bak
+    echo "0 3 * * * bash $PWD/$0 update_sublink" >> /tmp/crontab.bak
+    crontab /tmp/crontab.bak
+}
+
+if [ $# -gt 0 ]; then
+    case $1 in
+	"update_sublink")
+        update_sublink
+        restart_clash
+	exit 0
+	;;
+        *)
+        ;;
+    esac
+fi
 
 while true
 do
@@ -152,20 +165,24 @@ case $choise_num in
     install_clash
     download_mmdb
     import_sublink
+    setup_crontab
     echo -e "${green}安装成功！clash可以开始运行${plain}"
-    read
+    read -p "回车退出 "
     continue
     ;;
     2)
     run_clash
+    read -p "回车退出 "
     continue
     ;;
     3)
     stop_clash   
+    read -p "回车退出 "
     continue
     ;;
     4)
     restart_clash
+    read -p "回车退出 "
     continue
     ;;
     5)
@@ -183,10 +200,12 @@ case $choise_num in
     ;;
     7)
     update_sublink
+    read -p "回车退出 "
     continue
     ;;
     8)
     modify_sublink
+    read -p "回车退出 "
     continue
     ;;
     *)
