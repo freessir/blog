@@ -357,6 +357,9 @@
 <p>点击 “安装证书”，在弹出的提示框右下角点 “允许”，之后会跳出提示<strong>已下载描述文件</strong>。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/3.jpg"></p>
 <p>接下来不要对小火箭进行操作，直接退到桌面，打开手机的<strong>设置</strong>。设置里开头会多处一个选项：“已下载描述文件”，点击它来安装描述文件，点击右上角的“安装”，然后手机会让你输入解锁密码才能继续后面的操作。</p>
+<div class="note modern"><p>如果你使用的是 iOS15 系统，那么位置在：“通用” -&gt; “VPN与设备管理”。操作方法同上面一致。</p>
+</div>
+
 <p><img src="how-to-use-tiktok-without-pull-card/4.jpg"></p>
 <p>再次点击右上角的 “安装”，然后下方 “安装”，现在我们就完成了描述文件的安装，点击右上角的 “完成”。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/5.jpg"></p>
@@ -367,7 +370,23 @@
 <h3 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h3><p>快要成功了！打开小火箭，点击下方的 “配置”，然后点击 “米白云 TikTok 配置.conf”，这次点击 “使用配置”，之后会看到左侧的小黄点移动到了 “米白云 TikTok 配置.conf” 前面。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/7.jpg"></p>
 <p>点击小火箭下方的 “首页”，选择一个节点并开启小火箭，此处不做过多介绍，米白云有关于如何使用小火箭的详细教程。</p>
-<h3 id="打开-TikTok"><a href="#打开-TikTok" class="headerlink" title="打开 TikTok"></a>打开 TikTok</h3><p>首次打开 TikTok 可能会有点耗时，如果长时间黑屏，请尝试下划刷新、重新打开 或者 更换节点。不出意外的话，TikTok 就顺利打开了。iOS 观看 TikTok 的关键就是配置文件，配置文件如果失效导致 TikTok 无法播放请联系客服。</p>
+<h3 id="观看-TikTok"><a href="#观看-TikTok" class="headerlink" title="观看 TikTok"></a>观看 TikTok</h3><p>首次打开 TikTok 可能会有点耗时，如果长时间黑屏，请尝试下划刷新、重新打开 或者 更换节点。不出意外的话，TikTok 就顺利打开了。iOS 观看 TikTok 的关键就是配置文件，配置文件如果失效导致 TikTok 无法播放请联系客服。</p>
+<p>由于 TikTok 的政策限制，香港节点可能无法观看 TikTok，尝试更换其他地区的节点。</p>
+<h3 id="切换地区"><a href="#切换地区" class="headerlink" title="切换地区"></a>切换地区</h3><p>点击名为 “米白云 TikTok 配置” 文件，也是你观看 TikTok 所使用的配置文件，点击 “编辑配置”，选择 “URL重写”，选中第三行语句。这里默认的是 “TO US”，也就是说默认观看的就是美国版抖音，你可以根据自己的需求切换地区。例如观看日本，US 改成 JP。</p>
+<p><strong>记住：</strong>节点的地区并不是切换抖音地区的方法。</p>
+<p>一些常见地区的缩写：</p>
+<ul>
+<li>美国：US</li>
+<li>日本：JP</li>
+<li>韩国：KR</li>
+<li>英国：UK</li>
+<li>新加坡：SG</li>
+<li>德国：DE</li>
+<li>俄罗斯：RU</li>
+<li>法国：FR</li>
+<li>澳大利亚：AU</li>
+<li>……</li>
+</ul>
 <h2 id="Android-系统"><a href="#Android-系统" class="headerlink" title="Android 系统"></a>Android 系统</h2><p>相对于 iOS 系统，Android 系统因为较宽松的软件审核政策，可以下载到各样的第三方软件，所以使用起来比较简单。Android 有很多第三方软件，你可以谷歌搜索：安卓如果观看TikTok 查看更多教程。这里提供一种教程：</p>
 <p>下载安装下面的软件：</p>
 <ul>
