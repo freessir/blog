@@ -222,8 +222,8 @@
 </div>
 
 <p>使用米白云提供的美区账号登陆 App Store。付费用户可在 <a href="https://high.scay.net/user">米白云首页</a> 找到共享的苹果账号。</p>
-<p>下面提供了 <mark class="hl-label default">文字版</mark>  和 <mark class="hl-label default">图片版</mark> ，请根据自身需求切换参考。</p>
-<p><strong>如果登陆账号的过程中，提示要升级账号，请不要升级。</strong></p>
+<p><strong>使用 账号2 在登陆账号的过程中，请点击其他方式，不要升级。</strong><br><strong>使用 账号2 在登陆账号的过程中，请点击其他方式，不要升级。</strong><br><strong>使用 账号2 在登陆账号的过程中，请点击其他方式，不要升级。</strong></p>
+<p>下面提供了 <mark class="hl-label default">文字版</mark>  和 <mark class="hl-label default">图片版</mark> ，可自行切换参考。</p>
 <div class="tabs" id="login-appstore"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#login-appstore-1"><i class="fas fa-font"></i>文字版</button></li><li class="tab"><button type="button" data-href="#login-appstore-2"><i class="far fa-images"></i>图片版</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="login-appstore-1"><ul>
 <li>打开 App Store</li>
 <li>点击右上角的头像</li>
