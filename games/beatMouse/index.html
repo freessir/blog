@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打地鼠</title>
+		
+		<style type="text/css">
+			#outer {
+				width: 330px;
+				/* border: 1px solid black; */
+				margin: 0 auto;
+				text-align: center;
+			}
+			#title {
+				display: block;
+				font-weight: 700px;
+				font-size: 24px;
+				line-height: 60px;
+				background-color: #FFFAE8;
+			}
+			#img-warp {
+				height: 400px;
+				width: 330px;
+				margin-top: 20px;
+			}
+			
+			#img-warp > img {
+				width: 100px;
+				height: 100px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="outer">
+			
+			<marquee id="title">
+				打地鼠
+			</marquee>
+			<div id="img-warp">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+				<img src="./img/5.jpeg" onclick="beat(this)">
+			</div>
+			
+			<p id="score">得分：0</p>
+			
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		var score = 0;
+		setInterval(generateMouse,1000);
+		
+		function generateMouse () {
+			var blacks = document.querySelectorAll("#img-warp>img");
+			
+			var blockCounter = blacks.length;
+			var randomIndex = parseInt(Math.random() * blockCounter);
+			
+			// 先隐藏所有地鼠
+			for (var i = 0; i < blockCounter; i++) {
+				blacks[i].setAttribute("src", "./img/5.jpeg");
+			}
+			
+			// 出现地鼠
+			blacks[randomIndex].setAttribute("src", "./img/2.gif");
+		}
+		
+		function beat(block) {
+			if (block.src.endsWith("2.gif")) {
+				score++;
+				
+				block.setAttribute("src", "./img/5.jpeg");
+				document.getElementById("score").innerText = "得分：" + score;
+			}
+		}
+		
+	</script>
+	
+</html>
