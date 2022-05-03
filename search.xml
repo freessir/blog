@@ -327,22 +327,20 @@
 <h2 id="网页版"><a href="#网页版" class="headerlink" title="网页版"></a>网页版</h2><p>这个是最简单的方法，手机浏览器打开 TikTok 官网，然后你就可以正常观看、点赞、评论啦。你可以通过修改网页语言来切换 TikTok 地区。</p>
 <p><a href="https://www.tiktok.com/">TikTok 官网</a></p>
 <h2 id="iOS系统"><a href="#iOS系统" class="headerlink" title="iOS系统"></a>iOS系统</h2><p>这里借助 Shadowrocket（下称：小火箭）软件，这是一款售价 $2.99 的付费软件，米白云用户请先参考网站内教程免费安装并配置好 Shadowrocket，这里不过多赘述。</p>
-<h3 id="下载-TikTok"><a href="#下载-TikTok" class="headerlink" title="下载 TikTok"></a>下载 TikTok</h3><p><strong>新版的 TikTok 已经无法解锁，需要下载下面提供的旧版本</strong>。旧版 TikTok 软件提供在线下载安装方法，前提是：</p>
+<h3 id="下载-TikTok"><a href="#下载-TikTok" class="headerlink" title="下载 TikTok"></a>下载 TikTok</h3><p><strong>请不要通过 App Store 下载，无法使用！请在线下载下方的版本</strong>。旧版 TikTok 软件提供在线下载安装方法，前提是：</p>
 <p><em>你已经通过米白云提供的 美区账号1 下载过了 Shadowrocket！</em></p>
 <p><em>你已经通过米白云提供的 美区账号1 下载过了 Shadowrocket！</em></p>
 <p><em>你已经通过米白云提供的 美区账号1 下载过了 Shadowrocket！</em></p>
-<p>旧版 TikTok 软件在线下载地址：</p>
-<p><a href="https://www.mebi.me/app-store/TikTok/index.html">点我下载</a></p>
+<p>旧版 TikTok 软件在线下载地址：<br><a href="https://www.mebi.me/app-store/TikTok/index.html">点我下载</a></p>
 <h3 id="下载配置文件"><a href="#下载配置文件" class="headerlink" title="下载配置文件"></a>下载配置文件</h3><p>点击下方链接下载配置文件，电脑端可以通过QQ、微信等工具将配置文件传送到手机。</p>
 <ul>
-<li><a href="https://pan.baidu.com/s/1rZXgWOSmocw1_my-JUz05w">百度网盘</a></li>
-<li>密码：见下面</li>
+<li><a href="https://pan.baidu.com/s/1_nef3hBGbmEmASdy7FVpPQ">百度网盘</a></li>
 </ul>
-<p><strong>密码如何获取？</strong><br>前往 <a href="https://high.scay.net/user">米白云首页</a>，购买任一非试用套餐，然后在首页 右侧中部 的位置，点击 “TikTok”，默认不显示密码，点击复制获取密码。</p>
+<p><strong>网盘密码获取</strong><br>前往 <a href="https://high.scay.net/user">米白云首页</a>，购买任一非试用套餐，然后在首页 右侧中部 的位置，点击 “TikTok”，默认不显示密码，点击复制获取密码。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/0.1.jpg"></p>
 <h3 id="导入配置文件"><a href="#导入配置文件" class="headerlink" title="导入配置文件"></a>导入配置文件</h3><p>这里以微信为例，使用微信的文件传输助手将配置文件从电脑端传入到手机端，点击配置文件，“用其他应用打开”，然后左滑到底，找到 ···，选择 <strong>Shadowrocket</strong>。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/0.jpg"></p>
-<h3 id="配置-HTTPS-解密"><a href="#配置-HTTPS-解密" class="headerlink" title="配置 HTTPS 解密"></a>配置 HTTPS 解密</h3><p>配置文件会自动导入到小火箭，然后点击导入成功的 “米白云 TikTok 配置.conf”，在弹出的窗口里点击 “编辑配置”。</p>
+<h3 id="配置-HTTPS-解密"><a href="#配置-HTTPS-解密" class="headerlink" title="配置 HTTPS 解密"></a>配置 HTTPS 解密</h3><p>配置文件会自动导入到小火箭，然后点击导入成功的 “米白云 TikTok 配置.conf”，在弹出的窗口里点击 “编辑配置”。新版小火箭是点击右侧的感叹号。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/1.jpg"></p>
 <p>点击 “HTTPS 解密”，然后打开 “HTTPS 解密” 开关。</p>
 <p><img src="how-to-use-tiktok-without-pull-card/2.jpg"></p>
@@ -363,6 +361,14 @@
 <p><img src="how-to-use-tiktok-without-pull-card/7.jpg"></p>
 <p>点击小火箭下方的 “首页”，选择一个节点并开启小火箭，此处不做过多介绍，米白云有关于如何使用小火箭的详细教程。</p>
 <h3 id="观看-TikTok"><a href="#观看-TikTok" class="headerlink" title="观看 TikTok"></a>观看 TikTok</h3><p>首次打开 TikTok 可能会有点耗时，如果长时间黑屏，请尝试下划刷新、重新打开 或者 更换节点。不出意外的话，TikTok 就顺利打开了。iOS 观看 TikTok 的关键就是配置文件，配置文件如果失效导致 TikTok 无法播放请联系客服。</p>
+<div class="note modern"><p><strong>强制更新怎么办？</strong><br>此举限制的是低版本且不登录的用户。解决方法：</p>
+<ul>
+<li>清理tiktok后台，重新打开tiktok的时候，快速点击右下角的个人资料图标，然后点击注册一个账号，可以选择国内邮箱注册，不建议手机号注册。当然最简单的就是通过 Apple 继续，不需要填写任何信息。</li>
+<li>出生日期确保自己大于18岁，否则账号有限制。</li>
+<li>如果tiktok软件无法注册，前往tiktok官网注册也可以。</li>
+</ul>
+</div>
+
 <p>由于 TikTok 的政策限制，香港节点可能无法观看 TikTok，尝试更换其他地区的节点。</p>
 <h3 id="切换地区"><a href="#切换地区" class="headerlink" title="切换地区"></a>切换地区</h3><p>点击名为 “米白云 TikTok 配置” 文件，也是你观看 TikTok 所使用的配置文件，点击 “编辑配置”，选择 “URL重写”，选中第三行语句。这里默认的是 “TO US”，也就是说默认观看的就是美国版抖音，你可以根据自己的需求切换地区。例如观看日本，US 改成 JP。</p>
 <p><strong>记住：</strong>节点的地区并不是切换抖音地区的方法。</p>
